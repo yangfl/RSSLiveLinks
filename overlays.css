@@ -1,0 +1,181 @@
+/**
+ * RSS Live Links - an RSS "live bookmark" extension for Google Chrome
+ *
+ * Copyright 2012 Martin Bartlett
+ *
+ *    This file is part of RSS Live Links.
+ *
+ *    RSS Live Links is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU Lesser General Public License as published by
+ *    the Free Software Foundation, either version 3 of the License, or
+ *    (at your option) any later version.
+ *
+ *    RSS Live Links is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU Lesser General Public License for more details.
+ *
+ *    You should have received a copy of the GNU Lesser General Public License
+ *    along with RSS Live Links.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @version 1.0.0
+ * @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
+ * @author  Martin Bartlett
+ */
+
+/*
+ * How Google does dialogs
+ */
+.overlay {
+	-webkit-box-align: center;
+	-webkit-box-orient: vertical;
+	-webkit-box-pack: center;
+	-webkit-transition: 0.25s opacity;
+	background: -webkit-radial-gradient(rgba(127, 127, 127, 0.5), rgba(127, 127, 127, 0.5) 35%, rgba(0, 0, 0, 0.7));
+	bottom: 0;
+	display: none; /* -webkit-box */
+	left: 0;
+	overflow: auto;
+	padding: 20px;
+	padding-bottom: 130px;
+	position: fixed;
+	right: 0;
+	top: 0;
+	z-index: 10;
+}
+.overlay .page {
+	-webkit-box-shadow: 0px 5px 80px #505050;
+	background: white;
+	border: 1px solid #BCC1D0;
+	border-radius: 2px;
+	padding: 0;
+	position: relative;
+	border-image: initial;
+	display: none; /* block */
+	z-index: 20;
+}
+
+.overlay .page h1 {
+	background: -webkit-linear-gradient(white, #F8F8F8);
+	border-bottom: 1px solid rgba(188, 193, 208, .5);
+	font-size: 105%;
+	font-weight: bold;
+	padding: 10px 15px 8px 15px;
+	-webkit-padding-end: 24px;
+	-webkit-user-select: none;
+	color: #111;
+	margin: 0;
+	text-shadow: white 0 1px 2px;
+}
+
+.page .content-area {
+	padding: 10px 15px 5px 15px;
+}
+
+.page .row {
+	text-align: right;
+	padding-bottom: 7px;
+}
+
+.page .row label {
+	padding-right:2px;
+}
+
+.page .row label:after {
+	content: ":";
+}
+
+.page .action-area {
+	-webkit-box-align: center;
+	-webkit-box-orient: horizontal;
+	-webkit-box-pack: end;
+	border-top: 1px solid rgba(188, 193, 208, .5);
+	display: -webkit-box;
+	padding: 12px;
+	background: -webkit-linear-gradient(white, #F8F8F8);
+	position: relative;
+	z-index: 20;
+}
+
+.action-area-right {
+	display: -webkit-box;
+}
+
+.button-strip {
+	-webkit-box-orient: horizontal;
+	display: -webkit-box;
+}
+
+.button-strip > button {
+	-webkit-margin-start: 10px;
+	display: block;
+	margin-bottom: 0px;
+	min-width: 4em;
+	padding: 3px 12px 3px 12px;
+}
+
+.page .row  select {
+	margin-right: 0;
+	height: 25px;
+	min-width: 140px;
+}
+
+.page .row  input[type="checkbox"] {
+	margin: 0;
+	margin-bottom: 3px;
+	vertical-align: middle;
+}
+
+.page .row  input[type="text"] {
+	font-size: 13px;
+	width: 289;
+	height: 25px;
+}
+
+.page .row .text {
+	text-align:left;
+}
+
+.page .row  .text ul {
+	margin-left: 20px;
+}
+
+.page .row .text li {
+	margin-top: 5px;
+}
+
+.page .messages {
+	position: absolute;
+	bottom: 0px;
+	height: 30px;
+	width: 100%;
+	margin: 0;
+	padding: 0 0 0 0;
+	margin-left: -1px;
+	background-color:#FFE4B5;
+	-webkit-transition: bottom .5s linear; 
+	z-index: 15;
+	border: 1px solid #BCC1D0;
+	border-radius: 2px;
+
+}
+
+.page .messages .message-text {
+	padding-left: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 14px;
+	overflow-y: hidden;
+	text-overflow: ellipsis;
+	color: DarkRed;
+}
+
+
+.page .messages-show {
+	bottom: -30px;
+}
+
+.page .messages-hide {
+	bottom: 0px;
+}
+

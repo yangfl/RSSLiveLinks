@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html>
+	<!--
+	* RSS Live Links - an RSS "live bookmark" extension for Google Chrome
+	*
+    * Copyright 2010 Martin Bartlett
+    *
+    *    This file is part of RSS Live Links.
+    *
+    *    RSS Live Links is free software: you can redistribute it and/or modify
+    *    it under the terms of the GNU Lesser General Public License as published by
+    *    the Free Software Foundation, either version 3 of the License, or
+    *    (at your option) any later version.
+    *
+    *    RSS Live Links is distributed in the hope that it will be useful,
+    *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    *    GNU Lesser General Public License for more details.
+    *
+    *    You should have received a copy of the GNU Lesser General Public License
+    *    along with RSS Live Links.  If not, see <http://www.gnu.org/licenses/>.
+	*
+	* @version 1.0.0
+	* @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
+	* @author  Martin Bartlett
+	-->
+	<head>
+		<style>
+div#close_popup {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+	float: right;
+	cursor: pointer;
+	background: white url('img/close.png') no-repeat center center;
+	width: 11px;
+	height:11px
+}
+
+div#close_popup:hover {
+	background: white url('img/close_hover.png') no-repeat center center;
+}
+
+/**
+ * The drop down menu from Gmail Checker Plus - used with permission
+ */
+div#menu {
+    position: absolute;
+    top: -28px;
+    right: 30px;
+    float: right;
+    padding-top: 10px;
+    padding-right: 3px;
+    padding-left: 5px;
+    padding-bottom: 8px;
+    background: white url('img/dropdownarrow.png') no-repeat bottom center;
+    border: 1px solid #6d93b8;
+    -webkit-border-radius: 5px; 
+	-webkit-transition: all 0.5s ease;
+    z-index:99;
+}
+
+div#menu:hover {
+    top: -12px;
+    padding-bottom: 2px;
+    background: white none;
+}
+
+div#menu a.squareLink {
+    margin-top: 1px;
+    margin-right: 5px;
+    display: block;
+    float: left;
+    width: 16px;
+    height: 16px;
+}
+#logo {
+}
+
+#separator {
+    margin-top: 1px;
+    margin-right: 5px;
+    display: block;
+    float: left;
+    width: 7px;
+    height: 16px;
+}
+
+div#menu a#logo {
+    background: transparent url("img/rssll.png") no-repeat center center;
+    margin-top: 1px;
+    display: block;
+    float: left;
+    width: 40px;
+    height: 17px;
+}
+
+div#menu a#logo:hover {
+    background: transparent url("img/rssll_hover.png") no-repeat center center;
+}
+
+div#menu a#home {
+    background: transparent url("img/home.png") center center;
+}
+
+div#menu a#home:hover {
+    background: transparent url("img/home_hover.png") center center;
+}
+
+
+div#menu a#open_options {
+    background: transparent url("img/wrench.png") center center;
+}
+
+div#menu a#open_options:hover {
+    background: transparent url("img/wrench_hover.png") center center;
+}
+
+div#menu a#allread {
+    background: transparent url("img/read.png") center center;
+}
+
+div#menu a#allread:hover {
+	background: transparent url("img/read_hover.png") center center;
+}
+
+div#menu a#allmark {
+    background: transparent url("img/mark.png") center center;
+}
+
+div#menu a#allmark:hover {
+	background: transparent url("img/mark_hover.png") center center;
+}
+
+
+div#menu a#refresh {
+    background: transparent url("img/refresh.png") center center;
+}
+
+div#menu a#refresh:hover {
+	background: transparent url("img/refresh_hover.png") center center;
+}
+
+div#menu a#help {
+    background: transparent url("img/help.png") center center;
+}
+
+div#menu a#help:hover {
+	background: transparent url("img/help_hover.png") center center;
+}
+
+div#menu a.sound_on {
+    background: transparent url("img/sound_on.png") center center;
+}
+
+div#menu a.sound_on:hover {
+	background: transparent url("img/sound_on_hover.png") center center;
+}
+
+div#menu a.sound_mute {
+    background: transparent url("img/sound_mute.png") center center;
+}
+
+div#menu a.sound_mute:hover {
+	background: transparent url("img/sound_mute_hover.png") center center;
+}
+
+.hidden {
+    display: none;
+}
+
+/**
+ * END OF drop down menu from Gmail Checker Plus
+ */
+
+			body {
+				font-family: arial, helvetica, sans-serif;
+				font-size: 90%;
+				overflow: auto;
+				overflow-x: hidden;
+				padding: 3px;
+				margin: 0;		
+			}
+
+			#container {
+				border: 1px solid #88C;
+				padding: 5px;
+				-webkit-border-radius:5px;
+				-webkit-user-select: none;
+			}
+
+			#trailerDiv {
+				/*				position:absolute;*/
+				bottom:0;
+				width: 100%;
+			}
+
+			a {
+				color:#0000CC;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			.feedDataContainer {
+				margin: 0 0;
+				padding-right: 3px;
+				overflow: hidden;
+			}
+
+			.groupDataContainer {
+				margin: 2px 1px 0 26px;
+			}
+
+			.feedImage {
+				vertical-align: center;
+				width: 100%;
+			}
+
+			.feedIconBox {
+				display: block;
+				overflow: hidden;
+				height: 100%;
+				width: 16px;
+				float: left;
+				clear: left;
+			}
+
+			#feedContainer {
+				padding: 2px 0px 0px;
+				display: block;
+				overflow: auto;
+				overflow-x: hidden;			
+			}
+
+			/* These three rules determine the hiding and showing of feeds as they are openned and closed*/
+			.feedDiv > .feedDataContainer, .feedDiv > .groupDataContainer {
+				display: none;
+			}
+			.opennedFeedDiv, .opennedFeedDiv > .feedDataContainer, .opennedFeedDiv > .groupDataContainer {
+				display: block;
+			}
+
+			.hidingFeedContainer > .feedDiv {
+				display: none;
+			}
+
+			.feedData, .feedDataLong {
+				margin-left: 16px;  
+				overflow: auto;
+				overflow-x: hidden;			
+				margin-bottom: 0px;
+				min-width: 100%
+				max-width: 100%
+				width:100%
+			}
+
+			.feedData, .moreData, .feedDataLong {
+				margin-left: 16px;
+				padding-bottom: 0px	
+			}
+
+			.moreData hr {
+				margin: 3px 0px 2px 9px;
+			}
+
+			.moreLinks {
+				font-size: 90%;
+				width: 100%;
+				display: table;
+				padding-left: 9px;
+			}
+
+			.dataUnderline {
+				margin: 3px 0 3px 25px;
+				/*display: none;*/
+			}
+
+			.more {
+				display: table-cell;
+				width: 79px;
+			}
+
+			.smallMore {
+				display: table-cell;
+				width: 73px;
+			}
+
+			#morePrev, #moreNext {
+				display: table-cell;
+				width: 13px;
+			}
+
+			.midCell {
+				text-align: center;
+			}
+
+			.endCell {
+				text-align: right;
+				padding-right: 8px;
+			}
+
+			.moreAction {
+				color: #88C;
+			}
+
+
+			.item, .currentItem, .feedTitleDiv {
+				padding: 0px 0px 3px;
+				height: 16px;
+				display: block;
+			}
+
+			.error_item, .itemTitle, .feedTitle, .availableFeedsTitle {
+				cursor: pointer;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				display: block;
+				padding-left: 9px;
+			}
+
+			.item:hover, .feedTitleDiv:hover, .feedMessage:hover {
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0,#F6F6F6), color-stop(0.5,#E8E8E8), color-stop(1.0,#F6F8F6));
+			}
+
+			.currentItem, .currentItem:hover {
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0,#E0E0E0), color-stop(0.5,#D2D2D2), color-stop(1.0,#E0E2E0));
+			}
+
+			.availableFeedsTitle {
+				color: blue;
+			}
+
+			.itemTitle {
+				font-size: 13px;
+			}
+
+			.readItemTitle {
+				color: black;
+				font-weight: 100;
+			}
+
+			.unseenItemTitle {
+				color:red;
+				font-weight: bold;
+				padding-left: 3px;
+			}
+
+			.unseenItemTitle .itemTitleText:before {
+				content: "! ";
+			}
+
+			 .feedMessage:before {
+				content: "* ";
+			}
+
+			.unseenItemTitle .itemTitleText:before, .feedMessage:before {
+				font-size: 12px;
+				color: red;
+				font-weight: bold;
+			}
+
+			.unreadItemTitle {
+				color:#000099;
+				font-weight: bold;
+			}
+
+			.itemTitle a, .feedTitle a {
+				color: inherit;
+			}
+
+			.subscribedTitle {
+				color: gray;
+			}
+
+			.unsubscribedTitle {
+				color: black;
+			}
+
+			.feedTitle {
+				font-size: 14px;
+			}
+
+			.readFeedTitle {
+				color: black;
+				font-weight: normal;
+			}
+
+			.errorFeedTitle {
+				color: red;
+				font-weight: bold;
+				font-style: italic;
+			}
+
+			.unseenFeedTitle {
+				color: red;
+				font-weight: bold;
+			}
+
+			.unreadFeedTitle {
+				color: black;
+				font-weight: bold;
+			}
+
+			#title {
+				display: block;
+				margin-left: auto;
+			}
+
+			.error_item {
+				cursor: auto;
+				color: red;
+				padding-left: 1px;
+			}
+
+			.feedMessage {
+				font-style:italic;
+				font-weight: bold;
+				white-space: nowrap;
+				padding-left: 0px;
+				color: red;
+			}
+
+			#msg, {
+				font-style:italic;
+				white-space: nowrap;
+				color: #88C;
+				font-size: 85%;
+			}
+
+			.mainDivider {
+				margin: 2px 0;
+			}
+
+			.trailerRow {
+				display: table;
+				width:100%;
+			}
+
+			.trailer {
+				display: table-cell;
+				width: 33.3%;
+				white-space: nowrap;
+				margin:0;
+			}
+
+			.trailerAction {
+				color: #88C;
+				font-size: 90%;
+				text-decoration: none;
+				cursor: pointer;
+			}
+
+			#feedsMessageDiv, #versionMessageDiv {
+				display: none;
+			}
+		</style>
+		<script type="text/javascript" src="utilities.js"></script>
+		<script type="text/javascript" src="popup.js"></script>
+	</head>
+	<body>
+	<!--
+	 The drop-down menu from GMail Checker Plus - used with permission
+	-->
+    <div id="menu">
+		<span id="soundSpan"><a href="#" id="soundToggle" class="squareLink sound_mute"><img src="img/sound_on.png" class="hidden" /></a></span>
+		<a href="chrome://rssll/tool/read" id="allread" class="squareLink"><img src="img/read.png" class="hidden" /></a>
+		<a href="chrome://rssll/tool/mark" id="allmark" class="squareLink"><img src="img/mark.png" class="hidden" /></a>
+        <a href="#" id="refresh" class="squareLink"><img src="img/refresh.png" class="hidden" /></a>
+        <a href="#" id="open_options" class="squareLink"><img src="img/wrench.png" class="hidden" /></a>
+        <a href="updated.html" class="squareLink" id="help" class="squareLink"><img src="img/help.png"  class="hidden"/></a>
+    </div>
+	<!--
+	 END OF drop-down menu from GMail Checker Plus
+	 -->
+	 <div id="close_popup"></div>
+		<div id="container">
+			<div id="feedContainer" class="feedContainer">
+				<div id="feedsMessageDiv"></div>
+				<div id="availableDiv" class="hidden">
+					<div class="feedTitleDiv">
+						<div class="feedIconBox" id="availableIconBox">
+							<img class="feedImage" src="img/rssll_16x16.png"/>
+						</div>
+						<a  id="availableFeedsTitle" class="feedTitle availableFeedsTitle">
+							<span id="availableFeedsText"></span>
+						</a>
+					</div>
+					<div class="feedDataContainer" id="availableDataContainer"></div>
+				</div>
+			</div>
+			<div id="msg"></div>
+			<div id="translator" class="hidden"></div>
+		</div>
+	</html>

@@ -1,0 +1,760 @@
+{
+   "allmark_tooltip": {
+      "description": "Tooltip on 'mark all' tool",
+      "message": "单击: 标记所有更新项为已查看;\nAlt+Shift+单击: 标记所有更新项为已阅读."
+   },
+   "allread_tooltip": {
+      "description": "Tooltip on 'read all' tool",
+      "message": "单击: 打开所有未查看项;\nShift+单击: 打开所有未阅读项."
+   },
+   "available_feeds_title": {
+      "description": "Title of available feeds section",
+      "message": "可订阅的源"
+   },
+   "available_feeds_tooltip": {
+      "description": "Tooltip on icon of Available Feeds section",
+      "message": "当前页面上所有更新源. 单击以订阅.\n未订阅: $unsubscribed$, 已订阅: $subscribed$",
+      "placeholders": {
+         "subscribed": {
+            "content": "$2",
+            "example": "2"
+         },
+         "unsubscribed": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "close_button": {
+      "description": "Text on a close button",
+      "message": "关闭"
+   },
+   "close_popup_tooltip": {
+      "description": "Tooltip on 'close popup' tool",
+      "message": "关闭浮动窗口"
+   },
+   "enable_sound": {
+      "description": "Tooltip on enable sound icon",
+      "message": "提示音开启"
+   },
+   "extDesc": {
+      "description": "Extension description",
+      "message": "将RSS/Atom作为书签等反馈"
+   },
+   "extName": {
+      "description": "Extension name",
+      "message": "RSS Live Links"
+   },
+   "extTitle": {
+      "description": "Extension title",
+      "message": "RSS Live Links"
+   },
+   "feed_home_name": {
+      "description": "Name on Feed Home link",
+      "message": "更新源首页"
+   },
+   "feed_home_tooltip": {
+      "description": "Tooltip on Feed Home link",
+      "message": "在新选项卡中打开更新源的首页"
+   },
+   "feed_tooltip_error": {
+      "description": "Error message on tooltip on feed icon",
+      "message": "更新源错误"
+   },
+   "feed_tooltip_items": {
+      "description": "Item-related tooltip on a feed icon",
+      "message": "全部内容: $item_count$, 未查看内容: $unseen_count$, 未阅读内容: $unread_count$",
+      "placeholders": {
+         "item_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "feed_tooltip_pubdate": {
+      "description": "Publication date on tooltip on a feed icon",
+      "message": "发布时间: $parm$",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "feed_tooltip_ttl": {
+      "description": "TTL tooltip on a feed icon",
+      "message": "更新源延时: $parm$ 分钟",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "feed_tooltip_upd": {
+      "description": "Next update tooltip on a feed icon",
+      "message": "下次更新: $parm$",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "group_name_tag": {
+      "description": "Tag on a group's title",
+      "message": "组"
+   },
+   "group_tooltip_errors": {
+      "description": "Error-related tooltip on a group icon",
+      "message": "更新源错误: $error_count$",
+      "placeholders": {
+         "error_count": {
+            "content": "$1",
+            "example": "1"
+         }
+      }
+   },
+   "group_tooltip_feeds": {
+      "description": "Feed-related tooltip on a group icon",
+      "message": "源: $feed_count$, 未查看: $unseen_count$, 未阅读: $unread_count$",
+      "placeholders": {
+         "feed_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "group_tooltip_items": {
+      "description": "Item-related tooltip on a group icon",
+      "message": "内容: $item_count$, 未查看: $unseen_count$, 未阅读: $unread_count$",
+      "placeholders": {
+         "item_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "icon_1_feed_error": {
+      "description": "RSSLL Icon tooltip - one feed in error",
+      "message": "1 个源无法读取"
+   },
+   "icon_1_feed_updated": {
+      "description": "RSSLL Icon tooltip - one feed updated",
+      "message": "1 个源有更新"
+   },
+   "icon_n_feeds_error": {
+      "description": "RSSLL Icon tooltip - n feeds in error",
+      "message": "$errors$ 个源无法读取",
+      "placeholders": {
+         "errors": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "icon_n_feeds_updated": {
+      "description": "RSSLL Icon tooltip - n feeds updated",
+      "message": "$updated$ 个源有新内容",
+      "placeholders": {
+         "updated": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "import_error": {
+      "message": "RSS Live Links设置未能正确导入"
+   },
+   "item_pubdate_tag": {
+      "description": "Tag on an item's tooltip when displaying a publication date",
+      "message": "发布时间"
+   },
+   "left_arrow_tooltip": {
+      "description": "Tooltip on left arrow in hids-others-on-open mode",
+      "message": "切换至上一个未查看更新源\nShift: 切换至上一个更新源"
+   },
+   "mark_read_name": {
+      "description": "Name on Mark read link",
+      "message": "标记为已读"
+   },
+   "mark_read_tooltip": {
+      "description": "Tooltip on Mark read link",
+      "message": "标记所有信息为已读并关闭源页面\n(ctrl+单击以保留源页面)"
+   },
+   "multiple_feeds_loading": {
+      "description": "Message displayed when more than one feed is loading",
+      "message": "$number$ 个源读取中...",
+      "placeholders": {
+         "number": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "mute_sound": {
+      "description": "Tooltip on mute sound icon",
+      "message": "提示音关闭"
+   },
+   "no_available_feeds": {
+      "description": "Content of Available Feeds section when no feeds have been detected",
+      "message": "当前页面上没有可订阅的源"
+   },
+   "no_feeds": {
+      "description": "Message displayed when no feeds have been configured (e.g. a fresh installation",
+      "message": "目前尚未订阅任何更新源"
+   },
+   "one_feed_loading": {
+      "description": "Message displayed when one feed is loading",
+      "message": "1 个源更新中..."
+   },
+   "open_help_tooltip": {
+      "description": "Tooltip on 'open help' tool",
+      "message": "在新标签页中打开RSS Live Links帮助页"
+   },
+   "open_name": {
+      "description": "Name on Open link",
+      "message": "打开"
+   },
+   "open_options_tooltip": {
+      "description": "Tooltip on 'open options' tool",
+      "message": "在新标签页中打开设置页"
+   },
+   "open_tooltip": {
+      "description": "Tooltip on Open link",
+      "message": "单击: 在新选项卡中打开未查看源\nShift+单击: 在新选项卡中打开未阅读源\nAlt+单击: 在新选项卡中打开所有源"
+   },
+   "opt_addButton": {
+      "message": "添加"
+   },
+   "opt_addButtonHelp": {
+      "message": "点击手工添加更新源"
+   },
+   "opt_advancedOptionsHeader": {
+      "description": "Header for advanced options group",
+      "message": "高级选项"
+   },
+   "opt_advancedOptionsHelp": {
+      "description": "Header for advanced options help",
+      "message": "通常作为非选用选项，你也可以选择并承担相应风险。"
+   },
+   "opt_alreadySubscribed": {
+      "message": "你已经订阅此更新源"
+   },
+   "opt_animateButtonHelp": {
+      "message": "当源有新内容时显示RSS Live Links按钮动画效果"
+   },
+   "opt_animateButtonLabel": {
+      "message": "按钮动画效果"
+   },
+   "opt_askOnUpdateHelp": {
+      "message": "在刷新含有未阅读内容的源时先进行提示"
+   },
+   "opt_askOnUpdateLabel": {
+      "message": "刷新前提示"
+   },
+   "opt_autoopenNewHelp": {
+      "description": "Help on auto-open new option",
+      "message": "在有新内容时自动打开。注意：仅在少量的更新信息时使用此选项!"
+   },
+   "opt_autoopenNewLabel": {
+      "description": "Label on auto-open new option",
+      "message": "自动打开新内容"
+   },
+   "opt_availableFeedsHeader": {
+      "message": "可订阅的源"
+   },
+   "opt_availablesHelp": {
+      "message": "当前页面上可订阅的源.\n单击订阅源.\nShift+单击打开源地址"
+   },
+   "opt_badConfig": {
+      "message": "配置数据不可用"
+   },
+   "opt_changesUnseenHelp": {
+      "message": "如果某篇内容的原文发生更改,则重新将该条内容标记为未查看."
+   },
+   "opt_changesUnseenLabel": {
+      "message": "当内容更新时重新标记为未查看:"
+   },
+   "opt_clearConfig": {
+      "message": "清除"
+   },
+   "opt_colorLabel": {
+      "message": "颜色:"
+   },
+   "opt_configHeader": {
+      "message": "导入/导出配置"
+   },
+   "opt_configHelp": {
+      "message": "导出: 单击 '导出设置' 按钮, 选择下面文本框内的全部内容 (使用右键菜单), 复制粘贴到文本编辑器(例如:记事本)保存 .\n\n导入:用文本编辑器打开保存了之前配置内容的文档(例如:记事本), 选择全部内容, 复制粘贴到下面的文本框中, 然后单击'导入设置'按钮."
+   },
+   "opt_defaultLabel": {
+      "message": "默认:"
+   },
+   "opt_defaultTimeoutHelp": {
+      "message": "默认延迟时间, 单位为秒, 定义至更新内容的网络请求."
+   },
+   "opt_defaultTimeoutLabel": {
+      "message": "默认延时"
+   },
+   "opt_defaultTtlHelp": {
+      "message": "默认TTL（报文生存时间）值 ,定义至基于TTL值刷新的更新源."
+   },
+   "opt_defaultTtlLabel": {
+      "message": "默认TTL"
+   },
+   "opt_deleteButton": {
+      "message": "删除"
+   },
+   "opt_displayOptionsHeader": {
+      "message": "外观设置"
+   },
+   "opt_displayOptionsHelp": {
+      "message": "设置是否将最新内容置顶,\n当打开某一源时是否收起其他源的内容,\n是否自动更新当前打开的源,\n是否在浮动窗口中自动打开首个源,\n打开或关闭动画/声音提示, 以及\nRSS Live Links的其他默认值"
+   },
+   "opt_duplicateGroupName": {
+      "message": "分组 '$name$' 已存在",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "News"
+         }
+      }
+   },
+   "opt_enterGroupName": {
+      "message": "输入源分组名..."
+   },
+   "opt_errorLabel": {
+      "message": "错误:"
+   },
+   "opt_feedAddHeader": {
+      "message": "订阅新更新源"
+   },
+   "opt_feedCancelButton": {
+      "message": "取消"
+   },
+   "opt_feedFontsHeader": {
+      "message": "源标题设置"
+   },
+   "opt_feedFontsHelp": {
+      "message": "设置源标题的字体和字号, 以及标记不同阅读状态所使用的字体和颜色"
+   },
+   "opt_feedGroupSelectLabel": {
+      "message": "组:"
+   },
+   "opt_feedModHeader": {
+      "message": "编辑更新源属性"
+   },
+   "opt_feedModSaveButton": {
+      "message": "保存"
+   },
+   "opt_feedNameLabel": {
+      "message": "名称:"
+   },
+   "opt_feedNetworkTimeoutHelp": {
+      "message": "延时, 以秒为单位, 定义至源更新时间的网络请求.\n 当值为0时使用默认设置 ."
+   },
+   "opt_feedNetworkTimeoutLabel": {
+      "message": "网络请求延时:"
+   },
+   "opt_feedNoGroupOption": {
+      "message": "无"
+   },
+   "opt_feedRefreshTimeHelp": {
+      "message": "每次更新源内容所间隔的分钟数.\n选中 'TTL' 以使用TTL标签中所定义的时间值."
+   },
+   "opt_feedRefreshTimeLabel": {
+      "message": "更新频率:"
+   },
+   "opt_feedSortItemsHelp": {
+      "description": "Help on sort items option",
+      "message": "对信息进行排序的标准"
+   },
+   "opt_feedSortItemsLabel": {
+      "description": "Label on sort items option",
+      "message": "信息的排序标准"
+   },
+   "opt_feedUrlLabel": {
+      "message": "源地址:"
+   },
+   "opt_focusFirstTabHelp": {
+      "message": "关闭浮动窗口后,切换到从浮动窗口打开的首个标签页上."
+   },
+   "opt_focusFirstTabLabel": {
+      "message": "切换到首个标签页"
+   },
+   "opt_fontFamilyLabel": {
+      "message": "字体:"
+   },
+   "opt_fontOptionsHeader": {
+      "description": "Font options header",
+      "message": "字体选项"
+   },
+   "opt_fontSizeLabel": {
+      "message": "字号:"
+   },
+   "opt_getConfig": {
+      "message": "导出设置"
+   },
+   "opt_getConfigHelp": {
+      "description": "Help on config export button",
+      "message": "单击或拖动，将你的配置导入一个文件夹"
+   },
+   "opt_getOPMLHelp": {
+      "description": "Help on OPML export button",
+      "message": "单击或拖动， 将你的订阅作为OPML导入一个文件夹"
+   },
+   "opt_groupsButtonHelp": {
+      "message": "删除组,\n更改组名,\n更改组顺序"
+   },
+   "opt_groupsHeader": {
+      "message": "更新源分组"
+   },
+   "opt_groupsHelp": {
+      "message": "编辑源分组\n单击以选择\n双击以编辑"
+   },
+   "opt_hideOnOpenHelp": {
+      "message": "当打开某一个源时，隐藏其余源的内容"
+   },
+   "opt_hideOnOpenLabel": {
+      "message": "仅显示选定源内容"
+   },
+   "opt_importCancelButton": {
+      "message": "取消"
+   },
+   "opt_importCnfHeader": {
+      "message": "选择导入方式"
+   },
+   "opt_importCnfMsg": {
+      "description": "The entire body of the import confirmation dialog, including HTML markup",
+      "message": "你可以 \u003Cul>\u003Cli>\u003Cspan class=\"strong\">追加\u003C/span> 新设置到当前设置中(原有设置仍会被保留), \u003Cspan class=\"emphasis\">或\u003C/span>\u003C/li>\u003Cli>\u003Cspan class=\"strong\">替换\u003C/span>\t原有设置为新设置(原有设置将会被删除)\u003C/li>\u003C/ul>"
+   },
+   "opt_importConfig": {
+      "description": "Label on import button",
+      "message": "导入配置或OPML"
+   },
+   "opt_importConfigHelp": {
+      "description": "Help on OPML export button",
+      "message": "单击或放置一个文件，来导入配置或OPML文件"
+   },
+   "opt_importMergeButton": {
+      "message": "追加"
+   },
+   "opt_importReplaceButton": {
+      "message": "替换"
+   },
+   "opt_italicLabel": {
+      "message": "斜体:"
+   },
+   "opt_itemFontsHeader": {
+      "message": "内容标题设置"
+   },
+   "opt_itemFontsHelp": {
+      "message": "设置内容标题的字体和字号, 以及标记不同阅读状态所使用的字体和颜色"
+   },
+   "opt_maintainBadgeHelp": {
+      "message": "在刷新源的内容时显示按钮动画效果"
+   },
+   "opt_maintainBadgeLabel": {
+      "message": "开启更新提示"
+   },
+   "opt_maxConcurrentHelp": {
+      "message": "设置更新时每次最多发出多少个网络请求"
+   },
+   "opt_maxConcurrentLabel": {
+      "message": "最大并行更新数"
+   },
+   "opt_maxItemsCountHelp": {
+      "message": "设置每个更新源下最多显示多少条目"
+   },
+   "opt_maxItemsCountLabel": {
+      "message": "最大内容显示数"
+   },
+   "opt_modifyButton": {
+      "message": "编辑"
+   },
+   "opt_modifyGroupName": {
+      "message": "编辑源分组名称"
+   },
+   "opt_networkOptionsHeader": {
+      "message": "网络设置"
+   },
+   "opt_newAtTopHelp": {
+      "message": "自动排列内容顺序,将未查看内容置于最前"
+   },
+   "opt_newAtTopLabel": {
+      "message": "优先显示最新内容"
+   },
+   "opt_newtWorkOptionsHelp": {
+      "message": "设置最大并行更新数,\n设置默认的网络延迟时间,\n设定默认TTL(报文生存时间)值"
+   },
+   "opt_notificationOptionsHeader": {
+      "message": "提示设置"
+   },
+   "opt_notificationOptionsHelp": {
+      "message": "设置提示音和图标动画效果"
+   },
+   "opt_openFirstHelp": {
+      "message": "当展开浮动窗口时,自动打开第一个未查看的源"
+   },
+   "opt_openFirstLabel": {
+      "message": "打开首个未查看的源"
+   },
+   "opt_optionsHeader": {
+      "description": "Main options header",
+      "message": "选项"
+   },
+   "opt_optionsSavedMsg": {
+      "message": "设置已保存."
+   },
+   "opt_otherOptionsHeader": {
+      "description": "Other options header",
+      "message": "其他选项"
+   },
+   "opt_pageHeader": {
+      "message": "设置"
+   },
+   "opt_playSoundHelp": {
+      "message": "当源有新内容时播放提示音."
+   },
+   "opt_playSoundLabel": {
+      "message": "开启提示音"
+   },
+   "opt_popUpHeightLabel": {
+      "message": "浮动窗口最大高度"
+   },
+   "opt_popUpWidthLabel": {
+      "message": "浮动窗口宽度"
+   },
+   "opt_popupBehaviourHeader": {
+      "description": "Popup behaviour section header",
+      "message": "弹出习性"
+   },
+   "opt_popupContentHeader": {
+      "description": "Popup content section header",
+      "message": "弹出内容"
+   },
+   "opt_popupDimsHeader": {
+      "description": "Popup dimensions section header",
+      "message": "弹出尺寸"
+   },
+   "opt_popupHeightHelp": {
+      "message": "设置浮动窗口最大高度,单位为像素"
+   },
+   "opt_popupWidthHelp": {
+      "message": "设置浮动窗口宽度,单位为像素"
+   },
+   "opt_readLabel": {
+      "message": "已阅读:"
+   },
+   "opt_refreshButton": {
+      "message": "刷新设置"
+   },
+   "opt_refreshButtonHelp": {
+      "message": "刷新所有设置"
+   },
+   "opt_saveButton": {
+      "message": "保存设置"
+   },
+   "opt_saveButtonHelp": {
+      "message": "保存所作的更改"
+   },
+   "opt_setConfig": {
+      "message": "导入设置"
+   },
+   "opt_showAvailableHelp": {
+      "message": "在浮动窗口上显示可订阅的更新源"
+   },
+   "opt_showAvailableLabel": {
+      "message": "显示可订阅的更新源"
+   },
+   "opt_singleItemHelp": {
+      "message": "打开内容时关闭浮动窗口 (使用 Ctrl+单击保留浮动窗口)"
+   },
+   "opt_singleItemLabel": {
+      "message": "单条内容模式"
+   },
+   "opt_sortItemsHelp": {
+      "description": "Help on default sort items option",
+      "message": "对默认信息进行排序的标准"
+   },
+   "opt_sortItemsLabel": {
+      "description": "Label on default sort items option",
+      "message": "默认信息的排序标准"
+   },
+   "opt_soundFileHelp": {
+      "message": "选择提示音 (点击以试听)"
+   },
+   "opt_soundFileLabel": {
+      "message": "提示音"
+   },
+   "opt_subsAndGroupsHeader": {
+      "description": "Subscriptions and Groups header",
+      "message": "订阅与群"
+   },
+   "opt_subsButtonHelp": {
+      "message": "删除选定的源, \n编辑选定的源,\n更改源的显示顺序"
+   },
+   "opt_subsTTNextTag": {
+      "message": "下次更新"
+   },
+   "opt_subsTTPublishedTag": {
+      "message": "上次更新"
+   },
+   "opt_subsTTTtlAbsent": {
+      "message": "TTL: 未定义"
+   },
+   "opt_subsTTTtlPresent": {
+      "message": "TTL: $ttl$ 分钟",
+      "placeholders": {
+         "ttl": {
+            "content": "$1",
+            "example": "5"
+         }
+      }
+   },
+   "opt_subscriptionsHeader": {
+      "message": "更新源"
+   },
+   "opt_subscriptionsHelp": {
+      "message": "已订阅的更新源\n单击以选择\n双击以编辑"
+   },
+   "opt_title": {
+      "message": "RSS Live Links 设置页"
+   },
+   "opt_unlimitedCallsHelp": {
+      "message": "不限制最大并行更新数"
+   },
+   "opt_unlimitedItemsHelp": {
+      "message": "不限制最大内容显示数"
+   },
+   "opt_unlimitedLabel": {
+      "message": "不限制"
+   },
+   "opt_unreadLabel": {
+      "message": "未阅读:"
+   },
+   "opt_unseenLabel": {
+      "message": "未查看:"
+   },
+   "opt_updateAvailable": {
+      "message": "刷新"
+   },
+   "opt_updateAvailableHelp": {
+      "message": "单击以刷新可订阅源列表"
+   },
+   "opt_useAvailableIconHelp": {
+      "message": "当页面上有未订阅的可用更新源, 显示按钮动画效果"
+   },
+   "opt_useAvailableIconLabel": {
+      "message": "开启 '可订阅' 图标"
+   },
+   "opt_useBookmarkFolderHelp": {
+      "message": "设置更新源是否必须包含于书签文件夹中"
+   },
+   "opt_useBookmarkFolderLabel": {
+      "message": "使用书签文件夹"
+   },
+   "opt_useGroupsHelp": {
+      "message": "在浮动窗口中显示更新源分组"
+   },
+   "opt_useGroupsLabel": {
+      "message": "显示源分组"
+   },
+   "opt_useWebWorkerHelp": {
+      "description": "Help on use-web-worker option",
+      "message": "在后台线程执行更新。这可能会提高弹出响应（尤其是如果你有超过约30个信息），但是会使RSS即时连 接的使用内存增加3倍。"
+   },
+   "opt_useWebWorkerLabel": {
+      "description": "Label on use-web-worker option",
+      "message": "在后台线程执行更新（需要重新启动）"
+   },
+   "opt_weightLabel": {
+      "message": "字型:"
+   },
+   "reload_all_tooltip": {
+      "description": "Tooltip on 'reload all' tool",
+      "message": "更新所有源"
+   },
+   "reload_name": {
+      "description": "Name on Reload link",
+      "message": "刷新"
+   },
+   "reload_tooltip": {
+      "description": "Tooltip on Reload link",
+      "message": "更新源内容"
+   },
+   "right_arrow_tooltip": {
+      "description": "Tooltip on right arrow in hids-others-on-open mode",
+      "message": "切换至下一个未查看的源\nShift: 切换至下一个更新源"
+   },
+   "save_button": {
+      "description": "Text on a save button",
+      "message": "保存"
+   },
+   "subscribe_already": {
+      "description": "Message displayed when subscription dialog is called on URL that is already subscribed",
+      "message": "此地址已经被 RSS Live Links 订阅为 \n\n $name$",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "BBC News"
+         }
+      }
+   },
+   "subscribe_dlg_text": {
+      "description": "Text in the subscription adder dialog",
+      "message": "为你新订阅的源输入一个名字"
+   },
+   "subscribe_header": {
+      "description": "Header on subscription adder page",
+      "message": "更新源订阅器"
+   },
+   "subscribe_title": {
+      "description": "Title on subscription adder page and dialog",
+      "message": "RSS Live Links 更新源订阅器"
+   },
+   "subscribed_feed_tooltip": {
+      "description": "Tooltip on an available feed name when it has already been subscribed to",
+      "message": "该更新源已订阅"
+   },
+   "updates_pending_msg": {
+      "description": "Message when updates are pending on an open feed",
+      "message": "已设置为手动更新. 点击此处刷新内容"
+   },
+   "version_msg_x_tooltip": {
+      "description": "Tooltip on the version message close icon",
+      "message": "关闭提示信息"
+   },
+   "version_updated": {
+      "description": "Message displayed when the extension has been installed or updated",
+      "message": "你已经安装, 或更新,\u003Cbr>RSS Live Links 版本 $version$.\u003Cbr>点击此处阅读更新日志.",
+      "placeholders": {
+         "version": {
+            "content": "$1",
+            "example": "backgroundPage.manifest.version"
+         }
+      }
+   }
+}

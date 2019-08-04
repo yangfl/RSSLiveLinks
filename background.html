@@ -1,0 +1,52 @@
+<html>
+<!--
+ * RSS Live Links - an RSS "live bookmark" extension for Google Chrome
+ *
+ * Copyright 2010 Martin Bartlett
+ *
+ *    This file is part of RSS Live Links.
+ *
+ *    RSS Live Links is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU Lesser General Public License as published by
+ *    the Free Software Foundation, either version 3 of the License, or
+ *    (at your option) any later version.
+ *
+ *    RSS Live Links is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU Lesser General Public License for more details.
+ *
+ *    You should have received a copy of the GNU Lesser General Public License
+ *    along with RSS Live Links.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @version 1.0.0
+ * @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
+ * @author  Martin Bartlett
+ -->
+	<head>
+		<script type="text/javascript" src="utilities.js"></script>
+		<script type="text/javascript" src="tabrss.js"></script>
+		<!--
+		To enable web-worker config, uncomment this script, and comment
+		the following two.
+
+		But, frankly, don't - it doesn't make any difference to 
+		responsiveness and triples memory requirements, so it's disabled.
+
+		-->
+
+		<script type="text/javascript" src="feed.js"></script>
+		<script type="text/javascript" src="bookmarks.js"></script>
+		<script type="text/javascript" src="context.js"></script>
+		<script type="text/javascript" src="background.js"></script>
+		<script type="text/javascript" src="webWorker.js"></script>
+		<script type="text/javascript" src="xmlhttp.js"></script>
+		<script type="text/javascript" src="feedWorker.js"></script>
+	</head>
+	<body>
+		<canvas id="canvas" width="19" height="19"></canvas>
+		<audio id="audioNotify" src="sounds/boing.mp3"></audio>
+	    <img id="gfx" src="img/rssll_19x19.png" />
+		<div id="translator" class="hidden"></div>
+	</body>
+</html>

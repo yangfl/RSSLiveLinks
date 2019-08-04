@@ -1,0 +1,25 @@
+{
+   "background": {
+      "page": "background.html"
+   },
+   "browser_action": {
+      "default_icon": "img/rssll_19x19.png",
+      "default_popup": "popup.html",
+      "default_title": "__MSG_extTitle__"
+   },
+   "default_locale": "en",
+   "description": "__MSG_extDesc__",
+   "icons": {
+      "128": "img/rssll_128x128.png",
+      "16": "img/rssll_16x16.png",
+      "32": "img/rssll_32x32.png",
+      "48": "img/rssll_48x48.png"
+   },
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCaY4wbJBCO9zBhDN+6NNsj2KGBmUsQuincwJWWnYnpR3IBL67YypAshbYmaVAELeU3+zJMV15xQ7Y4/W8lH9QuEUbLud9+LNpGodwiazdTgoiD820wtTcmlfY++YNpaJXng8JY48bFCO+i9R00slEIYDfJWSwOLOH+a1+6Bi9DywIDAQAB",
+   "manifest_version": 2,
+   "name": "__MSG_extName__",
+   "options_page": "options.html",
+   "permissions": [ "contextMenus", "bookmarks", "tabs", "http://*/", "https://*/" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.9.1.1"
+}

@@ -1,0 +1,127 @@
+<html>
+	<head>
+		<title>Welcome to RSS Live Links</title>
+		<script type="text/javascript" src="updated.js"></script>
+		<style>
+			body {
+				padding: 3px;
+				margin: 0;		
+				background-color: white;
+				font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+				font-size: 80%;
+				line-height: 1.5;
+				overflow: hidden;
+			}
+
+			h2, h3 {
+				color: #707070;
+				margin: 0;
+			}
+
+			h2 {
+				text-align: center;
+				font-weight: bold;
+			}
+
+			.section {
+				margin: 5px 0 5px 0;
+			}
+
+			#warnings h3 {
+				font-weight: bold;
+				color: red;
+			}
+
+			#container {
+				border: 1px solid #88C;
+				padding: 5px;
+				-webkit-border-radius:5px;
+			}
+
+			#versionMessageDiv {
+				width: 400px;
+				max-height: 600px;
+				padding: 2px;
+				display: block;
+				overflow: auto;
+				overflow-x: hidden;	
+			}
+	
+			#closeVersionMessageX {
+			    position: absolute;
+			    top: 0px;
+			    right: 0px;
+				float: right;
+				cursor: pointer;
+				background: white url('img/close.png') no-repeat center center;
+				width: 11px;
+				height:11px
+			}
+	
+			#closeVersionMessageX:hover {
+				background: white url('img/close_hover.png') no-repeat center center;
+			}
+
+			ul {
+				margin: 3px 0 3px 0;
+				list-style-type: circle;
+				padding-left:	35px;
+			}
+
+			#donations, #warnings .bold {
+				font-weight: bold;
+			}
+
+			#newFeatures li {
+				color: black;
+				font-weight: bold;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="container">
+		<div id="versionMessageDiv">
+			<a href="popup.html" id="closeVersionMessageX" title="Return to pop-up"></a>
+			<div id="versionTextDiv">
+				<h2>Welcome to RSS Live Links</h2>
+				<div id="upgradeText" class="section"> Thank you for using RSS Live Links. 
+					You are using version <span id="rssllVersion"></span>.
+				</div>				
+				<div id="newFeatures" class="section">
+					<h3>What's new</h3>
+					<ul>
+						<li>Workaround for character display problems (root cause is a Google Chrome bug reported <a href="#" id="gcb">here</a>)</li>
+						<li>Fix to occasional non-removal of deleted items (and possibly other issues relating to feed refresh)</li>
+						<li>New "checkmark" tool for marking feeds. The "spectacles" tool now only opens items</li>
+						<li>Experimental implementation of context menus in all the logical places. Menu items are only in English at the moment</li>
+					</ul>
+					See the documentation for more information.
+				</div>
+				<div id="warnings" class="section">
+					<h3>Known Issues</h3>
+					<ul>
+						<li><span class="bold">Google Chrome milestone 17 introduced a problem</span> that affects RSS Live Links when a feed
+						URL has been blacklisted by Google. See the <a id="rn1"href="#">Release notes</a>
+						for more information and how to work around the problem.</li>
+						<li>RSS LL Bookmarks and Google sync do not work well together due to Google sync restrictions.
+						Use <a id="xmk" href="#">XMarks sync</a> instead. See
+						<a id="rn2" href="#">the help information</a> for more details.</li>
+					</ul>
+				</div>
+				<div id="links" class="section">
+					<h3>Documentation</h3>
+					<ul>
+						<li><a id="rn3" href="#">Release notes</a></li>
+						<li><a id="faq" href="#">FAQ</a></li>
+						<li><a id="doc" href="#">Full documentation</a></li>
+						<li><a id="bug" href="#">Report a problem or make a suggestion</a></li>
+					</ul>
+					<span id="donations">You can help support the development of RSS Live Links through donations via the 
+						<a id="opt" href="#">Options page</a>.</span>
+				</div>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>

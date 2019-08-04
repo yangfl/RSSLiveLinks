@@ -1,0 +1,742 @@
+{
+   "allmark_tooltip": {
+      "description": "Tooltip on 'mark all' tool",
+      "message": "clic: Marquer tous les éléments vus\nalt-maj-clic: Marquer tous les éléments lus"
+   },
+   "allread_tooltip": {
+      "description": "Tooltip on 'read all' tool",
+      "message": "clic: Ouvrir tous les éléments non vus\nmaj-clic: Ouvrir tous les éléments non lus"
+   },
+   "available_feeds_title": {
+      "description": "Title of available feeds section",
+      "message": "Flux RSS disponibles"
+   },
+   "available_feeds_tooltip": {
+      "description": "Tooltip on icon of Available Feeds section",
+      "message": "Liste des flux disponibles dans les onglets ouverts. Cliquer pour ajouter.\nnon souscrits: $unsubscribed$, sousrits: $subscribed$",
+      "placeholders": {
+         "subscribed": {
+            "content": "$2",
+            "example": "2"
+         },
+         "unsubscribed": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "close_button": {
+      "description": "Text on a close button",
+      "message": "Fermer"
+   },
+   "close_popup_tooltip": {
+      "description": "Tooltip on 'close popup' tool",
+      "message": "Fermer la fenêtre"
+   },
+   "enable_sound": {
+      "description": "Tooltip on enable sound icon",
+      "message": "Permettre une notification sonore"
+   },
+   "extDesc": {
+      "description": "Extension description",
+      "message": "Fournit un lecteur de flux RSS avec abonnement"
+   },
+   "extName": {
+      "description": "Extension name",
+      "message": "RSS Live Links"
+   },
+   "extTitle": {
+      "description": "Extension title",
+      "message": "RSS Live Links"
+   },
+   "feed_home_name": {
+      "description": "Name on Feed Home link",
+      "message": "Page du flux"
+   },
+   "feed_home_tooltip": {
+      "description": "Tooltip on Feed Home link",
+      "message": "Ouvrir la page du flux dans un onglet"
+   },
+   "feed_tooltip_error": {
+      "description": "Error message on tooltip on feed icon",
+      "message": "Flux en erreur"
+   },
+   "feed_tooltip_items": {
+      "description": "Item-related tooltip on a feed icon",
+      "message": "Eléments: $item_count$, non vus: $unseen_count$, non lus: $unread_count$",
+      "placeholders": {
+         "item_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "feed_tooltip_pubdate": {
+      "description": "Publication date on tooltip on a feed icon",
+      "message": "Publié le: $parm$",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "feed_tooltip_ttl": {
+      "description": "TTL tooltip on a feed icon",
+      "message": "TTL du flux: $parm$ minutes",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "feed_tooltip_upd": {
+      "description": "Next update tooltip on a feed icon",
+      "message": "Prochaine mise à jour: $parm$",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "group_name_tag": {
+      "description": "Tag on a group's title",
+      "message": "Groupe"
+   },
+   "group_tooltip_errors": {
+      "description": "Error-related tooltip on a group icon",
+      "message": "Flux en erreur: $error_count$",
+      "placeholders": {
+         "error_count": {
+            "content": "$1",
+            "example": "1"
+         }
+      }
+   },
+   "group_tooltip_feeds": {
+      "description": "Feed-related tooltip on a group icon",
+      "message": "Flux: $feed_count$, non vus: $unseen_count$, non lus: $unread_count$",
+      "placeholders": {
+         "feed_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "group_tooltip_items": {
+      "description": "Item-related tooltip on a group icon",
+      "message": "Eléments: $item_count$, non vus: $unseen_count$, non lus: $unread_count$",
+      "placeholders": {
+         "item_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "icon_1_feed_error": {
+      "description": "RSSLL Icon tooltip - one feed in error",
+      "message": "1 flux en erreur"
+   },
+   "icon_1_feed_updated": {
+      "description": "RSSLL Icon tooltip - one feed updated",
+      "message": "1 flux mis à jour"
+   },
+   "icon_n_feeds_error": {
+      "description": "RSSLL Icon tooltip - n feeds in error",
+      "message": "$errors$ flux en erreur",
+      "placeholders": {
+         "errors": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "icon_n_feeds_updated": {
+      "description": "RSSLL Icon tooltip - n feeds updated",
+      "message": "$updated$ flux mis à jour",
+      "placeholders": {
+         "updated": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "import_error": {
+      "message": "Les données importées ne semblent pas avoir été exportées depuis une autre installation de RSS Live Links"
+   },
+   "item_pubdate_tag": {
+      "description": "Tag on an item's tooltip when displaying a publication date",
+      "message": "Publié le"
+   },
+   "left_arrow_tooltip": {
+      "description": "Tooltip on left arrow in hids-others-on-open mode",
+      "message": "Passer au précédent flux non vu\nMaj: Passer au précédent flux"
+   },
+   "mark_read_name": {
+      "description": "Name on Mark read link",
+      "message": "Marquer lu"
+   },
+   "mark_read_tooltip": {
+      "description": "Tooltip on Mark read link",
+      "message": "Marquer tous les éléments comme lus et fermer le flux\n(ctrl-clic pour le maintenir ouvert)"
+   },
+   "multiple_feeds_loading": {
+      "description": "Message displayed when more than one feed is loading",
+      "message": "Chargement de $number$ flux...",
+      "placeholders": {
+         "number": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "mute_sound": {
+      "description": "Tooltip on mute sound icon",
+      "message": "Arrêter la sonification sonore"
+   },
+   "no_available_feeds": {
+      "description": "Content of Available Feeds section when no feeds have been detected",
+      "message": "Aucun flux disponible dans les onglets ouverts"
+   },
+   "no_feeds": {
+      "description": "Message displayed when no feeds have been configured (e.g. a fresh installation",
+      "message": "Vous n'avez pas de flux configurés"
+   },
+   "one_feed_loading": {
+      "description": "Message displayed when one feed is loading",
+      "message": "Chargement de 1 flux..."
+   },
+   "open_help_tooltip": {
+      "description": "Tooltip on 'open help' tool",
+      "message": "Ouvrir l'aide dans un onglet"
+   },
+   "open_name": {
+      "description": "Name on Open link",
+      "message": "Ouvrir"
+   },
+   "open_options_tooltip": {
+      "description": "Tooltip on 'open options' tool",
+      "message": "Ouvrir la page d'options dans un onglet"
+   },
+   "open_tooltip": {
+      "description": "Tooltip on Open link",
+      "message": "clic: ouvrir les éléments non vus dans un onglet\nmaj-clic: ouvrir les éléments non lus dans un onglet\nalt-clic: Ouvrir tous les éléments dans un onglet"
+   },
+   "opt_addButton": {
+      "message": "Ajouter"
+   },
+   "opt_addButtonHelp": {
+      "message": "cliquer pour s'abonner manuellement à un nouveau flux"
+   },
+   "opt_alreadySubscribed": {
+      "message": "Vous êtes déjà abonné à ce flux"
+   },
+   "opt_animateButtonHelp": {
+      "message": "Utiliser une icône animée quand des flux ont été mis à jour"
+   },
+   "opt_animateButtonLabel": {
+      "message": "Icône animée"
+   },
+   "opt_askOnUpdateHelp": {
+      "message": "Demander avant de rafraîchir un flux ouvert quand des mises à jour sont disponibles"
+   },
+   "opt_askOnUpdateLabel": {
+      "message": "Ne pas rafraîchir"
+   },
+   "opt_availableFeedsHeader": {
+      "message": "Flux disponibles"
+   },
+   "opt_availablesHelp": {
+      "message": "Flux trouvés dans les onglets ouverts.\nCliquer pour s'abonner.\nMaj-cliquer pour ouvrir le flux"
+   },
+   "opt_badConfig": {
+      "message": "donnée de configuration incorrecte"
+   },
+   "opt_badOPML": {
+      "message": "Les données OPML sont invalides"
+   },
+   "opt_changesUnseenHelp": {
+      "message": "Pour re-marquer ou pas comme non vu un élément dont le contenu a changé."
+   },
+   "opt_changesUnseenLabel": {
+      "message": "Marquer les éléments mis à jour en non vus"
+   },
+   "opt_clearConfig": {
+      "message": "Effacer"
+   },
+   "opt_colorLabel": {
+      "message": "couleur:"
+   },
+   "opt_configHeader": {
+      "message": "Import/export de la configuration"
+   },
+   "opt_configHelp": {
+      "message": "EXPORT: cliquer le bouton 'Exporter la conf' , sélectionner tout (en utilisant le menu contextuel), copier la sélection (en utilisant le menu contextuel), et copier dans un éditeur de texte (par exemple notepad).\n\nIMPORT: ouvrir un fichier d'un export précédent dans un éditeur de texte (par exemple notepad), sélectionner tout, copier dans le presse-papier, coller dans la zone de texte ci-dessous, puis cliquer sur 'Importer la conf'."
+   },
+   "opt_defaultLabel": {
+      "message": "défaut:"
+   },
+   "opt_defaultTimeoutHelp": {
+      "message": "Timeout par défaut, en seconde, pour les requêtes de mises à jour des flux"
+   },
+   "opt_defaultTimeoutLabel": {
+      "message": "Timeout par défaut"
+   },
+   "opt_defaultTtlHelp": {
+      "message": "TTL par défaut pour les flux basés sur un interval de mise à jour"
+   },
+   "opt_defaultTtlLabel": {
+      "message": "TTL par défaut"
+   },
+   "opt_deleteButton": {
+      "message": "Supprimer"
+   },
+   "opt_displayOptionsHeader": {
+      "message": "Options d'affichage"
+   },
+   "opt_displayOptionsHelp": {
+      "message": "Permettre aux nouveaux éléments d'apparaître en tête,\nde masquer les titres des autres flux quand l'un est ouvert,\nde mettre à jour un flux ouvert ou avertir des mises à jour,\nd'ouvrir le premier flux dans la fenêtre,\nd'utiliser une notification sonore et visuelle, et\ndifférentes limites par défaut utilisées par RSS Live Links"
+   },
+   "opt_donateButton": {
+      "message": "Contribuer"
+   },
+   "opt_duplicateGroupName": {
+      "message": "Un groupe de nom '$name$' existe déjà",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "News"
+         }
+      }
+   },
+   "opt_enterGroupName": {
+      "message": "Entrer le nom d'un nouveau groupe..."
+   },
+   "opt_errorLabel": {
+      "message": "Erreur:"
+   },
+   "opt_feedAddHeader": {
+      "message": "Ajouter un nouveau flux"
+   },
+   "opt_feedCancelButton": {
+      "message": "Abandonner"
+   },
+   "opt_feedFontsHeader": {
+      "message": "Affichage des flux"
+   },
+   "opt_feedFontsHelp": {
+      "message": "Police, taille et caractéristiques du texte des titres des flux"
+   },
+   "opt_feedGroupSelectLabel": {
+      "message": "Groupe"
+   },
+   "opt_feedModHeader": {
+      "message": "Modifier un flux"
+   },
+   "opt_feedModSaveButton": {
+      "message": "Sauvegarder"
+   },
+   "opt_feedNameLabel": {
+      "message": "Nom"
+   },
+   "opt_feedNetworkTimeoutHelp": {
+      "message": "Timeout, en secondes, au delà duquel une mise à jour du flux sera abandonnée.\nMettre 0 pour utiliser la valeur par défaut."
+   },
+   "opt_feedNetworkTimeoutLabel": {
+      "message": "Timeout réseau"
+   },
+   "opt_feedNoGroupOption": {
+      "message": "sans"
+   },
+   "opt_feedRefreshTimeHelp": {
+      "message": "Nombre de minutes entre chaque mise à jour des données des flux.\nUtiliser 'TTL' pour s'appuyer sur la valeur du TTL présente dans le flux lui-même."
+   },
+   "opt_feedRefreshTimeLabel": {
+      "message": "Délai de mise à jour"
+   },
+   "opt_feedUrlLabel": {
+      "message": "URL"
+   },
+   "opt_fixPopupClosesBugHelp": {
+      "message": "Contournement du problème pour lequel le pop-up se ferme lors de chaque click sur un élément, en retardant l'ouverture des onglets jusqu'à la fermeture délibérée du pop-up"
+   },
+   "opt_fixPopupClosesBugLabel": {
+      "message": "Correction de la fermeture du pop-up à chaque click"
+   },
+   "opt_focusFirstTabHelp": {
+      "message": "Activer le premier onglet ouvert à la fermeture de la fenêtre pop-up"
+   },
+   "opt_focusFirstTabLabel": {
+      "message": "Activer le 1er onglet"
+   },
+   "opt_fontFamilyLabel": {
+      "message": "Police:"
+   },
+   "opt_fontOptionsHeader": {
+      "description": "Font options header",
+      "message": "Options de police"
+   },
+   "opt_fontSizeLabel": {
+      "message": "Taille:"
+   },
+   "opt_getConfig": {
+      "message": "Exporter la Conf"
+   },
+   "opt_getConfigHelp": {
+      "description": "Help on config export button",
+      "message": "Cliquer ou déplacer pour exporter votre configuration dans un fichier"
+   },
+   "opt_getOPML": {
+      "message": "Exporter l'OPML"
+   },
+   "opt_getOPMLHelp": {
+      "description": "Help on OPML export button",
+      "message": "Cliquer ou déplacer pour exporter vos abonnements dans un fichier OPML"
+   },
+   "opt_groupsButtonHelp": {
+      "message": "Supprimer un groupe,\nRenommer un groupe,\nou déplacer le groupe sélectionné dans la liste"
+   },
+   "opt_groupsHeader": {
+      "message": "Groupes"
+   },
+   "opt_groupsHelp": {
+      "message": "Groupes de flux définis\nCliquer pour sélectionner\nDouble-Cliquer pour modifier"
+   },
+   "opt_hideOnOpenHelp": {
+      "message": "Masquer les autres flux à l'ouverture d'un flux"
+   },
+   "opt_hideOnOpenLabel": {
+      "message": "Afficher un seul flux"
+   },
+   "opt_importCancelButton": {
+      "message": "Abandonner"
+   },
+   "opt_importCnfHeader": {
+      "message": "Sélectionner le type d'import"
+   },
+   "opt_importCnfMsg": {
+      "description": "The entire body of the import confirmation dialog, including HTML markup",
+      "message": "Voulez-vous\u003Cul>\u003Cli>\u003Cspan class=\"strong\">FUSIONNER\u003C/span> la configuration importée avec la configuration actuelle, \u003Cspan class=\"emphasis\">ou\u003C/span>\u003C/li>\u003Cli>\u003Cspan class=\"strong\">REMPLACER\u003C/span>\tla configuration actuelle avec la configuration importée ?\u003C/li>\u003C/ul>"
+   },
+   "opt_importConfig": {
+      "description": "Label on import button",
+      "message": "Importer l'OPML ou la Conf"
+   },
+   "opt_importConfigHelp": {
+      "description": "Help on OPML export button",
+      "message": "Cliquer ou déposer un fichier pour importer a fichier OPML"
+   },
+   "opt_importMergeButton": {
+      "message": "Fusionner"
+   },
+   "opt_importReplaceButton": {
+      "message": "Remplacer"
+   },
+   "opt_italicLabel": {
+      "message": "italique:"
+   },
+   "opt_itemFontsHeader": {
+      "message": "Affichage des éléments"
+   },
+   "opt_itemFontsHelp": {
+      "message": "Police, taille et caractéristiques du texte des éléments des flux"
+   },
+   "opt_maintainBadgeHelp": {
+      "message": "Gérer ou non dans le texte de l'icône le nombre de mises à jour de flux"
+   },
+   "opt_maintainBadgeLabel": {
+      "message": "Afficher les mises à jour"
+   },
+   "opt_maxConcurrentHelp": {
+      "message": "Nombre maximum de mises à jour simultanées"
+   },
+   "opt_maxConcurrentLabel": {
+      "message": "Requêtes simultanées max"
+   },
+   "opt_maxItemsCountHelp": {
+      "message": "Nombre maximum d'éléments affichés pour chaque flux"
+   },
+   "opt_maxItemsCountLabel": {
+      "message": "Nb max. d'éléments"
+   },
+   "opt_modifyButton": {
+      "message": "Modifier"
+   },
+   "opt_modifyGroupName": {
+      "message": "Modifier le nom du groupe"
+   },
+   "opt_networkOptionsHeader": {
+      "message": "Options réseau"
+   },
+   "opt_newAtTopHelp": {
+      "message": "Réagencer les éléments pour faire apparaitre les éléments non vus en tête de liste"
+   },
+   "opt_newAtTopLabel": {
+      "message": "Eléments non vus en tête"
+   },
+   "opt_newtWorkOptionsHelp": {
+      "message": "Limiter le nombre de mises à jour simultanées,\nparamétrer le timeout par défaut,\nparamétrer le TTL par défaut"
+   },
+   "opt_notificationOptionsHeader": {
+      "message": "Options de notification"
+   },
+   "opt_notificationOptionsHelp": {
+      "message": "Configurer la notification sonore et visuelle"
+   },
+   "opt_openFirstHelp": {
+      "message": "Ouvrir automatiquement le premier flux de la liste avec des éléments non vus"
+   },
+   "opt_openFirstLabel": {
+      "message": "Ouvrir le 1er flux non vu"
+   },
+   "opt_optionsHeader": {
+      "description": "Main options header",
+      "message": "Options"
+   },
+   "opt_optionsSavedMsg": {
+      "message": "Configuration sauvegardée..."
+   },
+   "opt_otherOptionsHeader": {
+      "description": "Other options header",
+      "message": "Autres options"
+   },
+   "opt_pageHeader": {
+      "message": "Options"
+   },
+   "opt_playSoundHelp": {
+      "message": "Jouer un son quand des flux ont été mis à jour"
+   },
+   "opt_playSoundLabel": {
+      "message": "Notification sonore"
+   },
+   "opt_popUpHeightLabel": {
+      "description": "I used pop-up because wikipedia in French allows it :-)",
+      "message": "Hauteur max. du pop-up"
+   },
+   "opt_popUpWidthLabel": {
+      "message": "Largeur du pop-up"
+   },
+   "opt_popupBehaviourHeader": {
+      "description": "Popup behaviour section header",
+      "message": "Comportement du popup"
+   },
+   "opt_popupContentHeader": {
+      "description": "Popup content section header",
+      "message": "Contenu du popup"
+   },
+   "opt_popupDensityHelp": {
+      "message": "Définir la densité d'affichage des lignes dans le pop-up"
+   },
+   "opt_popupDensityLabel": {
+      "message": "Densité d'affichage"
+   },
+   "opt_popupDimsHeader": {
+      "description": "Popup dimensions section header",
+      "message": "Taille du popup"
+   },
+   "opt_popupHeightHelp": {
+      "message": "Spécifier la hauteur maximum de la fenêtre pop-up en pixels"
+   },
+   "opt_popupWidthHelp": {
+      "message": "Spécifier la largeur de la fenêtre pop-up en pixels"
+   },
+   "opt_readLabel": {
+      "message": "Lu(s):"
+   },
+   "opt_refreshButton": {
+      "message": "Rafraîchir"
+   },
+   "opt_refreshButtonHelp": {
+      "message": "Rafraîchir les options"
+   },
+   "opt_saveButton": {
+      "message": "Sauvegarder"
+   },
+   "opt_saveButtonHelp": {
+      "message": "Sauvegarder les modifications"
+   },
+   "opt_setConfig": {
+      "message": "Importer la conf"
+   },
+   "opt_showAvailableHelp": {
+      "message": "Montrer ou pas la disponibilité de flux dans la fenêtre pop-up"
+   },
+   "opt_showAvailableLabel": {
+      "message": "Afficher 'Flux disponibles'"
+   },
+   "opt_singleItemHelp": {
+      "message": "Fermer la fenêtre pop-up lors de l'ouverture du premier élément (utiliser ctrl-clic pour maintenir la fenêtre ouverte)"
+   },
+   "opt_singleItemLabel": {
+      "message": "Mode '1 élément'"
+   },
+   "opt_soundFileHelp": {
+      "message": "Son à jouer (choisir un nouveau son pour l'écouter)"
+   },
+   "opt_soundFileLabel": {
+      "message": "Fichier son"
+   },
+   "opt_subsAndGroupsHeader": {
+      "description": "Subscriptions and Groups header",
+      "message": "Abonnements et groupes"
+   },
+   "opt_subsButtonHelp": {
+      "message": "Se désabonner de flux, \nmodifier le flux sélectionner,\nou déplacer le flux sélectionné dans la liste"
+   },
+   "opt_subsTTNextTag": {
+      "message": "Prochaine mise à jour"
+   },
+   "opt_subsTTPublishedTag": {
+      "message": "Publié"
+   },
+   "opt_subsTTTtlAbsent": {
+      "message": "TTL: absent"
+   },
+   "opt_subsTTTtlPresent": {
+      "message": "TTL: $ttl$ minutes",
+      "placeholders": {
+         "ttl": {
+            "content": "$1",
+            "example": "5"
+         }
+      }
+   },
+   "opt_subscriptionsHeader": {
+      "message": "Abonnements"
+   },
+   "opt_subscriptionsHelp": {
+      "message": "Flux souscrit(s)\nCliquer pour sélectionner\nDouble-Cliquer pour modifier"
+   },
+   "opt_title": {
+      "message": "RSS Live Links Options"
+   },
+   "opt_unlimitedCallsHelp": {
+      "message": "Pas de limite au nombre de mises à jour simultanées"
+   },
+   "opt_unlimitedItemsHelp": {
+      "message": "Pas de limite au nombre d'éléments d'un flux"
+   },
+   "opt_unlimitedLabel": {
+      "message": "sans limite"
+   },
+   "opt_unreadLabel": {
+      "message": "Non lu(s):"
+   },
+   "opt_unseenLabel": {
+      "message": "Non vu(s):"
+   },
+   "opt_updateAvailable": {
+      "message": "Rafraichir"
+   },
+   "opt_updateAvailableHelp": {
+      "message": "Cliquer pour rafraîchir la liste des flux disponibles"
+   },
+   "opt_useAvailableIconHelp": {
+      "message": "Utiliser une icône alternative quand des flux disponibles sont non souscrits"
+   },
+   "opt_useAvailableIconLabel": {
+      "message": "Icône 'disponible'"
+   },
+   "opt_useBookmarkFolderHelp": {
+      "message": "Gérer ou non un dossier dans les favoris pour y stocker les éléments du flux"
+   },
+   "opt_useBookmarkFolderLabel": {
+      "message": "Utiliser un dossier"
+   },
+   "opt_useGroupsHelp": {
+      "message": "Montrer ou pas les groupes de flux dans la fenêtre pop-up"
+   },
+   "opt_useGroupsLabel": {
+      "message": "Utiliser les groupes"
+   },
+   "opt_weightLabel": {
+      "message": "gras:"
+   },
+   "reload_all_tooltip": {
+      "description": "Tooltip on 'reload all' tool",
+      "message": "Relire tous les flux"
+   },
+   "reload_name": {
+      "description": "Name on Reload link",
+      "message": "Relire"
+   },
+   "reload_tooltip": {
+      "description": "Tooltip on Reload link",
+      "message": "Relire le flux"
+   },
+   "right_arrow_tooltip": {
+      "description": "Tooltip on right arrow in hids-others-on-open mode",
+      "message": "Passer au flux suivant non vu\nMaj: Passer au flux suivant"
+   },
+   "save_button": {
+      "description": "Text on a save button",
+      "message": "Sauvegarder"
+   },
+   "subscribe_already": {
+      "description": "Message displayed when subscription dialog is called on URL that is already subscribed",
+      "message": "Vous êtes déjà abonné à cette URL via le flux\n\n $name$",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "BBC News"
+         }
+      }
+   },
+   "subscribe_dlg_text": {
+      "description": "Text in the subscription adder dialog",
+      "message": "Entrer un nom pour votre nouvel abonnement"
+   },
+   "subscribe_header": {
+      "description": "Header on subscription adder page",
+      "message": "Ajout d'un abonnement"
+   },
+   "subscribe_title": {
+      "description": "Title on subscription adder page and dialog",
+      "message": "RSS Live Links Ajout d'un abonnement"
+   },
+   "subscribed_feed_tooltip": {
+      "description": "Tooltip on an available feed name when it has already been subscribed to",
+      "message": "Flux déjà souscrit"
+   },
+   "updates_pending_msg": {
+      "description": "Message when updates are pending on an open feed",
+      "message": "Mises à jour en attente. Cliquer ici pour les rafraichir"
+   },
+   "version_msg_x_tooltip": {
+      "description": "Tooltip on the version message close icon",
+      "message": "Fermer la fenêtre de message"
+   },
+   "version_updated": {
+      "description": "Message displayed when the extension has been installed or updated",
+      "message": "Vous avez installé ou fait une mise à jour de,\u003Cbr>RSS Live Links en version $version$.\u003Cbr>Cliquer ici pour voir les notes de cette nouvelle version.\u003Cbr>Vous pouvez maintenant contribuer au développement de RSS Live Links en faisant un don sur la page des options.",
+      "placeholders": {
+         "version": {
+            "content": "$1",
+            "example": "backgroundPage.manifest.version"
+         }
+      }
+   }
+}

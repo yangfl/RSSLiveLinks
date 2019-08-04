@@ -1,0 +1,1218 @@
+<html>
+	<head>
+	<!--
+	* RSS Live Links - an RSS "live bookmark" extension for Google Chrome
+	*
+    * Copyright 2012 Martin Bartlett
+    *
+    *    This file is part of RSS Live Links.
+    *
+    *    RSS Live Links is free software: you can redistribute it and/or modify
+    *    it under the terms of the GNU Lesser General Public License as published by
+    *    the Free Software Foundation, either version 3 of the License, or
+    *    (at your option) any later version.
+    *
+    *    RSS Live Links is distributed in the hope that it will be useful,
+    *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    *    GNU Lesser General Public License for more details.
+    *
+    *    You should have received a copy of the GNU Lesser General Public License
+    *    along with RSS Live Links.  If not, see <http://www.gnu.org/licenses/>.
+	*
+	* @version 1.0.0
+	* @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
+	* @author  Martin Bartlett
+	-->
+
+		<style>
+			body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {
+				margin: 0;
+				padding: 0;
+				border: 0;
+				font-family: inherit;
+				font-size: 100%;
+				font-weight: inherit;
+				font-style: inherit;
+				vertical-align: baseline;
+				border-image: initial;
+			}
+			
+			html {
+				font-size: 100.01%;
+			}
+
+			body {
+				background-color: white;
+				font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+				font-size: 75%;
+				color: #222;
+				line-height: 1.5;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				font-weight: normal;
+				color: #111;
+			}
+			h1 {
+				margin-bottom: 0.5em;
+				font-size: 3em;
+				line-height: 1;
+			}
+			
+			table, th, td {
+				vertical-align: middle;
+			}
+
+			table {
+				width: 100%;
+				margin-bottom: 1.4em;
+				border-collapse: separate;
+				border-spacing: 0;
+			}
+
+			.fixed-table {
+				table-layout: fixed;
+			}
+
+			th, td {
+				padding: 4px 10px 4px 5px;
+				text-align: left;
+				font-weight: normal;
+			}
+
+			input[type="password"], input[type="text"], input[type="url"], input:not([type]) {
+				-webkit-border-radius: 2px;
+				border: 1px solid #AAA;
+				font-size: inherit;
+				padding: 3px;
+				padding-top: 3px;
+				padding-right: 3px;
+				padding-bottom: 3px;
+				padding-left: 3px;
+				border-image: initial;
+			}
+
+			input[type="range"] {
+				vertical-align: middle;
+			}
+
+			.text-numeric {
+				padding: 1px 0;
+				text-align: center;
+				width: 50px;
+				max-width: 50px;
+			}
+
+			.text-numeric.range-value {
+				margin-left: 5px;
+				width: 40px;
+				max-width:40px;
+				vertical-align: middle;
+			}
+
+			.fancy {
+				text-shadow: whiteSmoke 0 1px 0;
+			}
+
+			.emphasis {
+				font-style: italic;
+			}
+
+			.strong {
+				font-weight: bold;
+			}
+
+			#sidebar {
+				-webkit-user-select: none;
+				position: absolute;
+				-webkit-border-end: 1px solid #c6c6c6;
+				background: -webkit-linear-gradient(rgba(237, 237, 237, 0.2), #F5F5F5), -webkit-linear-gradient(left, #EDEDED, #EDEDED 97%, #D3D3D3);
+				width: 219px;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				border-right: 1px solid #C2C2C2;
+				box-shadow: inset -8px 0 30px -30px black;
+			}
+			#icon {
+				position: absolute;
+				width: 30px;
+				height: 30px;
+				top: 12px;
+				left: 12px;
+				-webkit-user-drag: none;
+			}
+			#sidebar h1 {
+				position: absolute;
+				top: 15px;
+				right: 25px;
+				font-size: 26px;
+				color: #707070;
+			}
+			#action-container {
+				position: absolute;
+				top: 50px;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				overflow-y: auto;
+				overflow-x: hidden;
+				text-align: right;
+			}
+			#save-container button {
+				min-width: 150px;
+			}
+
+			#link-container, #donate-container, #save-container {
+				padding-top: 10px;
+				margin-top: 10px;
+				border-top: 1px solid #C2C2C2;
+			}
+
+			#tab-container .tab, .link{
+				height: 28px;
+				padding-right: 25px;
+				border-top: 1px solid transparent;
+				border-bottom: 1px solid transparent;
+				font-size: 13px;
+				line-height: 28px;
+				color: gray;
+				cursor: pointer;
+			}
+
+			.link {
+				text-decoration: none  !important;
+				color: inherit;
+				display: block;
+			}
+
+			#save-container button {
+				height: 25px;
+			}
+
+			#donate-container .link {
+				margin-top: 5px;
+			}
+
+			#saveButtonHelp {
+				margin-bottom: 14px;
+				margin-top: 8px; 
+			}
+
+			#refreshButtonHelp {
+				margin-bottom: 15px;
+			}
+
+			#tab-container .tab.active, #link-container .link:hover, #link-container .link.dropping {
+				background: -webkit-linear-gradient(left, #D4D4D4, #D4D4D4 97%, #BFBFBF);
+				border-color: #BFBFBF;
+				color: black;
+				text-shadow: #DBDBDB 0 1px 0;
+				box-shadow: inset -12px 0 30px -30px black;
+			}
+
+			#content {
+				position: absolute;
+				top: 0;
+				left: 220px;
+				right: 0;
+				bottom: 0;
+				overflow: auto;
+			}
+
+			.hidden {
+				display: none;
+			}
+
+			.turnMe {
+				display: block;
+				-webkit-transform: rotate(180deg);
+			}
+
+			.tab-content {
+				display: none;
+				position: absolute;
+				max-width: 840px;
+				min-width: 560px;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				padding: 20px;
+				padding-top: 15px;
+			}
+			.tab-content h2 {
+				margin: 0;
+				font-size: 26px;
+				color: #707070;
+				line-height: 1;
+			}
+			.show {
+				display: block !important;
+			}
+
+			.colorSwatch {
+				width: 21px;
+				vertical-align:middle;
+			}
+
+			.option.group {
+				border-top: 1px solid #EEE;
+				margin-top: 9px;
+				padding-top: 5px;
+				padding-left: 2px;
+			}
+			.option.group-name {
+				min-width: 140px;
+				max-width: 140px;
+				width: 140px;
+				padding: 0;
+				font-size: 14px;
+				font-weight: bold;
+				vertical-align: top;
+			}
+			.option.content {
+				max-width: 683px;
+			}
+			.option.item:first-child, .group-content-table:first-child {
+				margin-top: 15px;
+			}
+			.option.item {
+				max-width: 600px;
+				margin-bottom: 5px;
+			}
+
+			.option.item.qualifier {
+				display: inline;
+				vertical-align: middle;
+				margin-left: 10px;
+			}
+
+			.option.label,  .option.element-label {
+				margin-right: 15px;
+				font-size: 13px;
+				font-weight: normal;
+			}
+
+			.option.label.sub {
+				margin-right: 2px;
+				vertical-align: middle;
+			}
+
+			.option.value-cell input, .option.value-cell select {
+				vertical-align: middle;
+			}
+
+			.option.value-cell .option.label.sub:not(:first-of-type) {
+				margin-left: 15px;
+			}
+
+			.option.label.bold {
+				font-weight: bold;
+			}
+
+			.option.label.checkbox, .option.element-label {
+				margin-left: 5px;
+				margin-right: 0;
+			}
+			
+			.option.label.checkbox {
+				position: relative;
+				top: -2px;
+			}
+
+			td> .option.item.qualifier input[type="checkbox"] {
+				margin-top:2px;
+			}
+
+			.option.item.qualifier .option.label.checkbox:after {
+				content: ": ";
+			}
+
+			.option.item.qualifier .option.label.checkbox {
+				top: -1px;
+				margin-left: 0;
+			}
+
+			td> .option.item.qualifier .option.label.checkbox {
+				vertical-align: middle;
+			}
+
+			.option.item input[type="checkbox"], .option.item select {
+				margin-left: 0;
+			}
+
+			.option.label-cell {
+				margin-right: 0;
+				padding-left: 0;
+				padding-right: 0;
+			}
+
+			.option.value-cell {
+				margin-right: 0;
+				padding-left: 0;
+				padding-right: 0;
+				white-space: nowrap;
+			}
+
+			.option.label.range-label {
+				margin-right: 5px;
+			}
+
+			.group-content-table {
+				width: 0;
+				margin-bottom: 5;
+			}
+
+			/*
+			 Scroll box stuff
+			 */
+
+			.col1Div {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
+				padding-left:3px;
+				line-height: 17px;
+				font-size: 14px;
+			}
+
+			.rowDiv, .selectedRowDiv, .greyedRowDiv {
+				resize: none;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			.greyedRowDiv {
+				color:gray;
+				background-color: inherit;
+				cursor: inherit;
+			}
+
+			.rowDiv {
+				cursor: pointer;
+				color:#0052AD;
+				background-color: inherit;
+			}
+
+			.selectedRowDiv {
+				cursor: pointer;
+				color: white;
+				background-color: #0052AD;
+			}
+
+			#addButtonDiv {
+				float: right;
+				margin-right: -5px;
+			}
+
+			#newGroup {
+				width: 300px;
+			}
+			
+			.scrollBlock:first-child {
+				margin-top: 15px;
+			}
+
+			.scrollBlock button:first-of-type {
+				margin-left: 0;
+			}
+
+			#donate {
+				margin-top: 3px;
+			}
+
+			.scrollBox {
+				margin-top:2px;
+				margin-bottom:2px;
+
+				overflow: auto;
+				overflow-x: hidden;
+
+				min-height: 130px;
+				height: 130px;
+				resize: vertical;
+				border-style: ridge;
+				border-width: 2px;
+				width:100%;
+			}
+
+			.scrollbox.smaller {
+				min-height: 100px;
+				height: 100px;
+			}
+
+			/*
+			 * A flashy slide-in/slide-out status message widget
+			 */
+			#statusLine {
+				position: absolute;
+				bottom: 0px;
+				max-height: 0px;
+				margin: 0;
+				padding: 0 10px 0 10PX;
+				background-color:#FFE4B5;
+				border-top-right-radius: 15px;
+				width: 199px;
+				-webkit-transition: max-height 1s linear; 
+			}
+
+			#statusLine.show {
+				max-height: 100px;
+			}
+
+			#statusLine.hide {
+				max-height: 0px;
+			}
+
+			#statusText {
+				padding-top: 5px;
+				padding-bottom: 5px;
+				font-size: 15px;
+				overflow-y: hidden;
+				text-overflow: ellipsis;
+				color: #707070;
+			}
+
+			/*
+			 * The hidden file uploader used for click and drop importing
+			 */
+			#importConfig {
+				position: relative;
+			}
+
+			#fileImport {
+				position: absolute;
+			    width: 100%;
+			    height: 100%;
+			    top: 0;
+			    left: 0;
+			    opacity: 0;
+			}
+
+
+		</style>
+		<link rel="stylesheet" type="text/css" href="overlays.css" />
+		<script type="text/javascript" src="options/jscolor/jscolor.js"></script>
+		<script type="text/javascript" src="utilities.js"></script>
+		<script type="text/javascript" src="options/ui.js"></script>
+		<script type="text/javascript" src="options/i18n.js"></script>
+		<script type="text/javascript" src="options/options.js"></script>
+
+		<title></title>
+	</head>
+	<body>
+		<div id="sidebar" class="fancy">
+			<img id="icon" src="img/rssll_32x32.png">
+			<h1 id="optionsHeader"></h1>
+			<div id="action-container">
+				<div id="tab-container" data-defaulttab="subsAndGroupsTab">
+					<div class="tab" data-associatedcontent="tabcontent_4" id="subsAndGroupsTab"></div>
+					<div class="tab" data-associatedcontent="tabcontent_1" id="displayOptionsTab"></div>
+					<div class="tab" data-associatedcontent="tabcontent_2" id="fontOptionsTab"></div>
+					<div class="tab" data-associatedcontent="tabcontent_3" id="otherOptionsTab"></div>
+				</div>
+				<div id="link-container">
+					<a id="configExport" class="link" draggable="true" href="#"></a>
+					<a id="opmlExport"   class="link" draggable="true" href="#"></a>
+					<div class="link" id="importConfig"><span id="importConfigText"></span><span id="importConfigInput"><input type="file" id="fileImport"/><span></div>
+				</div>
+				<div id="save-container">
+					<div id="saveButtonHelp" class="link">
+						<button id="saveButton"></button>
+					</div>
+					<div id="refreshButtonHelp" class="link">
+						<button id="refreshButton"></button>
+					</div>
+				</div>
+				<div id="donate-container">
+					<div class="link">				
+						<form id="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+							<input type="hidden" name="cmd" value="_s-xclick">
+							<input type="hidden" name="hosted_button_id" value="2PMBTKD2NXTVQ">
+							<input type="image" src="https://www.paypalobjects.com/en_US/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+							<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="content">
+			<div class="tab-content" id="tabcontent_1">
+				<h2 id="displayOptionsTabHeader"></h2>
+				<table class="option group">
+					<tr>
+						<td class="option group-name" id="popupDimsHeader"></td>
+						<td class="option group-content">
+							<table class="group-content-table">
+								<tr class="option item" id="popupHeightHelp">
+									<td class="option label-cell"><label for="popUpHeight" id="popUpHeightLabel" class="option label range-label"></label></td>
+									<td>	
+										<input type="range" min="400" max="560" step="1" id="popUpHeight"/>
+										<input class="text-numeric range-value" id="popUpHeight_text" type="text" maxlength="3"/>
+									</td>
+								</tr>
+								<tr class="option item" id="popupWidthHelp">
+									<td class="option label-cell"><label for="popUpWidth" id="popUpWidthLabel" class="option label  range-label"></label></td>
+									<td>
+										<input type="range" min="250" max="750" value="300" step="1" id="popUpWidth"/>
+										<input class="text-numeric range-value" type="text"  id="popUpWidth_text" maxlength="3"/>
+									</td>
+								</tr>
+								<tr class="option item" id="popupDensityHelp">
+									<td class="option label-cell"><label for="popupDensity" id="popupDensityLabel" class="option label  range-label"></label></td>
+									<td>
+										<select id="popupDensity" value="0">
+											<option value="0">Compact</option>
+											<option value="1">Cozy</option>
+											<option value="2">Comfortable</option>
+										</select>							
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<table class="option group">
+					<tr>
+						<td class="option group-name" id="popupContentHeader"></td>
+						<td class="option group-content">
+							<div class="option item" id="maxItemsCountHelp">
+								<label for="maxItemsCount" id="maxItemsCountLabel" class="option label text"></label>
+								<input class="text-numeric" type="text" maxlength="3" id="maxItemsCount"/>
+								<div class="option item qualifier" id="unlimitedItemsHelp" >
+									<label for="unlimitedItems" id="unlimitedItemsLabel" class="option label checkbox"></label>
+									<input type="checkbox" id="unlimitedItems">
+								</div>
+							</div>
+							<div class="option item" id="useGroupsHelp">
+								<input type="checkbox" id="useGroups">
+								<label for="useGroups" id="useGroupsLabel" class="option label checkbox"></label>
+							</div>
+							<div class="option item" id="showAvailableHelp">
+								<input type="checkbox" id="showAvailable">
+								<label for="showAvailable" id="showAvailableLabel" class="option label checkbox"></label>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<table class="option group">
+					<tr>
+						<td class="option group-name" id="popupBehaviourHeader"></td>
+						<td class="option group-content">
+							<div class="option item" id="sortItemsHelp">
+								<label for="sortItems" id="sortItemsLabel" class="option label text"></label>
+								<select id="sortItems" value="0">
+									<option value="0">Feed order</option>
+									<option value="1">Alphabetical by title</option>
+									<option value="2">Date (ascending)</option>
+									<option value="3">Date (descending)</option>
+								</select>
+							</div>
+							<div class="option item" id="singleItemHelp">
+								<input type="checkbox" id="singleItem">
+								<label for="singleItem" id="singleItemLabel" class="option label checkbox"></label>
+							</div>
+							<div class="option item" id="openFirstHelp">
+								<input type="checkbox" id="openFirst">
+								<label for="openFirst" id="openFirstLabel" class="option label checkbox"></label>
+							</div>
+							<div class="option item" id="hideOnOpenHelp">
+								<input type="checkbox" id="hideOnOpen">
+								<label for="hideOnOpen" id="hideOnOpenLabel" class="option label checkbox"></label>
+							</div>
+							<div class="option item" id="newAtTopHelp">
+								<input type="checkbox" id="newAtTop">
+								<label for="newAtTop" id="newAtTopLabel" class="option label checkbox"></label>
+							</div>
+							<div class="option item" id="askOnUpdateHelp">
+								<input type="checkbox" id="askOnUpdate">
+								<label for="askOnUpdate" id="askOnUpdateLabel" class="option label checkbox"></label>
+							</div>
+							<div class="option item" id="fixPopupClosesBugHelp">
+								<input type="checkbox" id="fixPopupClosesBug">
+								<label for="fixPopupClosesBug" id="fixPopupClosesBugLabel" class="option label checkbox"></label>
+							</div>
+							<div class="option item" id="focusFirstTabHelp">
+								<input type="checkbox" id="focusFirstTab">
+								<label for="focusFirstTab" id="focusFirstTabLabel" class="option label checkbox"></label>
+							</div>
+						<td>
+					</tr>
+				</table>
+			</div>
+			<div class="tab-content"  id="tabcontent_2">
+				<h2 id="fontOptionsTabHeader"></h2>
+				<table class="option group">
+					<tr>
+						<td class="option group-name" id="feedFontsHeader"></td>
+						<td class="option group-content">
+							<table id="titleFontTable" class="group-content-table">
+								<tr class="option item">
+									<td class="option label-cell ">
+										<label for="feedTitle_fontFamily" class="option label bold" id="fontFamilyLabel"></label>
+									</td>
+									<td class="option value-cell">
+										<select id="feedTitle_fontFamily">
+											<option value="default">default</option>
+											<option value="sans_serif">Sans-serif</option>
+											<option value="serif">Serif</option>
+											<option value="arial">Arial</option>
+											<option value="arial_black">Arial Black</option>
+											<option value="bookman_old_style">Bookman Old Style</option>
+											<option value="comic_sans_ms">Comic Sans MS</option>
+											<option value="garamond">Garamond</option>
+											<option value="geneva">Geneva</option>
+											<option value="georgia">Georgia</option>
+											<option value="impact">Impact</option>
+											<option value="lucida_sans_unicode">Lucida Sans Unicode</option>
+											<option value="ms_sans_serif">MS Sans Serif</option>
+											<option value="ms_serif">MS Serif</option>
+											<option value="palatino_linotype">Palatino Linotype</option>
+											<option value="tahoma">Tahoma</option>
+											<option value="times_new_roman">Times New Roman</option>
+											<option value="trebuchet_ms">Trebuchet MS</option>
+											<option value="verdana">Verdana</option>
+										</select>
+									</td>
+								</tr>
+								<tr class="option item">
+									<td class="option label-cell"><label for="feedTitle_fontSize" class="option label bold" id="fontSizeLabel"></label></td>
+									<td class="option value-cell">
+										<select id="feedTitle_fontSize">
+											<option value="default">default</option>
+											<option value="small">small</option>
+											<option value="smaller">smaller</option>
+											<option value="medium">medium</option>
+											<option value="larger">larger</option>
+											<option value="large">large</option>
+											<option value="8px">8</option>
+											<option value="9px">9</option>
+											<option value="10px">10</option>
+											<option value="11px">11</option>
+											<option value="12px">12</option>
+											<option value="13px">13</option>
+											<option value="14px">14</option>
+											<option value="15px">15</option>
+											<option value="16px">16</option>
+											<option value="17px">17</option>
+											<option value="18px">18</option>
+										</select>
+									</td>
+								</tr>
+								<tr class="option item">
+									<td class="option label-cell"><span class="option label bold" id="unseenLabel"></span></td>
+									<td class="option value-cell">
+										<label for="unseenFeedTitle_default" class="option label sub" id="unseenDefaultLabel"></label>
+										<input type="checkbox" id="unseenFeedTitle_default"/>
+										<label for="unseenFeedTitle_color_picker" class="option label sub" id="unseenColorLabel"></label>
+										<input name="unseenTitleFontColor" id="unseenFeedTitle_color_picker" class="colorSwatch"/>
+										<input style="display: none" id="unseenFeedTitle_color" value="#FF0000"/>
+										<label for="unseenFeedTitle_fontWeight" class="option label sub" id="unseenWeightLabel"></label>
+										<select name="unseenTitleFontWeight" id="unseenFeedTitle_fontWeight">
+											<option value="default">default</option>
+											<option value="lighter">lighter</option>
+											<option value="normal">normal</option>
+											<option value="bolder">bolder</option>
+											<option value="bold">bold</option>
+											<option value="100">100</option>
+											<option value="200">200</option>
+											<option value="300">300</option>
+											<option value="400">400</option>
+											<option value="500">500</option>
+											<option value="600">600</option>
+											<option value="700">700</option>
+											<option value="800">800</option>
+											<option value="900">900</option>
+										</select>
+										<label for="unseenFeedTitle_fontStyle" class="option label sub" id="unseenItalicLabel"></label>
+										<input type="checkbox" id="unseenFeedTitle_fontStyle"/>
+									</td>
+								</tr>
+								<tr class="option item">
+									<td class="option label-cell"><span class="option label bold" id="unreadLabel"></span></td>
+									<td class="option value-cell">
+										<label for="unreadFeedTitle_default" class="option label sub" id="unreadDefaultLabel"></label>
+										<input type="checkbox" class="defaultFontOptions" id="unreadFeedTitle_default"/>
+										<label for="unreadFeedTitle_color_picker" class="option label sub" id="unreadColorLabel"></label>
+										<input name="unreadTitleFontColor" id="unreadFeedTitle_color_picker" class="colorSwatch"/>
+										<input style="display: none" id="unreadFeedTitle_color" value="#010101"/>
+										<label for="unreadFeedTitle_fontWeight" class="option label sub" id="unreadWeightLabel"></label>
+										<select name="unreadTitleFontWeight"  id="unreadFeedTitle_fontWeight">
+											<option value="default">default</option>
+											<option value="lighter">lighter</option>
+											<option value="normal">normal</option>
+											<option value="bolder">bolder</option>
+											<option value="bold">bold</option>
+											<option value="100">100</option>
+											<option value="200">200</option>
+											<option value="300">300</option>
+											<option value="400">400</option>
+											<option value="500">500</option>
+											<option value="600">600</option>
+											<option value="700">700</option>
+											<option value="800">800</option>
+											<option value="900">900</option>
+										</select>
+										<label for="unreadFeedTitle_fontStyle" class="option label sub" id="unreadItalicLabel"></label>
+										<input type="checkbox" id="unreadFeedTitle_fontStyle"/>
+									</td>
+								</tr>
+								<tr class="option item">
+									<td class="option label-cell"><span class="option label bold" id="readLabel"></span></td>
+									<td class="option value-cell">
+										<label for="readFeedTitle_default" class="option label sub" id="readDefaultLabel"></label>
+										<input type="checkbox" class="defaultFontOptions" id="readFeedTitle_default"/>
+										<label for="readFeedTitle_color_picker" class="option label sub" id="readColorLabel"></label>
+										<input name="readTitleFontColor" id="readFeedTitle_color_picker" class="colorSwatch"/>
+										<input style="display: none" id="readFeedTitle_color" value="#010101"/>
+										<label for="readFeedTitle_fontWeight" class="option label sub" id="readWeightLabel"></label>
+										<select name="readTitleFontWeight" id="readFeedTitle_fontWeight">
+											<option value="default">default</option>
+											<option value="lighter">lighter</option>
+											<option value="normal">normal</option>
+											<option value="bolder">bolder</option>
+											<option value="bold">bold</option>
+											<option value="100">100</option>
+											<option value="200">200</option>
+											<option value="300">300</option>
+											<option value="400">400</option>
+											<option value="500">500</option>
+											<option value="600">600</option>
+											<option value="700">700</option>
+											<option value="800">800</option>
+											<option value="900">900</option>
+										</select>
+										<label for="readFeedTitle_fontStyle" class="option label sub" id="readItalicLabel"></label>
+										<input type="checkbox" id="readFeedTitle_fontStyle"/>
+									</td>
+								</tr>
+								<tr class="option item">
+									<td class="option label-cell"><span class="option label bold" id="errorLabel"></span>
+									<td class="option value-cell">
+										<label for="errorFeedTitle_default" class="option label sub" id="errorDefaultLabel"></label>
+										<input type="checkbox" class="defaultFontOptions" id="errorFeedTitle_default"/>
+										<label for="errorFeedTitle_color_picker" class="option label sub" id="errorColorLabel"></label>
+										<input name="errorTitleFontColor" id="errorFeedTitle_color_picker" class="colorSwatch"/>
+										<input style="display: none" id="errorFeedTitle_color" value="#FF0000"/>
+										<label for="errorFeedTitle_fontWeight" class="option label sub" id="errorWeightLabel"></label>
+										<select name="errorTitleFontWeight" id="errorFeedTitle_fontWeight">
+											<option value="default">default</option>
+											<option value="lighter">lighter</option>
+											<option value="normal">normal</option>
+											<option value="bolder">bolder</option>
+											<option value="bold">bold</option>
+											<option value="100">100</option>
+											<option value="200">200</option>
+											<option value="300">300</option>
+											<option value="400">400</option>
+											<option value="500">500</option>
+											<option value="600">600</option>
+											<option value="700">700</option>
+											<option value="800">800</option>
+											<option value="900">900</option>
+										</select>
+										<label for="errorFeedTitle_fontStyle" class="option label sub" id="errorItalicLabel"></label>
+										<input type="checkbox" id="errorFeedTitle_fontStyle"/>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<table class="option group">
+					<tr>
+						<td class="option group-name" id="itemFontsHeader"></td>
+						<td class="option group-content">
+							<table id="itemFontTable" class="group-content-table">
+								<tr class="option item">
+									<td class="option label-cell ">
+										<label for="itemTitle_fontFamily" class="option label bold" id="item_fontFamilyLabel"></label>
+									</td>
+									<td class="option value-cell">
+										<select id="itemTitle_fontFamily">
+											<option value="default">default</option>
+											<option value="sans_serif">Sans-serif</option>
+											<option value="serif">Serif</option>
+											<option value="arial">Arial</option>
+											<option value="arial_black">Arial Black</option>
+											<option value="bookman_old_style">Bookman Old Style</option>
+											<option value="comic_sans_ms">Comic Sans MS</option>
+											<option value="garamond">Garamond</option>
+											<option value="geneva">Geneva</option>
+											<option value="georgia">Georgia</option>
+											<option value="impact">Impact</option>
+											<option value="lucida_sans_unicode">Lucida Sans Unicode</option>
+											<option value="ms_sans_serif">MS Sans Serif</option>
+											<option value="ms_serif">MS Serif</option>
+											<option value="palatino_linotype">Palatino Linotype</option>
+											<option value="tahoma">Tahoma</option>
+											<option value="times_new_roman">Times New Roman</option>
+											<option value="trebuchet_ms">Trebuchet MS</option>
+											<option value="verdana">Verdana</option>
+										</select>
+									</td>
+								</tr>
+								<tr class="option item">
+									<td class="option label-cell"><label for="itemTitle_fontSize" class="option label bold" id="item_fontSizeLabel"></label></td>
+									<td class="option value-cell">
+										<select id="itemTitle_fontSize">
+											<option value="default">default</option>
+											<option value="small">small</option>
+											<option value="smaller">smaller</option>
+											<option value="medium">medium</option>
+											<option value="larger">larger</option>
+											<option value="large">large</option>
+											<option value="8px">8</option>
+											<option value="9px">9</option>
+											<option value="10px">10</option>
+											<option value="11px">11</option>
+											<option value="12px">12</option>
+											<option value="13px">13</option>
+											<option value="14px">14</option>
+											<option value="15px">15</option>
+											<option value="16px">16</option>
+											<option value="17px">17</option>
+											<option value="18px">18</option>
+										</select>
+									</td>
+								</tr>
+								<tr class="option item">
+									<td class="option label-cell"><span class="option label bold" id="item_unseenLabel"></span></td>
+									<td class="option value-cell">
+										<label for="unseenItemTitle_default" class="option label sub" id="item_unseenDefaultLabel"></label>
+										<input type="checkbox" id="unseenItemTitle_default"/>
+										<label for="unseenItemTitle_color_picker" class="option label sub" id="item_unseenColorLabel"></label>
+										<input name="unseenTitleFontColor" id="unseenItemTitle_color_picker" class="colorSwatch"/>
+										<input style="display: none" id="unseenItemTitle_color" value="#FF0000"/>
+										<label for="unseenItemTitle_fontWeight" class="option label sub" id="item_unseenWeightLabel"></label>
+										<select name="unseenTitleFontWeight" id="unseenItemTitle_fontWeight">
+											<option value="default">default</option>
+											<option value="lighter">lighter</option>
+											<option value="normal">normal</option>
+											<option value="bolder">bolder</option>
+											<option value="bold">bold</option>
+											<option value="100">100</option>
+											<option value="200">200</option>
+											<option value="300">300</option>
+											<option value="400">400</option>
+											<option value="500">500</option>
+											<option value="600">600</option>
+											<option value="700">700</option>
+											<option value="800">800</option>
+											<option value="900">900</option>
+										</select>
+										<label for="unseenItemTitle_fontStyle" class="option label sub" id="item_unseenItalicLabel"></label>
+										<input type="checkbox" id="unseenItemTitle_fontStyle"/>
+									</td>
+								</tr>
+								<tr class="option item">
+									<td class="option label-cell"><span class="option label bold" id="item_unreadLabel"></span></td>
+									<td class="option value-cell">
+										<label for="unreadItemTitle_default" class="option label sub" id="item_unreadDefaultLabel"></label>
+										<input type="checkbox" class="defaultFontOptions" id="unreadItemTitle_default"/>
+										<label for="unreadItemTitle_color_picker" class="option label sub" id="item_unreadColorLabel"></label>
+										<input name="unreadTitleFontColor" id="unreadItemTitle_color_picker" class="colorSwatch"/>
+										<input style="display: none" id="unreadItemTitle_color" value="#010101"/>
+										<label for="unreadItemTitle_fontWeight" class="option label sub" id="item_unreadWeightLabel"></label>
+										<select name="unreadTitleFontWeight"  id="unreadItemTitle_fontWeight">
+											<option value="default">default</option>
+											<option value="lighter">lighter</option>
+											<option value="normal">normal</option>
+											<option value="bolder">bolder</option>
+											<option value="bold">bold</option>
+											<option value="100">100</option>
+											<option value="200">200</option>
+											<option value="300">300</option>
+											<option value="400">400</option>
+											<option value="500">500</option>
+											<option value="600">600</option>
+											<option value="700">700</option>
+											<option value="800">800</option>
+											<option value="900">900</option>
+										</select>
+										<label for="unreadItemTitle_fontStyle" class="option label sub" id="item_unreadItalicLabel"></label>
+										<input type="checkbox" id="unreadItemTitle_fontStyle"/>
+									</td>
+								</tr>
+								<tr class="option item">
+									<td class="option label-cell"><span class="option label bold" id="item_readLabel"></span></td>
+									<td class="option value-cell">
+										<label for="readItemTitle_default" class="option label sub" id="item_readDefaultLabel"></label>
+										<input type="checkbox" class="defaultFontOptions" id="readItemTitle_default"/>
+										<label for="readItemTitle_color_picker" class="option label sub" id="item_readColorLabel"></label>
+										<input name="readTitleFontColor" id="readItemTitle_color_picker" class="colorSwatch"/>
+										<input style="display: none" id="readItemTitle_color" value="#010101"/>
+										<label for="readItemTitle_fontWeight" class="option label sub" id="item_readWeightLabel"></label>
+										<select name="readTitleFontWeight" id="readItemTitle_fontWeight">
+											<option value="default">default</option>
+											<option value="lighter">lighter</option>
+											<option value="normal">normal</option>
+											<option value="bolder">bolder</option>
+											<option value="bold">bold</option>
+											<option value="100">100</option>
+											<option value="200">200</option>
+											<option value="300">300</option>
+											<option value="400">400</option>
+											<option value="500">500</option>
+											<option value="600">600</option>
+											<option value="700">700</option>
+											<option value="800">800</option>
+											<option value="900">900</option>
+										</select>
+										<label for="readItemTitle_fontStyle" class="option label sub" id="item_readItalicLabel"></label>
+										<input type="checkbox" id="readItemTitle_fontStyle"/>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="tab-content" id="tabcontent_3">
+				<h2 id="otherOptionsTabHeader"></h2>
+				<table class="option group">
+					<tr>
+						<td class="option group-name" id="networkOptionsHeader"></td>
+						<td class="option group-content">
+							<table class="group-content-table">
+								<tr class="option item" id="maxConcurrentHelp">
+									<td class="option label-cell"><label for="maxConcurrent" id="maxConcurrentLabel" class="option label text"></label></td>
+									<td class="option value-cell">
+										<input class="text-numeric" type="text" maxlength="3" id="maxConcurrent"/>
+										<div class="option item qualifier" id="unlimitedCallsHelp" >
+											<label for="unlimitedCalls" id="unlimitedCallsLabel" class="option label checkbox"></label>
+											<input type="checkbox" id="unlimitedCalls">
+										</div>
+									</td>
+								</tr>
+								<tr class="option item" id="defaultTimeoutHelp">
+									<td class="option label-cell"><label for="defaultTimeout" id="defaultTimeoutLabel" class="option label text"></label></td>
+									<td class="option value-cell"><input class="text-numeric" type="text" maxlength="3" id="defaultTimeout"/></td>
+								</tr>
+								<tr class="option item" id="defaultTtlHelp">
+									<td class="option label-cell"><label for="defaultTtl" id="defaultTtlLabel" class="option label text"></label></td>
+									<td class="option value-cell">
+										<select id="defaultTtl" value="5">
+											<option value="1">1 min</option>
+											<option value="2">2 mins</option>
+											<option value="3">3 mins</option>
+											<option value="4">4 mins</option>
+											<option value="5">5 mins</option>
+											<option value="10">10 mins</option>
+											<option value="15">15 mins</option>
+											<option value="30">30 mins</option>
+											<option value="45">45 mins</option>
+											<option value="60">60 mins</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+
+						</td>
+					</tr>
+				</table>
+				<table class="option group">
+					<tr>
+						<td class="option group-name" id="notificationOptionsHeader"></td>
+						<td class="option group-content">
+							<div class="option item" id="soundFileHelp">
+								<label for="soundFile" id="soundFileLabel" class="option label text"></label>
+								<select id="soundFile" value="sounds/boing.mp3">
+									<option value="sounds/boing.mp3">Boing</option>
+									<option value="sounds/high-gliss.mp3">Hi Gliss</option>
+									<option value="sounds/low-arpeg.mp3">Low Arpeg</option>
+									<option value="sounds/low-gliss.mp3">Low Gliss</option>
+									<option value="sounds/oringz-w428.mp3">Ring 1</option>
+									<option value="sounds/oringz-w432.mp3">Ring 2</option>
+									<option value="sounds/oringz-w434.mp3">Ring 3</option>
+									<option value="sounds/ti-na.mp3">Ti-na</option>
+									<option value="sounds/tring.mp3">Tring</option>
+								</select>
+							</div>
+							<div class="option item" id="playSoundHelp">
+								<input type="checkbox" id="playSound">
+								<label for="playSound" id="playSoundLabel" class="option label checkbox"></label>
+							</div>
+							<div class="option item" id="animateButtonHelp">
+								<input type="checkbox" id="animateButton">
+								<label for="animateButton" id="animateButtonLabel" class="option label checkbox"></label>
+							</div>
+							<div class="option item" id="maintainBadgeHelp">
+								<input type="checkbox" id="maintainBadge">
+								<label for="maintainBadge" id="maintainBadgeLabel" class="option label checkbox"></label>
+							</div>
+							<div class="option item" id="useAvailableIconHelp">
+								<input type="checkbox" id="useAvailableIcon">
+								<label for="useAvailableIcon" id="useAvailableIconLabel" class="option label checkbox"></label>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<table class="option group">
+					<tr>
+						<td class="option group-name" id="advancedOptionsHeader"></td>
+						<td class="option group-content">
+							<div class="option item" id="useWebWorkerHelp">
+								<input type="checkbox" id="useWebWorker">
+								<label for="useWebWorker" id="useWebWorkerLabel" class="option label checkbox"></label>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div class="tab-content" id="tabcontent_4">
+				<h2 id="subsAndGroupsTabHeader"></h2>
+				<table class="option group fixed-table">
+					<tr>
+						<td class="option group-name" id="subscriptionsHeader"></td>
+						<td class="option content">
+							<div class="scrollBlock">
+								<div class="scrollBox" id="subscribedScroll">
+									<div id="subscribed"></div>
+								</div>
+								<button id="deleteButton" disabled="disabled" class="firstButton"></button>
+								<button id="modifyButton" disabled="disabled"></button>
+								<button id="moveUpButton" disabled="disabled"><span class="turnMe">V</span></button>
+								<button id="moveDownButton" disabled="disabled">V</button> <span class="help" id="subsButtonHelp">?</span>
+								<span id="addButtonDiv"><button id="addButton"></button> <span class="help" id="addButtonHelp">?</span></span>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<table class="option group fixed-table">
+					<tr>
+						<td class="option group-name" id="groupsHeader"></td>
+						<td class="option content">
+							<div class="scrollBlock">
+								<div id="newGroupDiv"><input id="newGroup"></div>
+								<div class="scrollBox smaller" id="groupScroll">
+									<div id="groups"></div>
+								</div>
+								<button id="deleteGButton" disabled="disabled" class="firstButton"></button>
+								<button id="modifyGButton" disabled="disabled"></button>
+								<button id="moveGUpButton" disabled="disabled"><span class="turnMe">V</span></button>
+								<button id="moveGDownButton" disabled="disabled">V</button> <span class="help" id="groupsButtonHelp">?</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+				<table class="option group fixed-table">
+					<tr>
+						<td class="option group-name" id="availableFeedsHeader"></td>
+						<td class="option content">
+							<div class="scrollBlock">
+								<div class="scrollBox smaller" id="availableScroll">
+									<div id="available"></div>
+								</div>
+								<button  class="firstButton" id="updateAvailable"></button> <span class="help" id="updateAvailableHelp">?</span>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div id="colorpicker301" class="colorpicker301"></div>
+
+		<!--
+			Dialogs - technique and styling unashamedly stolen from Chrome itself
+		-->
+		<div id="dialogs" class="overlay">
+			<div id="feedModDialogOverlay" class="page">
+				<h1 id="feedModHeader"></h1>
+				<div class="content-area" id="feedModContent">
+					<div class="row">
+						<label id="feedNameLabel" class="contentLabel"></label>
+						<input type="text" id="feedNameText">
+					</div>
+
+					<div class="row">
+						<label id="feedUrlLabel" class="contentLabel"></label>
+						<input type="text" id="feedUrlText">
+					</div>
+
+					<div class="row" id="dialogGroupChoice">
+						<label id="feedGroupSelectLabel" class="contentLabel"></label>
+						<select id="feedGroupSelect"></select>							
+					</div>
+					<div class="row" id="feedSortItemsHelp">
+						<label for="feedSortItems" id="feedSortItemsLabel" class="contentLabel"></label>
+						<select id="feedSortItems" value="0">
+							<option value="0">Default</option>
+							<option value="1">Feed order</option>
+							<option value="2">Alphabetical by title</option>
+							<option value="3">Date (ascending)</option>
+							<option value="4">Date (descending)</option>
+						</select>
+					</div>
+
+					<div class="row" id="feedRefreshTimeHelp">
+						<label id="feedRefreshTimeLabel" class="contentLabel" for="feedRefreshTime"></label>
+						<select id="feedRefreshTime">
+								<option value="TTL">TTL</option>
+								<option value="1">1 min</option>
+								<option value="2">2 mins</option>
+								<option value="3">3 mins</option>
+								<option value="4">4 mins</option>
+								<option value="5">5 mins</option>
+								<option value="10">10 mins</option>
+								<option value="15">15 mins</option>
+								<option value="30">30 mins</option>
+								<option value="45">45 mins</option>
+								<option value="60">60 mins</option>
+						</select>
+					</div>
+					<div class="row" id="feedNetworkTimeoutHelp">
+						<label id="feedNetworkTimeoutLabel" class="contentLabel"></label>
+						<input class="text-numeric" type="text" id="feedNetworkTimeout" maxlength="3">
+					</div>
+
+					<div id="useBookmarkFolderHelp" class="row">
+						<label id="useBookmarkFolderLabel" class="contentLabel"></label>
+						<input type="checkbox" id="useBookmarkFolder">
+					</div>
+
+					<div id="changesUnseenHelp" class="row">
+						<label id="changesUnseenLabel" class="contentLabel"></label>
+						<input type="checkbox" id="changesUnseen">
+					</div>
+					<div id="autoopenNewHelp" class="row">
+						<label id="autoopenNewLabel" class="contentLabel"></label>
+						<input type="checkbox" id="autoopenNew">
+					</div>
+				</div>
+				<div class="action-area">
+					<div class="action-area-right">
+						<div class="button-strip">
+							<button id="feedModSaveButton"></button>
+							<button id="feedCancelButton"></button>
+						</div>
+					</div>
+				</div>
+				<div class="messages"><div class="message-text"></div></div>
+			</div>
+			<div id="importCnfDialogOverlay" class="page">
+				<h1 id="importCnfHeader"></h1>
+				<div class="content-area" id="feedModContent">
+					<div class="row">
+						<div id="importCnfMsg" class="text"></div>
+					</div>
+				</div>
+				<div class="action-area">
+					<div class="action-area-right">
+						<div class="button-strip">
+							<button id="importMergeButton"></button>
+							<button id="importReplaceButton"></button>
+							<button id="importCancelButton"></button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="statusLine" class="hide"><span id="statusText"></span></div>
+		<span class="hidden" id="hiddenContent">
+			<audio id="audioNotify" src="sounds/boing.mp3"></audio>
+		</span>
+	</body>
+</html>

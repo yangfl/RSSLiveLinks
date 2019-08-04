@@ -1,0 +1,98 @@
+<html>
+<!--
+ * RSS Live Links - an RSS "live bookmark" extension for Google Chrome
+ *
+ * Copyright 2010 Martin Bartlett
+ *
+ *    This file is part of RSS Live Links.
+ *
+ *    RSS Live Links is free software: you can redistribute it and/or modify
+ *    it under the terms of the GNU Lesser General Public License as published by
+ *    the Free Software Foundation, either version 3 of the License, or
+ *    (at your option) any later version.
+ *
+ *    RSS Live Links is distributed in the hope that it will be useful,
+ *    but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *    GNU Lesser General Public License for more details.
+ *
+ *    You should have received a copy of the GNU Lesser General Public License
+ *    along with RSS Live Links.  If not, see <http://www.gnu.org/licenses/>.
+ *
+ * @version 1.0.0
+ * @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
+ * @author  Martin Bartlett
+ -->
+
+	<head>
+		<title id="pageTitle"></title>
+		<style>
+
+			body {
+				font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+				font-size: 75%;
+				color: #222;
+				line-height: 1.5;
+			}
+
+			#feedURL {
+				font-size: 150%;
+				font-weight: bold;
+				color: black;
+			}
+			.status {
+			  background-color: #FFF18A;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="overlays.css" />
+			
+		<script type="text/javascript" src="subscribe.js"></script>
+	</head>
+	<body>
+		<h2><img src="img/rssll_128x128.png"><span id="subsAdderHeader"></span></h2>
+		<p>
+		<div id="feedURL"><span id="urlLabel"></span>: <span id="urlText"></span></div>
+		<div id="dialogs" class="overlay">
+			<div id="feedModDialogOverlay" class="page">
+				<h1 id="dialogHeader"></h1>
+				<div class="content-area" id="feedModContent">
+					<div class="row" id="feedSortItemsHelp">
+						<label id="feedNameLabel" class="contentLabel"></label>
+						<input type="text" id="feedNameText">
+					</div>
+					<div class="row" id="dialogGroupChoice">
+						<label id="feedGroupSelectLabel" class="contentLabel"></label>
+						<select id="feedGroupSelect"></select>							
+					</div>
+					<div class="row" id="feedSortItemsHelp">
+						<label for="feedSortItems" id="feedSortItemsLabel" class="contentLabel"></label>
+						<select id="feedSortItems" value="0">
+							<option value="0">Default</option>
+							<option value="1">Feed order</option>
+							<option value="2">Alphabetical by title</option>
+							<option value="3">Date (ascending)</option>
+							<option value="4">Date (descending)</option>
+						</select>
+					</div>
+					<div id="useBookmarkFolderHelp" class="row">
+						<label id="useBookmarkFolderLabel" class="contentLabel"></label>
+						<input type="checkbox" id="useBookmarkFolder">
+					</div>
+					<div id="autoopenNewHelp" class="row">
+						<label id="autoopenNewLabel" class="contentLabel"></label>
+						<input type="checkbox" id="autoopenNew">
+					</div>
+				</div>
+				<div class="action-area">
+					<div class="action-area-right">
+						<div class="button-strip">
+							<button id="saveButton"></button>
+							<button id="closeButton"></button>
+						</div>
+					</div>
+				</div>
+				<div class="messages"><div class="message-text"></div></div>
+			</div>
+		</div>
+	</body>
+</html>

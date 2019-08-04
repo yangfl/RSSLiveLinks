@@ -1,0 +1,784 @@
+{
+   "allmark_tooltip": {
+      "description": "Tooltip on 'mark all' tool",
+      "message": "klick: Markera alla flöden som sedda\nalt-shift-klick: Markera alla flöden som lästa"
+   },
+   "allread_tooltip": {
+      "description": "Tooltip on 'read all' tool",
+      "message": "klick: Öppna alla dolda objekt\nshift-klick: Öppna alla olästa objekt"
+   },
+   "available_feeds_title": {
+      "description": "Title of available feeds section",
+      "message": "Tillgängliga flöden"
+   },
+   "available_feeds_tooltip": {
+      "description": "Tooltip on icon of Available Feeds section",
+      "message": "Lista över tillgängliga flöden i öppna flikar. Klicka för att lägga till.\nunsubscribed: $unsubscribed$, subscribed: $subscribed$",
+      "placeholders": {
+         "subscribed": {
+            "content": "$2",
+            "example": "2"
+         },
+         "unsubscribed": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "close_button": {
+      "description": "Text on a close button",
+      "message": "Stäng"
+   },
+   "close_popup_tooltip": {
+      "description": "Tooltip on 'close popup' tool",
+      "message": "Stäng poppuppfönstret"
+   },
+   "enable_sound": {
+      "description": "Tooltip on enable sound icon",
+      "message": "Aktivera ljudmeddelanden"
+   },
+   "extDesc": {
+      "description": "Extension description",
+      "message": "Dina RSS/Atom flöden som bokmärken och mycket, mycket mer"
+   },
+   "extName": {
+      "description": "Extension name",
+      "message": "RSS Live Links"
+   },
+   "extTitle": {
+      "description": "Extension title",
+      "message": "RSS Live Links"
+   },
+   "feed_home_name": {
+      "description": "Name on Feed Home link",
+      "message": "Flöden-Start"
+   },
+   "feed_home_tooltip": {
+      "description": "Tooltip on Feed Home link",
+      "message": "Öppna flödets hemsida i en ny flik"
+   },
+   "feed_tooltip_error": {
+      "description": "Error message on tooltip on feed icon",
+      "message": "Fel i flödet"
+   },
+   "feed_tooltip_items": {
+      "description": "Item-related tooltip on a feed icon",
+      "message": "Flöden: $item_count$, osedda: $unseen_count$, olästa: $unread_count$",
+      "placeholders": {
+         "item_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "feed_tooltip_pubdate": {
+      "description": "Publication date on tooltip on a feed icon",
+      "message": "PubDate: $parm$",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "feed_tooltip_ttl": {
+      "description": "TTL tooltip on a feed icon",
+      "message": "Flödets varaktighet: $parm$ minutes",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "feed_tooltip_upd": {
+      "description": "Next update tooltip on a feed icon",
+      "message": "Nästa uppdatering: $parm$",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "group_name_tag": {
+      "description": "Tag on a group's title",
+      "message": "Grupp"
+   },
+   "group_tooltip_errors": {
+      "description": "Error-related tooltip on a group icon",
+      "message": "Fel i flödena: $error_count$",
+      "placeholders": {
+         "error_count": {
+            "content": "$1",
+            "example": "1"
+         }
+      }
+   },
+   "group_tooltip_feeds": {
+      "description": "Feed-related tooltip on a group icon",
+      "message": "Flöden: $feed_count$, osedda: $unseen_count$, olästa: $unread_count$",
+      "placeholders": {
+         "feed_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "group_tooltip_items": {
+      "description": "Item-related tooltip on a group icon",
+      "message": "Objekt: $item_count$, osedda: $unseen_count$, olästa: $unread_count$",
+      "placeholders": {
+         "item_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "icon_1_feed_error": {
+      "description": "RSSLL Icon tooltip - one feed in error",
+      "message": "1 flöde i felet"
+   },
+   "icon_1_feed_updated": {
+      "description": "RSSLL Icon tooltip - one feed updated",
+      "message": "1 flöde uppdaterad"
+   },
+   "icon_n_feeds_error": {
+      "description": "RSSLL Icon tooltip - n feeds in error",
+      "message": "$errors$ flöden i felet",
+      "placeholders": {
+         "errors": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "icon_n_feeds_updated": {
+      "description": "RSSLL Icon tooltip - n feeds updated",
+      "message": "$updated$ flöden uppdaterade",
+      "placeholders": {
+         "updated": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "import_error": {
+      "message": "Importdatan verkar inte ha exporterats från en annan RSS Live Links installation"
+   },
+   "item_pubdate_tag": {
+      "description": "Tag on an item's tooltip when displaying a publication date",
+      "message": "PubDate"
+   },
+   "left_arrow_tooltip": {
+      "description": "Tooltip on left arrow in hids-others-on-open mode",
+      "message": "Växla till tidigare osedd flöde\nShift: växla till tidigare flöde"
+   },
+   "mark_read_name": {
+      "description": "Name on Mark read link",
+      "message": "Markera läst"
+   },
+   "mark_read_tooltip": {
+      "description": "Tooltip on Mark read link",
+      "message": "Markera alla objekt som lästa och stäng flödet\n(ctrl-klick att lämna öppet)"
+   },
+   "multiple_feeds_loading": {
+      "description": "Message displayed when more than one feed is loading",
+      "message": "$number$ flöden laddar...",
+      "placeholders": {
+         "number": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "mute_sound": {
+      "description": "Tooltip on mute sound icon",
+      "message": "Stäng av ljudmeddelanden"
+   },
+   "no_available_feeds": {
+      "description": "Content of Available Feeds section when no feeds have been detected",
+      "message": "Inga RSS-flöden är tillgängliga i dina öppna flikar"
+   },
+   "no_feeds": {
+      "description": "Message displayed when no feeds have been configured (e.g. a fresh installation",
+      "message": "Du har inga konfigurerade RSS-flöden"
+   },
+   "one_feed_loading": {
+      "description": "Message displayed when one feed is loading",
+      "message": "1 RSS-flöde laddas..."
+   },
+   "open_help_tooltip": {
+      "description": "Tooltip on 'open help' tool",
+      "message": "Öppna användarinformation om RSS Live Links i ny flik"
+   },
+   "open_name": {
+      "description": "Name on Open link",
+      "message": "Öppna"
+   },
+   "open_options_tooltip": {
+      "description": "Tooltip on 'open options' tool",
+      "message": "Öppna inställningarna i ny flik"
+   },
+   "open_tooltip": {
+      "description": "Tooltip on Open link",
+      "message": "klick: Öppna osedda i flikar\nshift-klick: Öppna olästa i nya flikar\nalt-klick: Öppna alla objekt i nya flikar"
+   },
+   "opt_addButton": {
+      "message": "Lägg till"
+   },
+   "opt_addButtonHelp": {
+      "message": "Klicka för att prenumerera på ett nytt flöde"
+   },
+   "opt_advancedOptionsHeader": {
+      "description": "Header for advanced options group",
+      "message": "Avancerade alternativ"
+   },
+   "opt_advancedOptionsHelp": {
+      "description": "Header for advanced options help",
+      "message": "Alternativ som du förmodligen inte ska röra men som du kan leka med på egen risk."
+   },
+   "opt_alreadySubscribed": {
+      "message": "Du har redan prenumererat till flödet på denna adress"
+   },
+   "opt_animateButtonHelp": {
+      "message": "Animera RSS Live Links knappen när uppdateringar har hittats"
+   },
+   "opt_animateButtonLabel": {
+      "message": "Ikon animering"
+   },
+   "opt_askOnUpdateHelp": {
+      "message": "Fråga innan uppdatering sker av ett öppet flöde när nya uppdateringar hittas"
+   },
+   "opt_askOnUpdateLabel": {
+      "message": "Fråga innan uppdatering"
+   },
+   "opt_autoopenNewHelp": {
+      "description": "Help on auto-open new option",
+      "message": "Öppna nya objekt automatiskt när de anländer. VARNING: aktivera detta alternativ bara på flöden som sällan uppdateras!"
+   },
+   "opt_autoopenNewLabel": {
+      "description": "Label on auto-open new option",
+      "message": "Öppna nya objekt automatiskt"
+   },
+   "opt_availableFeedsHeader": {
+      "message": "Tillgängliga flöden"
+   },
+   "opt_availablesHelp": {
+      "message": "Flöden hittade i öppna flikar.\n Klick - prenumeration.\n Shift-klick - öppna földets URL"
+   },
+   "opt_badConfig": {
+      "message": "konfiguartionsdatan är ogiltig"
+   },
+   "opt_badOPML": {
+      "message": "OPML datan är ogiltig"
+   },
+   "opt_changesUnseenHelp": {
+      "message": "Om en ändring i ett existerande objekts innehåll ska få objektet att markeras som osedd"
+   },
+   "opt_changesUnseenLabel": {
+      "message": "Markera objektet som osedd vid innehållsändring"
+   },
+   "opt_clearConfig": {
+      "message": "Rensa"
+   },
+   "opt_colorLabel": {
+      "message": "färg:"
+   },
+   "opt_configHeader": {
+      "message": "Konfiguration - Import/Export"
+   },
+   "opt_configHelp": {
+      "message": "EXPORT: klicka på 'Hämta exportkonfiguration' eller 'OPML exportering' knappen, markera allt (genom kontextmenyn), kopiera markeringen (genom kontextmenyn) och klistra in texten i en orbehandlare (t.ex. Notepad).\n\nIMPORT: öppna upp en fil med exportdata i en orbehandlare (t.ex. Notepad), markera allt och kopiera-och-klistra innehållet i textlådan nedan.  Klicka sedan på 'Konfig. import' eller 'Importera OPML' knappen."
+   },
+   "opt_defaultLabel": {
+      "message": "standard:"
+   },
+   "opt_defaultTimeoutHelp": {
+      "message": "Standardvärde för timeout (i sekunder) vid anspråk på RSS-data"
+   },
+   "opt_defaultTimeoutLabel": {
+      "message": "Standard timeout"
+   },
+   "opt_defaultTtlHelp": {
+      "message": "Standard ‘livslängdsvärde' för flöden med TTL-baserade uppdateringsintervaller"
+   },
+   "opt_defaultTtlLabel": {
+      "message": "Standard TTL"
+   },
+   "opt_deleteButton": {
+      "message": "Radera"
+   },
+   "opt_displayOptionsHeader": {
+      "message": "Visa inställningar"
+   },
+   "opt_displayOptionsHelp": {
+      "message": "Ange om nya objekt ska visas först,\nom övriga rubriker skall gömmas när ett nytt flöde öppnas,\nom ett öppet flöde ska uppdateras eller information om tillgänglig uppdatering visas,\nom första flödet ska automatiskt öppnas i poppuppfönstret,\nom animering och ljudmeddelanden ska användas, och\növriga standardbegränsningar använda i RSS Live Links"
+   },
+   "opt_donateButton": {
+      "message": "Donera"
+   },
+   "opt_duplicateGroupName": {
+      "message": "En grupp med namnet '$name$' finns redan",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "News"
+         }
+      }
+   },
+   "opt_enterGroupName": {
+      "message": "Ange nytt gruppnamn..."
+   },
+   "opt_errorLabel": {
+      "message": "Fel:"
+   },
+   "opt_feedAddHeader": {
+      "message": "Lägg till ny prenumeration"
+   },
+   "opt_feedCancelButton": {
+      "message": "Avbryt"
+   },
+   "opt_feedFontsHeader": {
+      "message": "Rubrikalternativ-Flöden"
+   },
+   "opt_feedFontsHelp": {
+      "message": "Typsnitt och storlek för flödens rubriker samt typsnittsinställningar som används vid visning "
+   },
+   "opt_feedGroupSelectLabel": {
+      "message": "Grupp"
+   },
+   "opt_feedModHeader": {
+      "message": "Ändra abonnemangdetaljer"
+   },
+   "opt_feedModSaveButton": {
+      "message": "Spara"
+   },
+   "opt_feedNameLabel": {
+      "message": "Namn"
+   },
+   "opt_feedNetworkTimeoutHelp": {
+      "message": "Timeout-värdet (i sekunder) att användas vid begäran om flödets data.\nAnvänd 0 för standardvärde."
+   },
+   "opt_feedNetworkTimeoutLabel": {
+      "message": "Begär timeout"
+   },
+   "opt_feedNoGroupOption": {
+      "message": "ingen"
+   },
+   "opt_feedRefreshTimeHelp": {
+      "message": "Minuter mellan uppdatering av flödesdata.\nAnvänd 'TTL' vid användning av TTL-tagets värdet i själva datan."
+   },
+   "opt_feedRefreshTimeLabel": {
+      "message": "Uppdateringstid"
+   },
+   "opt_feedSortItemsHelp": {
+      "description": "Help on sort items option",
+      "message": "Kriteriet som används för att sortera objekten i detta flöde"
+   },
+   "opt_feedSortItemsLabel": {
+      "description": "Label on sort items option",
+      "message": "Kriterium för objektsortering"
+   },
+   "opt_feedUrlLabel": {
+      "message": "URL"
+   },
+   "opt_fixPopupClosesBugHelp": {
+      "message": "Kommer runt problemet med att poppuppfönstret stängs efter varje klick genom att de nya flikarna öppnas när du avsiktligen stängt poppuppfönstret."
+   },
+   "opt_fixPopupClosesBugLabel": {
+      "message": "Laga 'poppuppstängning vid varje klick'"
+   },
+   "opt_focusFirstTabHelp": {
+      "message": "Hoppa till första fliken som öppnades från poppuppfönstret när poppuppfönstret stängs"
+   },
+   "opt_focusFirstTabLabel": {
+      "message": "Hoppa till första fliken"
+   },
+   "opt_fontFamilyLabel": {
+      "message": "Typsnitt:"
+   },
+   "opt_fontOptionsHeader": {
+      "description": "Font options header",
+      "message": "Typsnittsinställningar"
+   },
+   "opt_fontSizeLabel": {
+      "message": "Storlek:"
+   },
+   "opt_getConfig": {
+      "message": "Hämta exportkonfiguration"
+   },
+   "opt_getConfigHelp": {
+      "description": "Help on config export button",
+      "message": "Klicka eller dra för att exportera konfigurationen till en fil"
+   },
+   "opt_getOPML": {
+      "message": "OPML exportering"
+   },
+   "opt_getOPMLHelp": {
+      "description": "Help on OPML export button",
+      "message": "Klicka eller dra för att exporterar prenumerationerna till en fil som OPML"
+   },
+   "opt_groupsButtonHelp": {
+      "message": "Ta bort grupp,\ndöp om grupp,\neller flytta markerad grupp upp eller ner i listan"
+   },
+   "opt_groupsHeader": {
+      "message": "Grupper"
+   },
+   "opt_groupsHelp": {
+      "message": "Definierade flödesgrupper\nKlicka för markering \nDubbelklicka för modifiering"
+   },
+   "opt_hideOnOpenHelp": {
+      "message": "Göm allt annat när ett flöde visas i poppuppfönstret"
+   },
+   "opt_hideOnOpenLabel": {
+      "message": "Göm allt annat vid visning"
+   },
+   "opt_importCancelButton": {
+      "message": "Avbryt"
+   },
+   "opt_importCnfHeader": {
+      "message": "Välj typ av import"
+   },
+   "opt_importCnfMsg": {
+      "description": "The entire body of the import confirmation dialog, including HTML markup",
+      "message": "Vill du\u003Cul>\u003Cli>\u003Cspan class=\"strong\">SAMMANFOGA\u003C/span> den importerade konfigurationen med den existerande konfigurationen, \u003Cspan class=\"emphasis\">eller\u003C/span>\u003C/li>\u003Cli>\u003Cspan class=\"strong\">ERSÄTTA\u003C/span>\tden existerande konfigurationen med den importerade?\u003C/li>\u003C/ul>"
+   },
+   "opt_importConfig": {
+      "description": "Label on import button",
+      "message": "Import av konfig. eller OPML"
+   },
+   "opt_importConfigHelp": {
+      "description": "Help on OPML export button",
+      "message": " Klicka eller dra en fil för att importera konfigurationerna i ett OPML fil"
+   },
+   "opt_importMergeButton": {
+      "message": "Sammanfoga"
+   },
+   "opt_importReplaceButton": {
+      "message": "Ersätt"
+   },
+   "opt_italicLabel": {
+      "message": "kursiv:"
+   },
+   "opt_itemFontsHeader": {
+      "message": "Rubrikalternativ-Objekt"
+   },
+   "opt_itemFontsHelp": {
+      "message": "Typsnitt och storlek för objektrubriker och typsnittsegenskaper att användas vid visning"
+   },
+   "opt_maintainBadgeHelp": {
+      "message": "Om ikonen som visar att nya uppdateringar är tillgängliga ska visas"
+   },
+   "opt_maintainBadgeLabel": {
+      "message": "Visa uppdateringsemblem"
+   },
+   "opt_maxConcurrentHelp": {
+      "message": "Max antal simultana uppdateringsförfrågan"
+   },
+   "opt_maxConcurrentLabel": {
+      "message": "Max simult. uppdateringar"
+   },
+   "opt_maxItemsCountHelp": {
+      "message": "Max antal objekt som visas för varje flöde"
+   },
+   "opt_maxItemsCountLabel": {
+      "message": "Max objekt per flöde"
+   },
+   "opt_modifyButton": {
+      "message": "Ändra"
+   },
+   "opt_modifyGroupName": {
+      "message": "Ändra gruppnamn"
+   },
+   "opt_networkOptionsHeader": {
+      "message": "Nätverksinställningar"
+   },
+   "opt_newAtTopHelp": {
+      "message": "Sortera om objekten så att alla osedda objekt visas högst upp på listan"
+   },
+   "opt_newAtTopLabel": {
+      "message": "Visa nya objekt först"
+   },
+   "opt_newtWorkOptionsHelp": {
+      "message": "Begränsa antalet samtidiga uppdateringsförfrågningar,\nange standard förfrågnings-timeout,\nange standard 'livslängd'"
+   },
+   "opt_notificationOptionsHeader": {
+      "message": "Meddelandealternativ"
+   },
+   "opt_notificationOptionsHelp": {
+      "message": "Konfigurera ljudmeddelandet och ikonanimationen"
+   },
+   "opt_openFirstHelp": {
+      "message": "Automatiskt öppna första flödet i listan med osedda objekt när poppuppfönstret öppnas"
+   },
+   "opt_openFirstLabel": {
+      "message": "Öppna första osedda flöde"
+   },
+   "opt_optionsHeader": {
+      "description": "Mani options header",
+      "message": "Alternativ"
+   },
+   "opt_optionsSavedMsg": {
+      "message": "Inställningar sparade."
+   },
+   "opt_otherOptionsHeader": {
+      "description": "Other options header",
+      "message": "Övriga inställningar"
+   },
+   "opt_pageHeader": {
+      "message": "Inställningar"
+   },
+   "opt_playSoundHelp": {
+      "message": "Spela upp en ljudsignal när uppdateringar har hittats"
+   },
+   "opt_playSoundLabel": {
+      "message": "Ljudmeddelande"
+   },
+   "opt_popUpHeightLabel": {
+      "message": "Poppuppfönstrets max höjd"
+   },
+   "opt_popUpWidthLabel": {
+      "message": "Poppuppfönstrets bredd"
+   },
+   "opt_popupBehaviourHeader": {
+      "description": "Popup behaviour section header",
+      "message": "Poppuppfönstrets beteende"
+   },
+   "opt_popupContentHeader": {
+      "description": "Poppuppfönstrets innehåll",
+      "message": "Poppuppfönstrets innehåll"
+   },
+   "opt_popupDensityHelp": {
+      "message": "Ange visningsläget på det som ska visas i poppuppfönstret."
+   },
+   "opt_popupDensityLabel": {
+      "message": "Poppuppfönstrets visningsläge"
+   },
+   "opt_popupDimsHeader": {
+      "description": "Popup dimensions section header",
+      "message": "Poppuppfönstrets dimensioner"
+   },
+   "opt_popupHeightHelp": {
+      "message": "Ange poppuppfönstrets max höjd i pixlar"
+   },
+   "opt_popupWidthHelp": {
+      "message": "Ange poppuppfönstrets bredd i pixlar"
+   },
+   "opt_readLabel": {
+      "message": "Läs:"
+   },
+   "opt_refreshButton": {
+      "message": "Uppdatera inställningar"
+   },
+   "opt_refreshButtonHelp": {
+      "message": "Uppdatera alla inställningar"
+   },
+   "opt_saveButton": {
+      "message": "Spara inställningar"
+   },
+   "opt_saveButtonHelp": {
+      "message": "Spara ändringar"
+   },
+   "opt_setConfig": {
+      "message": "Konfig. import"
+   },
+   "opt_setOPML": {
+      "message": "Importera OPML"
+   },
+   "opt_showAvailableHelp": {
+      "message": "Om menyraden 'Tillgängliga flöden' ska visas i poppuppfönstret"
+   },
+   "opt_showAvailableLabel": {
+      "message": "Visa 'Tillgängliga flöden'"
+   },
+   "opt_singleItemHelp": {
+      "message": "Stäng poppuppfönstret när ett objekt öppnas\n(ctrl-klick för att hålla det öppet)"
+   },
+   "opt_singleItemLabel": {
+      "message": "Enskilt objektläge"
+   },
+   "opt_sortItemsHelp": {
+      "description": "Help on default sort items option",
+      "message": "Standardkriteriet som används för att sortera objekten i ett flöde"
+   },
+   "opt_sortItemsLabel": {
+      "description": "Label on default sort items option",
+      "message": "Standardkriterium för objektsortering"
+   },
+   "opt_soundFileHelp": {
+      "message": "Ljudsignal som ska spelas (välj ett för att lyssna till det)"
+   },
+   "opt_soundFileLabel": {
+      "message": "Ljudsignal"
+   },
+   "opt_subsAndGroupsHeader": {
+      "description": "Subscriptions and Groups header",
+      "message": "Prenumerationer och grupper"
+   },
+   "opt_subsButtonHelp": {
+      "message": "Avsluta prenumeration för valda flöden,\nändra vald flöde,\neller flytta vald flöde upp eller ner i listan"
+   },
+   "opt_subsTTNextTag": {
+      "message": "Nästa uppdatering"
+   },
+   "opt_subsTTPublishedTag": {
+      "message": "Publicerad"
+   },
+   "opt_subsTTTtlAbsent": {
+      "message": "TTL: ej närvarande"
+   },
+   "opt_subsTTTtlPresent": {
+      "message": "TTL: $ttl$ minuter",
+      "placeholders": {
+         "ttl": {
+            "content": "$1",
+            "example": "5"
+         }
+      }
+   },
+   "opt_subscriptionsHeader": {
+      "message": "Prenumerationer"
+   },
+   "opt_subscriptionsHelp": {
+      "message": "Flöden du prenumererar på\nKlicka för att välja\nDubbelklicka för att ändra"
+   },
+   "opt_title": {
+      "message": "RSS Live Links inställningar"
+   },
+   "opt_unlimitedCallsHelp": {
+      "message": "Inga begränsningar på antal samtidiga uppdateringsförfrågan"
+   },
+   "opt_unlimitedItemsHelp": {
+      "message": "Ingen begränsning på antal objekt visade i ett flöde"
+   },
+   "opt_unlimitedLabel": {
+      "message": "obegränsat"
+   },
+   "opt_unreadLabel": {
+      "message": "Oläst:"
+   },
+   "opt_unseenLabel": {
+      "message": "Osedd:"
+   },
+   "opt_updateAvailable": {
+      "message": "Uppdatera"
+   },
+   "opt_updateAvailableHelp": {
+      "message": "Klicka för att uppdatera tillgängliga flöden"
+   },
+   "opt_useAvailableIconHelp": {
+      "message": "När flöden hittas vars prenumeration har avslutats, använd alternativ ikon"
+   },
+   "opt_useAvailableIconLabel": {
+      "message": "Använd 'alt.' ikon"
+   },
+   "opt_useBookmarkFolderHelp": {
+      "message": "Om detta flöde ska ha en bokmärkesmapp kopplad till sig"
+   },
+   "opt_useBookmarkFolderLabel": {
+      "message": "Använd bokmärkesmappen"
+   },
+   "opt_useGroupsHelp": {
+      "message": "Om flödesgrupper ska visas i poppuppfönstret"
+   },
+   "opt_useGroupsLabel": {
+      "message": "Visa flödesgrupper"
+   },
+   "opt_useWebWorkerHelp": {
+      "description": "Help on use-web-worker option",
+      "message": "Uppdateringar utförs i bakgrunden. Detta KAN förbättra responstiden av pop-up fönstret (särskilt om du har mer än 30 flöden), men KOMMER att trefaldiga minnesanvändningen av RSS Live Links."
+   },
+   "opt_useWebWorkerLabel": {
+      "description": "Label on use-web-worker option",
+      "message": "Utför uppdateringar i bakgrunden (omstart behövs)"
+   },
+   "opt_weightLabel": {
+      "message": "tyngd:"
+   },
+   "reload_all_tooltip": {
+      "description": "Tooltip on 'reload all' tool",
+      "message": "Ladda om datan i alla flöden"
+   },
+   "reload_name": {
+      "description": "Name on Reload link",
+      "message": "Ladda om"
+   },
+   "reload_tooltip": {
+      "description": "Tooltip on Reload link",
+      "message": "Ladda om flödesdatan"
+   },
+   "right_arrow_tooltip": {
+      "description": "Tooltip on right arrow in hids-others-on-open mode",
+      "message": "Växla till nästa osedda flöde\nShift: växla till nästa flöde"
+   },
+   "save_button": {
+      "description": "Text on a save button",
+      "message": "Spara"
+   },
+   "subscribe_already": {
+      "description": "Message displayed when subscription dialog is called on URL that is already subscribed",
+      "message": "RSS Live Links prenumererar redan till denna adress som\n\n $name$",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "BBC News"
+         }
+      }
+   },
+   "subscribe_dlg_text": {
+      "description": "Text in the subscription adder dialog",
+      "message": "Ange namnet för din nya prenumeration"
+   },
+   "subscribe_header": {
+      "description": "Header on subscription adder page",
+      "message": "Prenumerationstilläggaren"
+   },
+   "subscribe_title": {
+      "description": "Title on subscription adder page and dialog",
+      "message": "RSS Live Links Prenumerationstilläggare"
+   },
+   "subscribed_feed_tooltip": {
+      "description": "Tooltip on an available feed name when it has already been subscribed to",
+      "message": "Redan prenumererad"
+   },
+   "updates_pending_msg": {
+      "description": "Message when updates are pending on an open feed",
+      "message": "Uppdateringar väntar. Clicka för att uppdatera"
+   },
+   "version_msg_x_tooltip": {
+      "description": "Tooltip on the version message close icon",
+      "message": "Stäng meddelandefönster"
+   },
+   "version_updated": {
+      "description": "Message displayed when the extension has been installed or updated",
+      "message": "Du har just installerat eller uppgraderat till,\u003Cbr>RSS Live Links version $version$.\u003Cbr>Klicka här för att se versionsinformationen.\u003Cbr>Nu kan du stödja utvecklingen av RSS Live Links genom att skänka pengar via inställningssidan.",
+      "placeholders": {
+         "version": {
+            "content": "$1",
+            "example": "backgroundPage.manifest.version"
+         }
+      }
+   }
+}

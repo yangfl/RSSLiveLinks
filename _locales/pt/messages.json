@@ -1,0 +1,744 @@
+{
+   "allmark_tooltip": {
+      "description": "Tooltip on 'mark all' tool",
+      "message": "clique em: Marcar todos os feeds como vistos\nalt-shift-click: Marcar todos os feeds como lidos"
+   },
+   "allread_tooltip": {
+      "description": "Tooltip on 'read all' tool",
+      "message": "clique em: Abrir todos os itens novos\nshift-click: Abrir todos os itens por ler"
+   },
+   "available_feeds_title": {
+      "description": "Title of available feeds section",
+      "message": "Feeds Disponiveis"
+   },
+   "available_feeds_tooltip": {
+      "description": "Tooltip on icon of Available Feeds section",
+      "message": "Lista de feeds disponíveis nas abas abertas. Clique para adicionar.\nanular subscrição: $unsubscribed$, subscritos: $subscribed$",
+      "placeholders": {
+         "subscribed": {
+            "content": "$2",
+            "example": "2"
+         },
+         "unsubscribed": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "close_button": {
+      "description": "Text on a close button",
+      "message": "Fechar"
+   },
+   "close_popup_tooltip": {
+      "description": "Tooltip on 'close popup' tool",
+      "message": "Fechar janela popup"
+   },
+   "enable_sound": {
+      "description": "Tooltip on enable sound icon",
+      "message": "Activar notificação sonora"
+   },
+   "extDesc": {
+      "description": "Extension description",
+      "message": "Fornece links tipo favoritos de itens de RSS feeds subscritos"
+   },
+   "extName": {
+      "description": "Extension name",
+      "message": "RSS Live Links"
+   },
+   "extTitle": {
+      "description": "Extension title",
+      "message": "RSS Live Links"
+   },
+   "feed_home_name": {
+      "description": "Name on Feed Home link",
+      "message": "Origem do Feed"
+   },
+   "feed_home_tooltip": {
+      "description": "Tooltip on Feed Home link",
+      "message": "Abrir a origem do feed numa aba"
+   },
+   "feed_tooltip_error": {
+      "description": "Error message on tooltip on feed icon",
+      "message": "Erro nos Feeds"
+   },
+   "feed_tooltip_items": {
+      "description": "Item-related tooltip on a feed icon",
+      "message": "Items: $item_count$, não vistos: $unseen_count$, não lidos: $unread_count$",
+      "placeholders": {
+         "item_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "feed_tooltip_pubdate": {
+      "description": "Publication date on tooltip on a feed icon",
+      "message": "Data Publicação: $parm$",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "feed_tooltip_ttl": {
+      "description": "TTL tooltip on a feed icon",
+      "message": "Tempo para actualizar Feeds: $parm$ minutes",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "feed_tooltip_upd": {
+      "description": "Next update tooltip on a feed icon",
+      "message": "Próxima actualização: $parm$",
+      "placeholders": {
+         "parm": {
+            "content": "$1"
+         }
+      }
+   },
+   "group_name_tag": {
+      "description": "Tag on a group's title",
+      "message": "Grupo"
+   },
+   "group_tooltip_errors": {
+      "description": "Error-related tooltip on a group icon",
+      "message": "Feeds em erro: $error_count$",
+      "placeholders": {
+         "error_count": {
+            "content": "$1",
+            "example": "1"
+         }
+      }
+   },
+   "group_tooltip_feeds": {
+      "description": "Feed-related tooltip on a group icon",
+      "message": "Feeds: $feed_count$, Não vistos: $unseen_count$, Não lidos: $unread_count$",
+      "placeholders": {
+         "feed_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "group_tooltip_items": {
+      "description": "Item-related tooltip on a group icon",
+      "message": "Items: $item_count$, Não vistos: $unseen_count$, Não lidos: $unread_count$",
+      "placeholders": {
+         "item_count": {
+            "content": "$1",
+            "example": "1"
+         },
+         "unread_count": {
+            "content": "$3",
+            "example": "1"
+         },
+         "unseen_count": {
+            "content": "$2",
+            "example": "1"
+         }
+      }
+   },
+   "icon_1_feed_error": {
+      "description": "RSSLL Icon tooltip - one feed in error",
+      "message": "1 feed em erro"
+   },
+   "icon_1_feed_updated": {
+      "description": "RSSLL Icon tooltip - one feed updated",
+      "message": "1 feed actualizado"
+   },
+   "icon_n_feeds_error": {
+      "description": "RSSLL Icon tooltip - n feeds in error",
+      "message": "$errors$ feeds em erro",
+      "placeholders": {
+         "errors": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "icon_n_feeds_updated": {
+      "description": "RSSLL Icon tooltip - n feeds updated",
+      "message": "$updated$ feeds actualizados",
+      "placeholders": {
+         "updated": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "import_error": {
+      "message": "Importar dados que não parecem ter sido exportados a partir de outra instalação RSS Links Live"
+   },
+   "item_pubdate_tag": {
+      "description": "Tag on an item's tooltip when displaying a publication date",
+      "message": "Data publicação"
+   },
+   "left_arrow_tooltip": {
+      "description": "Tooltip on left arrow in hids-others-on-open mode",
+      "message": "Mudar para o Feed anterior por ver\nShift: Mudar para o Feed anterior"
+   },
+   "mark_read_name": {
+      "description": "Name on Mark read link",
+      "message": "Marcar como lido"
+   },
+   "mark_read_tooltip": {
+      "description": "Tooltip on Mark read link",
+      "message": "Marcar todos os items como lidos e fechar o Feed\n(ctrl-click para manter aberto)"
+   },
+   "multiple_feeds_loading": {
+      "description": "Message displayed when more than one feed is loading",
+      "message": "$number$ feeds carregando...",
+      "placeholders": {
+         "number": {
+            "content": "$1",
+            "example": "2"
+         }
+      }
+   },
+   "mute_sound": {
+      "description": "Tooltip on mute sound icon",
+      "message": "Notificação sonora desligada"
+   },
+   "no_available_feeds": {
+      "description": "Content of Available Feeds section when no feeds have been detected",
+      "message": "Não há Feeds disponiveis nas abas abertas"
+   },
+   "no_feeds": {
+      "description": "Message displayed when no feeds have been configured (e.g. a fresh installation",
+      "message": "Não tem os Feeds configurados"
+   },
+   "one_feed_loading": {
+      "description": "Message displayed when one feed is loading",
+      "message": "1 feed carregando..."
+   },
+   "open_help_tooltip": {
+      "description": "Tooltip on 'open help' tool",
+      "message": "Abrir a ajuda de RSS Live Links numa aba"
+   },
+   "open_name": {
+      "description": "Name on Open link",
+      "message": "Abrir"
+   },
+   "open_options_tooltip": {
+      "description": "Tooltip on 'open options' tool",
+      "message": "Abrir a página de opcões numa aba"
+   },
+   "open_tooltip": {
+      "description": "Tooltip on Open link",
+      "message": "clique em: Abrir todos os itens novos\nshift-click: Abrir todos os itens por ler\nalt-click: Abrir tudo nas abas"
+   },
+   "opt_addButton": {
+      "message": "+"
+   },
+   "opt_addButtonHelp": {
+      "message": "Clique para manualmente subscrever um novo Feed"
+   },
+   "opt_alreadySubscribed": {
+      "message": "Este Feed já se encontra subscrito"
+   },
+   "opt_animateButtonHelp": {
+      "message": "Animação do botão de RSS Live Links quando são encontradas actualizações dos Feeds"
+   },
+   "opt_animateButtonLabel": {
+      "message": "Animação do Icone"
+   },
+   "opt_askOnUpdateHelp": {
+      "message": "Perguntar antes de refrescar um Feed aberto quando são encontradas actualizações"
+   },
+   "opt_askOnUpdateLabel": {
+      "message": "Perguntar para refrescar"
+   },
+   "opt_availableFeedsHeader": {
+      "message": "Feeds disponiveis"
+   },
+   "opt_availablesHelp": {
+      "message": "Feeds encontrados nas abas abertas.\nClick para subscrever.\nShift-Click para abrir o link do Feed"
+   },
+   "opt_badConfig": {
+      "message": "Os dados de configuração não são válidos"
+   },
+   "opt_badOPML": {
+      "message": "Os dados OPML não são válidos"
+   },
+   "opt_changesUnseenHelp": {
+      "message": "Seja ou não uma mudança no conteúdo de um item fará com que ele volte ao estado de não visto."
+   },
+   "opt_changesUnseenLabel": {
+      "message": "Marcar items como não vistos da presente selecção."
+   },
+   "opt_clearConfig": {
+      "message": "Limpar"
+   },
+   "opt_colorLabel": {
+      "message": "Cor:"
+   },
+   "opt_configHeader": {
+      "message": "Configuração Importar/Exportar"
+   },
+   "opt_configHelp": {
+      "message": "EXPORTAR: prime o botão ‘Exportar configuração’ ou ‘Exportar OPML’, seleciona tudo (usando o menu de contexto), copia a seleção (usando o menu de contexto), e cola num editor de texto (p.ex notepad).\n\nIMPORTAR: abre o ficheiro com os dados exportados previamente, seleciona tudo, copia e cola na caixa de texto abaixo, de seguida clica em ‘Importar configuração’ ou ‘Importar OPML’ de acordo com o pretendido."
+   },
+   "opt_defaultLabel": {
+      "message": "padrão:"
+   },
+   "opt_defaultTimeoutHelp": {
+      "message": "O tempo de espera padrão, em segundos, para tentar actualizar Feeds"
+   },
+   "opt_defaultTimeoutLabel": {
+      "message": "Tempo de espera"
+   },
+   "opt_defaultTtlHelp": {
+      "message": "O 'Time to live' padrão para Feeds que usam TTL para definir intervalos de refrescamento"
+   },
+   "opt_defaultTtlLabel": {
+      "message": "TTL padrão"
+   },
+   "opt_deleteButton": {
+      "message": "Apagar"
+   },
+   "opt_displayOptionsHeader": {
+      "message": "Opções de Visualização"
+   },
+   "opt_displayOptionsHelp": {
+      "message": "Definir se os novos items devem aparecer primeiro,\nse (ou não) esconder os outros titulos de Feeds quando um Feed está aberto,\nQuando actualizar um Feed aberto ou notificar apenas a existência de actualizações,\nse (ou não) automaticamente abrir o primeiro Feed na janela de Feeds,\nse (ou não) usar a animação e notificação sonora, e\nvariados limites padrão usados pelo RSS Live Links"
+   },
+   "opt_donateButton": {
+      "message": "Doar"
+   },
+   "opt_duplicateGroupName": {
+      "message": "Um grupo com o nome '$name$' já existe",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "News"
+         }
+      }
+   },
+   "opt_enterGroupName": {
+      "message": "Introduza o nome do novo grupo..."
+   },
+   "opt_errorLabel": {
+      "message": "Erro:"
+   },
+   "opt_feedAddHeader": {
+      "message": "Adicionar nova subscrição de Feed"
+   },
+   "opt_feedCancelButton": {
+      "message": "Cancelar"
+   },
+   "opt_feedFontsHelp": {
+      "message": "A fonte e o tamanho para os titulos dos Feeds, e as caracteristicas das fontes a usar para cada estado de leitura"
+   },
+   "opt_feedGroupSelectLabel": {
+      "message": "Grupo"
+   },
+   "opt_feedModHeader": {
+      "message": "Modificar os detalhes da subscrição do Feed"
+   },
+   "opt_feedModSaveButton": {
+      "message": "Salvar"
+   },
+   "opt_feedNameLabel": {
+      "message": "Nome"
+   },
+   "opt_feedNetworkTimeoutHelp": {
+      "message": "O tempo de espera, em segundos, para aplicar aos pedidos de Feeds.\nColocar 0 se quiser usar o valor padrão."
+   },
+   "opt_feedNetworkTimeoutLabel": {
+      "message": "Tempo de espera pedido"
+   },
+   "opt_feedNoGroupOption": {
+      "message": "Nenhum"
+   },
+   "opt_feedRefreshTimeHelp": {
+      "message": "O tempo em minutos entre cada refrescamento de dados.\nUse 'TTL' se quiser usar o valor da tag TTL tag."
+   },
+   "opt_feedRefreshTimeLabel": {
+      "message": "Tempo de refrescamento"
+   },
+   "opt_feedUrlLabel": {
+      "message": "URL"
+   },
+   "opt_firstTabHeader": {
+      "message": "Opções dos titulos dos Feeds"
+   },
+   "opt_focusFirstTabHelp": {
+      "message": "Foco na primeira aba aberta quando a janela é fechada"
+   },
+   "opt_focusFirstTabLabel": {
+      "message": "Foco na primeira aba"
+   },
+   "opt_fontFamilyLabel": {
+      "message": "Familia:"
+   },
+   "opt_fontOptionsHeader": {
+      "description": "Font options header",
+      "message": "Opções de Fonte"
+   },
+   "opt_fontSizeLabel": {
+      "message": "Tamanho:"
+   },
+   "opt_getConfig": {
+      "message": "Exportar Opções"
+   },
+   "opt_getConfigHelp": {
+      "description": "Help on config export button",
+      "message": "Prime, ou captura, para exportar a tua configuração num ficheiro"
+   },
+   "opt_getOPML": {
+      "message": "Exportar OPML"
+   },
+   "opt_getOPMLHelp": {
+      "description": "Help on OPML export button",
+      "message": "Prime, ou captura, para exportar as tuas subscrições num ficheiro, como OPML"
+   },
+   "opt_groupsButtonHelp": {
+      "message": "Remover um grupo,\nmudar o nome de um grupo,\nou mover o grupo seleccionado para cima ou para baixo na lista"
+   },
+   "opt_groupsHeader": {
+      "message": "Grupos"
+   },
+   "opt_groupsHelp": {
+      "message": "Grupos de Feeds definidos\nClique para seleccionar\nDuplo clique para modificar"
+   },
+   "opt_hideOnOpenHelp": {
+      "message": "Esconder todos os titulos de Feeds quando um Feed é aberto"
+   },
+   "opt_hideOnOpenLabel": {
+      "message": "Esconder feeds na abertura"
+   },
+   "opt_importCancelButton": {
+      "message": "Cancelar"
+   },
+   "opt_importCnfHeader": {
+      "message": "Seleccionar tipo de Importação"
+   },
+   "opt_importCnfMsg": {
+      "description": "The entire body of the import confirmation dialog, including HTML markup",
+      "message": "Deseja que\u003Cul>\u003Cli>\u003Cspan class=\"strong\">MERGE\u003C/span> a configuração importada com a actual, \u003Cspan class=\"emphasis\">or\u003C/span>\u003C/li>\u003Cli>\u003Cspan class=\"strong\">REPLACE\u003C/span>\ta configuração actual com a importada?\u003C/li>\u003C/ul>"
+   },
+   "opt_importConfig": {
+      "description": "Label on import button",
+      "message": "Importar Opções ou OPML"
+   },
+   "opt_importConfigHelp": {
+      "description": "Help on OPML export button",
+      "message": "Prime, ou despeja um ficheiro, para importar a configuração de ficheiro OPML"
+   },
+   "opt_importMergeButton": {
+      "message": "Juntar"
+   },
+   "opt_importReplaceButton": {
+      "message": "Substituir"
+   },
+   "opt_italicLabel": {
+      "message": "italico:"
+   },
+   "opt_itemFontsHelp": {
+      "message": "A fonte e o tamanho para os titulos dos items, e caracteristicas a usar para cada estado de leitura"
+   },
+   "opt_lastTabHeader": {
+      "message": "Opções dos titulos dos Items"
+   },
+   "opt_maintainBadgeHelp": {
+      "message": "Manter ou não o crachá no icone de notificações de actualizações"
+   },
+   "opt_maintainBadgeLabel": {
+      "message": "Mostrar crachá actualizações"
+   },
+   "opt_maxConcurrentHelp": {
+      "message": "Numero máximo de actualizações em simultaneo"
+   },
+   "opt_maxConcurrentLabel": {
+      "message": "Max.Actualizações sim."
+   },
+   "opt_maxItemsCountHelp": {
+      "message": "Numero máximo de items mostrados para cada Feed"
+   },
+   "opt_maxItemsCountLabel": {
+      "message": "Max. items por feed"
+   },
+   "opt_modifyButton": {
+      "message": "Modificar"
+   },
+   "opt_modifyGroupName": {
+      "message": "Modificar o nome do grupo"
+   },
+   "opt_networkOptionsHeader": {
+      "message": "Opções de rede"
+   },
+   "opt_newAtTopHelp": {
+      "message": "Reordenar os Feeds de forma a que os items não vistos apareçam no topo"
+   },
+   "opt_newAtTopLabel": {
+      "message": "Mostrar os novos primeiro"
+   },
+   "opt_newtWorkOptionsHelp": {
+      "message": "Limitar o numero de actualizações simultaneas,\nespecificar o tempo de espera máximo,\nespecificar o 'time-to-live' padrão"
+   },
+   "opt_notificationOptionsHeader": {
+      "message": "Opções de notificação"
+   },
+   "opt_notificationOptionsHelp": {
+      "message": "Configurar notificação sonora e animação do icone"
+   },
+   "opt_openFirstHelp": {
+      "message": "Automaticamente abrir o primeiro Feed da lista com items por ver, ao abrir a janela"
+   },
+   "opt_openFirstLabel": {
+      "message": "Abrir primeiro Feed não visto"
+   },
+   "opt_optionsHeader": {
+      "description": "Mani options header",
+      "message": "Opções"
+   },
+   "opt_optionsSavedMsg": {
+      "message": "Opções salvas."
+   },
+   "opt_otherOptionsHeader": {
+      "description": "Other options header",
+      "message": "Outras Opções"
+   },
+   "opt_pageHeader": {
+      "message": "Opções"
+   },
+   "opt_playSoundHelp": {
+      "message": "Tocar som quando houver actualizações de Feeds"
+   },
+   "opt_playSoundLabel": {
+      "message": "Notificação sonora"
+   },
+   "opt_popUpHeightLabel": {
+      "message": "Altura máxima da janela"
+   },
+   "opt_popUpWidthLabel": {
+      "message": "Largura da janela"
+   },
+   "opt_popupBehaviourHeader": {
+      "description": "Popup behaviour section header",
+      "message": "Comportamento da janela Pop-up"
+   },
+   "opt_popupContentHeader": {
+      "description": "Popup content section header",
+      "message": "Conteudo da janela Pop-up"
+   },
+   "opt_popupDimsHeader": {
+      "description": "Popup dimensions section header",
+      "message": "Dimensões da janela Pop-up"
+   },
+   "opt_popupHeightHelp": {
+      "message": "Coloque a altura máxima da janela em pixels"
+   },
+   "opt_popupWidthHelp": {
+      "message": "Coloque a largura da janela em pixels"
+   },
+   "opt_readLabel": {
+      "message": "Ler:"
+   },
+   "opt_refreshButton": {
+      "message": "Refrescar Opções"
+   },
+   "opt_refreshButtonHelp": {
+      "message": "Refrescar todas as opções"
+   },
+   "opt_saveButton": {
+      "message": "Salvar Opções"
+   },
+   "opt_saveButtonHelp": {
+      "message": "Salvar alterações"
+   },
+   "opt_saveFeedXMLConfirm": {
+      "message": "Voce tem mais de 30 feeds.\n\nActivando esta opção PODE causar instabilidade.\n\nTem a certeza que pretende activar esta opção?"
+   },
+   "opt_saveFeedXMLHelp": {
+      "message": "Guardar os dados XML dos feeds localmente. Aumenta a velocidade no arranque MAS pode exceder a capacidade do disco. Não usar se tiver mais de 30 Feeds"
+   },
+   "opt_saveFeedXMLLabel": {
+      "message": "Salvar XML dos Feeds"
+   },
+   "opt_saveFeedXMLWarn": {
+      "message": "RSS Live links não está a conseguir gerir a informação vista, provavelmente por falta de espaço em disco.\n\nPara resolver isto, desactive a opção de guardar o XML dos feeds localmente no painel de opções."
+   },
+   "opt_setConfig": {
+      "message": "Importar Configuração"
+   },
+   "opt_setOPML": {
+      "message": "Importar OPML"
+   },
+   "opt_showAvailableHelp": {
+      "message": "Se (ou não) mostrar o links de Feeds disponiveis na janela"
+   },
+   "opt_showAvailableLabel": {
+      "message": "Mostrar Feeds disponiveis"
+   },
+   "opt_singleItemHelp": {
+      "message": "Feche a janela ao abrir um item (use ctrl-click para manter a janela aberta)"
+   },
+   "opt_singleItemLabel": {
+      "message": "Modo item unico"
+   },
+   "opt_soundFileHelp": {
+      "message": "A notificação sonora a usar (escolha uma nova para ouvir)"
+   },
+   "opt_soundFileLabel": {
+      "message": "Notificação sonora"
+   },
+   "opt_subsAndGroupsHeader": {
+      "description": "Subscriptions and Groups header",
+      "message": "Subscrições e Grupos"
+   },
+   "opt_subsButtonHelp": {
+      "message": "Anular subscrição dos Feeds seleccionados, \nmodificar Feed seleccionado,\nou mover Feed seleccionado para cima ou para baixo na lista"
+   },
+   "opt_subsTTNextTag": {
+      "message": "Próxima actualização"
+   },
+   "opt_subsTTPublishedTag": {
+      "message": "Publicado"
+   },
+   "opt_subsTTTtlAbsent": {
+      "message": "TTL: ausente"
+   },
+   "opt_subsTTTtlPresent": {
+      "message": "TTL: $ttl$ minutos",
+      "placeholders": {
+         "ttl": {
+            "content": "$1",
+            "example": "5"
+         }
+      }
+   },
+   "opt_subscriptionsHeader": {
+      "message": "Subscrições"
+   },
+   "opt_subscriptionsHelp": {
+      "message": "Feeds que você subscreveu\nClique para seleccionar\nDuplo-Click para modificar"
+   },
+   "opt_title": {
+      "message": "Opções de RSS Live Links"
+   },
+   "opt_unlimitedCallsHelp": {
+      "message": "Sem limite do numero de actualizações simultaneas"
+   },
+   "opt_unlimitedItemsHelp": {
+      "message": "Sem limite no numero de items mostrados por Feed"
+   },
+   "opt_unlimitedLabel": {
+      "message": "Ilimitado"
+   },
+   "opt_unreadLabel": {
+      "message": "Por ler:"
+   },
+   "opt_unseenLabel": {
+      "message": "Por ver:"
+   },
+   "opt_updateAvailable": {
+      "message": "Refrescar"
+   },
+   "opt_updateAvailableHelp": {
+      "message": "Clique para refrescar Feeds"
+   },
+   "opt_useAvailableIconHelp": {
+      "message": "Quando estiverem disponiveis Feeds não subscritos usar a imagem alternativa do botão."
+   },
+   "opt_useAvailableIconLabel": {
+      "message": "Usar icone disp."
+   },
+   "opt_useBookmarkFolderHelp": {
+      "message": "Se (ou não) este Feed deve ter uma pasta de favoritos associada"
+   },
+   "opt_useBookmarkFolderLabel": {
+      "message": "Use pasta de favoritos"
+   },
+   "opt_useGroupsHelp": {
+      "message": "Mostrar grupos dos feeds na janela"
+   },
+   "opt_useGroupsLabel": {
+      "message": "Mostrar grupos dos Feeds"
+   },
+   "opt_weightLabel": {
+      "message": "Altura:"
+   },
+   "reload_all_tooltip": {
+      "description": "Tooltip on 'reload all' tool",
+      "message": "Refrescar toda a informação dos Feeds"
+   },
+   "reload_name": {
+      "description": "Name on Reload link",
+      "message": "Refrescar"
+   },
+   "reload_tooltip": {
+      "description": "Tooltip on Reload link",
+      "message": "Refrescar informação dos Feeds"
+   },
+   "right_arrow_tooltip": {
+      "description": "Tooltip on right arrow in hids-others-on-open mode",
+      "message": "Mudar para o próximo Feed não visto\nShift: mudar para próximo Feed"
+   },
+   "save_button": {
+      "description": "Text on a save button",
+      "message": "Salvar"
+   },
+   "subscribe_already": {
+      "description": "Message displayed when subscription dialog is called on URL that is already subscribed",
+      "message": "RSS Live Links já tem esta subscrição como\n\n $name$",
+      "placeholders": {
+         "name": {
+            "content": "$1",
+            "example": "BBC News"
+         }
+      }
+   },
+   "subscribe_dlg_text": {
+      "description": "Text in the subscription adder dialog",
+      "message": "Introduza um noma para a sua nova subscrição"
+   },
+   "subscribe_header": {
+      "description": "Header on subscription adder page",
+      "message": "Subscrição"
+   },
+   "subscribe_title": {
+      "description": "Title on subscription adder page and dialog",
+      "message": "RSS Live Links Subscrição Adder"
+   },
+   "subscribed_feed_tooltip": {
+      "description": "Tooltip on an available feed name when it has already been subscribed to",
+      "message": "Já subscrito"
+   },
+   "updates_pending_msg": {
+      "description": "Message when updates are pending on an open feed",
+      "message": "Actualizações pendentes. Clique para refrescar"
+   },
+   "version_msg_x_tooltip": {
+      "description": "Tooltip on the version message close icon",
+      "message": "Fechar mensagem"
+   },
+   "version_updated": {
+      "description": "Message displayed when the extension has been installed or updated",
+      "message": "Acabou de instalar, ou actualizar para,\u003Cbr>RSS Live Links version $version$.\u003Cbr>Clique para ver as alterações.\u003Cbr>Agora pode apoiar o desenvolvimento de RSS Live Links doando algum dinheiro através da página de opções.",
+      "placeholders": {
+         "version": {
+            "content": "$1",
+            "example": "backgroundPage.manifest.version"
+         }
+      }
+   }
+}
