@@ -44,16 +44,14 @@ function addsubscription()
 {
 	setStaticEventHandlers();
 	backgroundPage = chrome.extension.getBackgroundPage();
+
 	pageTitle.innerText = chrome.i18n.getMessage("subscribe_title");
 	subsAdderHeader.innerText = chrome.i18n.getMessage("subscribe_header");
-
 	dialogHeader.innerText = chrome.i18n.getMessage("subscribe_title");
-
 	feedSortItemsHelp.title = chrome.i18n.getMessage("subscribe_dlg_text");
-
 	feedNameLabel.innerText = chrome.i18n.getMessage("opt_feedNameLabel");
-
 	feedGroupSelectLabel.innerText =  chrome.i18n.getMessage("opt_feedGroupSelectLabel");
+
 	var groupArray = [];
 	var options = backgroundPage.options;
 	for (var groupName in options.groups)
@@ -143,7 +141,7 @@ function save() {
 
 function closeWindow() {
 	chrome.tabs.getSelected(
-		undefined,			 
+		undefined,
 		function(tab) {
 			chrome.tabs.remove(tab.id);
 		}

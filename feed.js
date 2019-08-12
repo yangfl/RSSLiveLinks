@@ -130,7 +130,7 @@ Feed.prototype.hasUnread = function() {
 }
 
 Feed.prototype.getUnreadCount = function() {
-	return this._unreadCount
+	return this._unreadCount;
 }
 
 Feed.prototype.getItemByGuid =function (guid) {
@@ -192,7 +192,7 @@ Feed.prototype.setExpireTime = function() {
 		this.setExpireTimeTTL()
 	} else {
 		var myDate=new Date();
-		myDate.setTime(this.updated.getTime()+(60000 * this.refreshTime));
+		myDate.setTime(this.updated.getTime() + (60000 * this.refreshTime));
 		this.expire = myDate;
 	}
 }
@@ -210,12 +210,23 @@ Feed.prototype.loadFeed = function(dfltTimeout) {
 		dfltTimeout = this.networkTimeout;
 	}
 
-	var request = { feed: this.data, url: this.url, name: this.name, timeout: dfltTimeout };
+	var request = {
+		feed: this.data,
+		url: this.url, name:
+		this.name,
+		timeout: dfltTimeout
+	};
 
 	if (!window.rssllWebWorker) {
 		localRunRequest("update_feed", request, this);
 	} else {
-		window.rssllWebWorker.runRequest("update_feed", request, this, handleFeedUpdateResponse, handleFeedUpdateError);
+		window.rssllWebWorker.runRequest(
+			"update_feed",
+			request,
+			this,
+			handleFeedUpdateResponse,
+			handleFeedUpdateError
+		);
 	}
 }
 

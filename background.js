@@ -608,7 +608,11 @@ function sortFeedItems(feedObject, itemArray) {
 			function(item1, item2) {
 				var title1 = getItemTitle(item1)
 				var title2 = getItemTitle(item2);
-				return (title1 ? (title2 ? title1.localeCompare(title2) : 1) : (title2 ? -1 : 0));
+				return (title1 ? (
+					title2 ? title1.localeCompare(title2) : 1
+				) : (
+					title2 ? -1 : 0
+				));
 			}
 		);
 	} else if (algorithm < 4) {
@@ -616,7 +620,11 @@ function sortFeedItems(feedObject, itemArray) {
 			function(item1, item2) {
 				var date1 = item1.pubDate;
 				var date2 = item2.pubdate;
-				var val = (date1 ? (date2 ? date1.getTime() - date2.getTime() : 1) : (date2 ? -1 : 0));
+				var val = (date1 ? (
+					date2 ? date1.getTime() - date2.getTime() : 1
+				) : (
+					date2 ? -1 : 0
+				));
 				return (algorithm == 2 ? val : (0-val));
 			}
 		);
@@ -706,7 +714,9 @@ function buildFeedInfo() {
 			}
 			oldFeed.group = myFeed.group;
 			oldFeed.sortItems = myFeed.sortItems ? myFeed.sortItems : 0;
-			var flag = (myFeed.useBookmarkFolder == undefined ? (hasBookmarkFolder(myFeed) ? true : false ) : myFeed.useBookmarkFolder);
+			var flag = (myFeed.useBookmarkFolder == undefined ? (
+				hasBookmarkFolder(myFeed) ? true : false
+			) : myFeed.useBookmarkFolder);
 			oldFeed.useBookmarkFolder = flag;
 
 			myFeeds[myFeedIndex] = oldFeed;
@@ -721,8 +731,8 @@ function buildFeedInfo() {
 	for (var url in feedInfo.feedsByURL) {
 		var deletedFeed = feedInfo.feeds[feedInfo.feedsByURL[url]];
 		deletedFeed.unseenStateCallback = undefined;
-		deletedFeed.errorStateCallback = undefined;
-		deletedFeed.updateCallback = undefined;
+		deletedFeed.errorStateCallback  = undefined;
+		deletedFeed.updateCallback      = undefined;
 		if (deletedFeed.hasUnseen()) {
 			unseenFeedCount--;
 		}
@@ -793,7 +803,9 @@ function updateFeeds() {
 	var now = new Date();
 	for (var i = 0; i < feeds.length; ++i) {
 		var feed = feeds[i];
-		if (!feed.updating && (!feed.expire || feed.expire.getTime() < now.getTime())) {
+		if (!feed.updating && (
+			!feed.expire || feed.expire.getTime() < now.getTime()
+		)) {
 			console.warn("Fetching feed \"" + feed.name + "\"");
 			feed.loadFeed(options.defaultTimeout);
 		}
@@ -801,8 +813,7 @@ function updateFeeds() {
 }
 
 function openExtensionPage(page, focus, win) {
-	if (focus == undefined)
-	{
+	if (focus == undefined) {
 		focus = true;
 	}
 	var URL = chrome.extension.getURL(page);
@@ -866,15 +877,16 @@ var badgeText = "";
 var animatedIconPath = "img/rssll_19x19.png";
 
 function setButtonTitle(upds, errors) {
-	if (upds < 0)
-		upds = 0;
-	if (errors < 0)
-		errors = 0;
+	if (upds < 0) upds = 0;
+	if (errors < 0) errors = 0;
+
 	var doBoing = (badgeCount < upds);
-	var goingToNonZero =(badgeCount <= 0 && upds != 0);
-	var goingToZero =(badgeCount > 0 && upds == 0);
+	var goingToNonZero = (badgeCount <= 0 && upds != 0);
+	var goingToZero = (badgeCount > 0 && upds == 0);
+
 	badgeCount = upds;
 	badgeErrors = errors;
+
 	if (!options.maintainBadge) {
 		badgeText = "";
 	} else if (goingToZero) {
@@ -935,55 +947,60 @@ function initGraphics() {
 }
 
 function startAnimate() {
-  stopAnimateLoop();
-    
-  if(options.animateButton) {
-    animTimer = setInterval(doAnimate, animDelay);
-    setTimeout(stopAnimate, 2000);
-    loopTimer = setTimeout(startAnimate, 20000);
-  } else {
+	stopAnimateLoop();
+
+	if(options.animateButton) {
+		animTimer = setInterval(doAnimate, animDelay);
+		setTimeout(stopAnimate, 2000);
+		loopTimer = setTimeout(startAnimate, 20000);
+	} else {
 	stopAnimate();
-  }
+	}
 }
 
 function stopAnimate() {
-  if(animTimer != null)
-    clearTimeout(animTimer);       
+	if(animTimer != null)
+		clearTimeout(animTimer);
 
-  chrome.browserAction.setIcon({path:gfx.src});
-    
-  rotation = 1;
-  factor = 1;
+	chrome.browserAction.setIcon({path:gfx.src});
+
+	rotation = 1;
+	factor = 1;
 }
 
 function stopAnimateLoop() {
-  if(loopTimer != null)
-    clearTimeout(loopTimer);
-    
-  stopAnimate();
+	if(loopTimer != null)
+		clearTimeout(loopTimer);
+
+	stopAnimate();
 }
 
 function doAnimate() {
-  canvasContext.save();
-  canvasContext.clearRect(0, 0, canvas.width, canvas.height);
-  canvasContext.translate(
-   Math.ceil(canvas.width/2),
-   Math.ceil(canvas.height/2));
-  canvasContext.rotate(rotation*2*Math.PI);
-  canvasContext.drawImage(gfx,
-   -Math.ceil(canvas.width/2),
-   -Math.ceil(canvas.height/2));
-  canvasContext.restore();
-  
-  rotation += 0.01 * factor;
-  
-  if(rotation <= 0.9 && factor < 0)
-    factor = 1;
-  else if(rotation >= 1.1 && factor > 0)
-    factor = -1;        
-    
-  chrome.browserAction.setIcon({imageData:canvasContext.getImageData(0, 0,
-   canvas.width,canvas.height)});
+	canvasContext.save();
+	canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+	canvasContext.translate(
+		Math.ceil(canvas.width/2),
+		Math.ceil(canvas.height/2)
+	);
+	canvasContext.rotate(rotation * 2 * Math.PI);
+	canvasContext.drawImage(gfx,
+		-Math.ceil(canvas.width/2),
+		-Math.ceil(canvas.height/2)
+	);
+	canvasContext.restore();
+
+	rotation += 0.01 * factor;
+	
+	if(rotation <= 0.9 && factor < 0)
+		factor = 1;
+	else if(rotation >= 1.1 && factor > 0)
+		factor = -1;
+
+	chrome.browserAction.setIcon({
+		imageData: canvasContext.getImageData(
+			0, 0, canvas.width, canvas.height
+		)
+	});
 }
 
 var nextPlay = 0;
@@ -993,8 +1010,12 @@ function setPopupMuteState(state, notifyingMenuItemInfo) {
 	if (window["soundMenuItems"]) {
 		for (idx in window["soundMenuItems"]) {
 			var id = window["soundMenuItems"][idx];
-			if (id && ((!notifyingMenuItemInfo) || (id != notifyingMenuItemInfo.menuItemId))) {
-				chrome.contextMenus.update(id, {"type": "checkbox", "checked": !state},reportCtxError);
+			if (id && (
+				(!notifyingMenuItemInfo) || (id != notifyingMenuItemInfo.menuItemId)
+			)) {
+				chrome.contextMenus.update(
+					id, {"type": "checkbox", "checked": !state}, reportCtxError
+				);
 			}
 		}
 	}
@@ -1011,8 +1032,7 @@ function playBoing() {
 				document.getElementById('audioNotify').play();			
 			}
 			catch(e) { console.error(e); }
-		} else {
-		}
+		} // else {}
 	}
 }
 

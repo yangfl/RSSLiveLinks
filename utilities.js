@@ -41,9 +41,33 @@ function clone(obj) {
 	return new ClonedObject;
 }
 
-var isoDateRE = new RegExp("([0-9]{4})(-([0-9]{2})(-([0-9]{2})" +
-		"(T([0-9]{2}):([0-9]{2})(:([0-9]{2})(\.([0-9]+))?)?" +
-		"(Z|(([-+])([0-9]{2}):([0-9]{2})))?)?)?)?");
+var isoDateRE = new RegExp( // broken up for #tag1
+  "([0-9]{4})" // Year
++ "("
++   "-"
++   "([0-9]{2})" // Month
++   "("
++     "-"
++     "([0-9]{2})" // Day
++    "("
++       "T" // T tag
++       "([0-9]{2})" // Hours
++       ":"
++       "([0-9]{2})" // Minutes
++       "("
++         ":"
++         "([0-9]{2})" // Seconds
++         "(\.([0-9]+))?" // Milliseconds
++       ")?"
++       "("
++         "Z"// Z tag
++       "|"
++         "(([-+])([0-9]{2}):([0-9]{2}))" // #tag1 Timezone? Not found in standard. Is this useful? What's this?
++       ")?"
++     ")?"
++   ")?"
++ ")?"
+);
 
 function isTimeStamp(xmlDate) {
 	//return /^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z/.test(xmlDate);
@@ -58,10 +82,10 @@ function timeStampToDate(timestamp) {
 	var offset = 0;
 	var dat = new Date(d[1], 0, 1);
 
-	if (d[3]) { dat.setMonth(d[3] - 1); }
-	if (d[5]) { dat.setDate(d[5]); }
-	if (d[7]) { dat.setHours(d[7]); }
-	if (d[8]) { dat.setMinutes(d[8]); }
+	if (d[3])  { dat.setMonth(d[3] - 1); }
+	if (d[5])  { dat.setDate(d[5]); }
+	if (d[7])  { dat.setHours(d[7]); }
+	if (d[8])  { dat.setMinutes(d[8]); }
 	if (d[10]) { dat.setSeconds(d[10]); }
 	if (d[12]) { dat.setMilliseconds(Number("0." + d[12]) * 1000); }
 	if (d[14]) {

@@ -122,16 +122,16 @@ chrome.tabs.onRemoved.addListener(tabRemoved);
 ); 
 
 function addTabDetails(tab) {
-	if (tab.url && (tab.url.indexOf("http://") == 0 || tab.url.indexOf("https://") == 0)) {
+	if (tab.url && (tab.url.startsWith("http://") || tab.url.startsWith("https://"))) {
 		getTabRSS(tab.id);
 	}
 }
 
 function getTabRSS(tabId) {
 	chrome.tabs.executeScript(tabId, {
-file: "findrss.js", allFrames: true
-//file: "findrss.js"
-});
+		file: "findrss.js",
+		allFrames: true
+	});
 }
 
 function addAllTabs(tabs) {

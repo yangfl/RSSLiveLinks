@@ -39,7 +39,7 @@
 			}
 			
 			html {
-				font-size: 100.01%;
+				font-size: 100.01%; // #tag1 ???
 			}
 
 			body {
@@ -83,6 +83,7 @@
 
 			input[type="password"], input[type="text"], input[type="url"], input:not([type]) {
 				-webkit-border-radius: 2px;
+				border-radius: 2px;
 				border: 1px solid #AAA;
 				font-size: inherit;
 				padding: 3px;
@@ -125,9 +126,11 @@
 
 			#sidebar {
 				-webkit-user-select: none;
+				user-select: none;
 				position: absolute;
 				-webkit-border-end: 1px solid #c6c6c6;
-				background: -webkit-linear-gradient(rgba(237, 237, 237, 0.2), #F5F5F5), -webkit-linear-gradient(left, #EDEDED, #EDEDED 97%, #D3D3D3);
+				background: -webkit-linear-gradient(rgba(237, 237, 237, 0.2), #F5F5F5),
+				            -webkit-linear-gradient(left, #EDEDED, #EDEDED 97%, #D3D3D3);
 				width: 219px;
 				top: 0;
 				left: 0;
@@ -455,6 +458,7 @@
 				border-top-right-radius: 15px;
 				width: 199px;
 				-webkit-transition: max-height 1s linear; 
+				transition: max-height 1s linear; 
 			}
 
 			#statusLine.show {
@@ -526,7 +530,7 @@
 					</div>
 				</div>
 				<div id="donate-container">
-					<div class="link">				
+					<div class="link">
 						<form id="donate" action="https://www.paypal.com/cgi-bin/webscr" method="post">
 							<input type="hidden" name="cmd" value="_s-xclick">
 							<input type="hidden" name="hosted_button_id" value="2PMBTKD2NXTVQ">
@@ -566,7 +570,7 @@
 											<option value="0">Compact</option>
 											<option value="1">Cozy</option>
 											<option value="2">Comfortable</option>
-										</select>							
+										</select>
 									</td>
 								</tr>
 							</table>

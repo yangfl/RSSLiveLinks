@@ -368,23 +368,42 @@ function restore_options() {
 	sortItems.value = "" + (options.sortItems ? options.sortItems : 0);
 	popupDensity.value = "" + (options.popupDensity ? options.popupDensity : 0);
 
-	subscribed.selectionControl = {data: subscriptions, dataByURL: subscriptionsByURL, selected: 0, selectionHead: -1, deleteButton: deleteButton, modifyButton: modifyButton, moveUpButton: moveUpButton, moveDownButton: moveDownButton};
-	groups.selectionControl = {data: feedGroups, dataByURL: feedGroupsByURL, selected: 0, selectionHead: -1, deleteButton: deleteGButton, modifyButton: modifyGButton, moveUpButton: moveGUpButton, moveDownButton: moveGDownButton};
+	subscribed.selectionControl = {
+		data: subscriptions,
+		dataByURL: subscriptionsByURL,
+		selected: 0,
+		selectionHead: -1,
+		deleteButton: deleteButton,
+		modifyButton: modifyButton,
+		moveUpButton: moveUpButton,
+		moveDownButton: moveDownButton
+	};
+	groups.selectionControl = {
+		data: feedGroups,
+		dataByURL: feedGroupsByURL,
+		selected: 0,
+		selectionHead: -1,
+		deleteButton: deleteGButton,
+		modifyButton: modifyGButton,
+		moveUpButton: moveGUpButton,
+		moveDownButton: moveGDownButton
+	};
 
-	for (var i = 0; i < options.subscriptions.length; ++i)
-	{
+	for (var i = 0; i < options.subscriptions.length; ++i) {
 		addSubscription(options.subscriptions[i]);
 	}
 
 	var groupArray = [];
-	for (var groupName in options.groups)
-	{
+	for (var groupName in options.groups) {
 		var idx = options.groups[groupName];
-		groupArray[idx] = {name: groupName, url: "group " + groupName, idx: idx};
+		groupArray[idx] = {
+			name: groupName,
+			url: "group " + groupName,
+			idx: idx
+		};
 	}
 
-	for (var i = 0; i < groupArray.length; ++i)
-	{
+	for (var i = 0; i < groupArray.length; ++i) {
 		addGroup( groupArray[i]);
 	}
 
@@ -462,8 +481,7 @@ function updateAvailableFeeds()
 	}
 }
 
-function addSubscriptionFromAvaliable(evt)
-{
+function addSubscriptionFromAvaliable(evt) {
 	var rowDiv = evt.currentTarget;
 	var feed = rowDiv.feed;
 
@@ -699,20 +717,17 @@ function doMoveFeedDown(container) {
 	mods = true;
 }
 
-function deleteGroups(container)
-{
+function deleteGroups(container) {
 	doDelete(groups);
 	groupmods = true;
 }
 
-function deleteFeeds(container)
-{
+function deleteFeeds(container) {
 	doDelete(subscribed);
 	mods = true;
 }
 
-function doDelete(container)
-{
+function doDelete(container) {
 	var feedRows = container.getElementsByClassName("selectedRowDiv");
 
 	var selCtrl = container.selectionControl;
@@ -776,7 +791,7 @@ function showFeedMod(title, feed, callback) {
 		var optn = document.createElement("OPTION");
 		optn.text = feedGroups[i].name;
 		optn.value = feedGroups[i].name;
-		feedGroupSelect.options.add(optn);		
+		feedGroupSelect.options.add(optn);
 	}
 
 	if (feed) {
@@ -869,9 +884,9 @@ function feedModInput() {
 
 function getOPMLText() {
 	var d=new Date();
-	return	"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n" +
-			"<opml version=\"1.0\">\n" +
-			"	 <head>\n" +
+	return '<?xml version="1.0" encoding="UTF-8"?>\n' +
+			'<opml version="1.0">\n' +
+			"    <head>\n" +
 			"        <title><![CDATA[RSS Live Links OPML Export]]></title>\n" +
 			"        <dateCreated>" + d + "</dateCreated>\n" +
 			"    </head>\n" +
@@ -885,13 +900,15 @@ function getOutlineElements(subs) {
 	var elements = "";
 	for (var i = 0; i < subs.length; ++i) {
 		var sub = subs[i];
-		elements += ("        <outline type=\"rss\" version=\"RSS\" text=\"" + 
-				     xmlAttrEscape(sub.name) + 
-					 "\" xmlUrl=\"" + 
-					 xmlAttrEscape(sub.url) + 
-					 "\" title=\"" + 
-					 xmlAttrEscape(sub.name) + 
-					 "\"/>\n");
+		elements += (
+		'        <outline type="rss" version="RSS" text="' +
+		xmlAttrEscape(sub.name)
+		+ '" xmlUrl="' +
+		xmlAttrEscape(sub.url)
+		+ '" title="' +
+		xmlAttrEscape(sub.name)
+		+ '"/>\n'
+		);
 	}
 	return elements;
 }
@@ -907,7 +924,8 @@ function addOutline(outline) {
 
 
 		if (url && name && !subscriptionsByURL[url]) {
-			var newFeed= {url: url, 
+			var newFeed= {
+				url: url, 
 				name: name, 
 				group: undefined, 
 				faviconURL: undefined, 
@@ -917,7 +935,8 @@ function addOutline(outline) {
 				changesUnseen: false, 
 				useBookmarkFolder: false, 
 				autoopenNew: false, 
-				bookmarkFolderId: undefined};
+				bookmarkFolderId: undefined
+			};
 			subscriptions.push(newFeed);
 			subscriptionsByURL[newFeed.url] = newFeed;
 			return true;
@@ -940,11 +959,7 @@ function doImport(replace) {
 				var firstChar = text.charAt(0);
 				try {
 					if (firstChar == '{') {
-						if (replace) {
-							ok = importReplace(text);
-						} else {
-							ok = importMerge(text);
-						}
+						ok = (replace) ? importReplace(text) : importMerge(text);
 					} else if (firstChar == '<') {
 						ok = importOPML(replace, text);
 					} else {
@@ -1104,11 +1119,21 @@ function initExportHrefs() {
 }
 
 function saveOPMLFile() {
-	saveFile(opmlFile, getOPMLText(), "OPML", opmlExport);
+	saveFile(
+		opmlFile,
+		getOPMLText(),
+		"OPML",
+		opmlExport
+	);
 }
 
 function saveConfigFile() {
-	saveFile(configFile, backgroundPage.getConfigJSON(), "Config", configExport);
+	saveFile(
+		configFile,
+		backgroundPage.getConfigJSON(),
+		"Config",
+		configExport
+	);
 }
 
 /*
@@ -1127,7 +1152,9 @@ function saveFile(file, data, type, button) {
 						button.disabled = "disabled";
 						fsError('Failed ' + type + ' write', e);
 					};
-					fileWriter.write(new Blob([data],{type: 'text/plain'}));
+					fileWriter.write(
+						new Blob( [data], {type: 'text/plain'} )
+					);
 				};
 				fileWriter.onerror = function (e) {
 					button.disabled = "disabled";
@@ -1147,7 +1174,7 @@ function saveFile(file, data, type, button) {
 }
 
 function fsError(hd, e) {
-	var msg = '';
+	var msg;
 	switch (e.code) {
 	  case FileError.QUOTA_EXCEEDED_ERR:
 	    msg = 'QUOTA_EXCEEDED_ERR';

@@ -62,7 +62,9 @@ function deleteBookmarkFolder(feed, doneFunction) {
 			feed.useBookmarkFolder = false;
 			chrome.bookmarks.removeTree(folderId);
 		}
-	} catch(e) { console.error("Error in 'deleteBookmarkFolder' for feed '"+feed.name+"': " + e); }
+	} catch(e) {
+		console.error("Error in 'deleteBookmarkFolder' for feed '"+feed.name+"': " + e);
+	}
 	if (doneFunction) {
 		doneFunction(feed);
 	} else {
@@ -71,10 +73,7 @@ function deleteBookmarkFolder(feed, doneFunction) {
 }
 
 function hasBookmarkFolder(feed) {
-	if (folderIds[feed.url])
-		return true;
-	else
-		return false;
+	return folderIds[feed.url] ? true : false;
 }
 
 function renameBookmarkFolder(feed, newName) {
@@ -86,24 +85,33 @@ function renameBookmarkFolder(feed, newName) {
 			console.warn("Bookmark folder for \"" + oldName + "\" has disappeared");
 			deleteBookmarkFolder(feed);
 		} else if (nodes[0].title == oldName) {
-			chrome.bookmarks.update(folderId, {title: newName}, function(node) {
-				if (!node) {
-					console.warn("Bookmark folder for \"" + oldName + "\" has disappeared");
-					deleteBookmarkFolder(feed);
+			chrome.bookmarks.update(
+				folderId,
+				{title: newName},
+				function(node) {
+					if (!node) {
+						console.warn("Bookmark folder for \"" + oldName + "\" has disappeared");
+						deleteBookmarkFolder(feed);
+					}
 				}
-			});
+			);
 		}
 	};
 	try {
 		if (folderId) {
 			chrome.bookmarks.get(folderId, doRename);
 		}
-	} catch(e) { console.error("Error in 'renameBookmarkFolder' for feed '"+feed.name+"': " + e); }
+	} catch(e) {
+		console.error("Error in 'renameBookmarkFolder' for feed '" + feed.name + "': " + e);
+	}
 }
 
 function createBookmarkFolder(feed, doneFunction, parentFolder) {
 	try {
-		var parms = {parentId: (parentFolder ? parentFolder.id : homeFolder.id), title: feed.name};
+		var parms = {
+			parentId: (parentFolder ? parentFolder.id : homeFolder.id),
+			title: feed.name
+		};
 		chrome.bookmarks.create(
 			parms, 
 			function(folder) {
@@ -117,12 +125,12 @@ function createBookmarkFolder(feed, doneFunction, parentFolder) {
 				if (doneFunction) {
 					doneFunction(feed, folder);
 				} else if (folder) {
-					loadBookmarkFolder(feed, folder, doneFunction)					
+					loadBookmarkFolder(feed, folder, doneFunction)
 				}
 			}
 		);
 	} catch(e) { 
-		console.error("Error in 'createBookmarkFolder' for feed '"+feed.name+"': " + e); 
+		console.error("Error in 'createBookmarkFolder' for feed '" + feed.name + "': " + e); 
 		if (doneFunction) {
 			doneFunction(feed);
 		}
@@ -131,7 +139,7 @@ function createBookmarkFolder(feed, doneFunction, parentFolder) {
 
 function checkAllFeedFolders() {
 	var doneData = {count: feedInfo.feeds.length};
-	feedInfo.feeds.forEach( function(feed) {
+	feedInfo.feeds.forEach(function(feed) {
 		checkFeedFolder(feed, doneData);
 	});
 }
@@ -354,16 +362,23 @@ function finishedCreateBookmark(newNode, item, doneData, debugString) {
 function createBookmark(parentId, item, index, doneData, debugString) {
 	try {
 		var myItem = item;
-		var parms = {parentId: parentId, title: getItemTitle(item), url: item.url};
+		var parms = {
+			parentId: parentId,
+			title: getItemTitle(item),
+			url: item.url
+		};
 		if (index != undefined) {
 			parms.index = index;
 		}
-		chrome.bookmarks.create(
-			parms,
-			function(newNode) {finishedCreateBookmark(newNode, myItem, doneData, debugString)});
+		chrome.bookmarks.create(parms, function(newNode) {
+				finishedCreateBookmark(newNode, myItem, doneData, debugString)
+		});
 	} catch(e) { 
 		console.error("Error in 'createBookmark' for feed '"+item.feed.name+"': " + e); 
-		finishedBookmarkUpdate(doneData, (debugString ? (debugString + " (error)") : null));
+		finishedBookmarkUpdate(
+			doneData,
+			(debugString ? (debugString + " (error)") : null)
+		);
 	}
 }
 
@@ -396,7 +411,7 @@ function updateBookmarkFolder(feed, doneFunction) {
 				internalUpdateBookmarkFolder(feed, folderId, doneFunction);
 			}
 		} catch(e) { 
-			console.error("Error in 'updateBookmarkFolder' for feed '"+feed.title+"': " + e);
+			console.error("Error in 'updateBookmarkFolder' for feed '" + feed.title + "': " + e);
 			feed.folderLoading = false;
 		}
 	}
@@ -404,7 +419,10 @@ function updateBookmarkFolder(feed, doneFunction) {
 
 function internalUpdateBookmarkFolder(feed, folderId, doneFunction) {
 	console.log("Updating bookmarks for " + feed.name);
-	var doneData = {feed: feed, doneFunction: doneFunction};
+	var doneData = {
+		feed: feed,
+		doneFunction: doneFunction
+	};
 
 	chrome.bookmarks.getChildren(folderId, function (bookmarks) {
 		performFolderUpdates(doneData, bookmarks);
@@ -461,14 +479,14 @@ function performFolderUpdates(doneData, bookmarks) {
 			if (item.moved) {
 				++toDo;
 				++moves;
-			}	
+			}
 			if (item.modified) {
 				++toDo;
 				++updates;
 			}
 		}
 	});
-	
+
 	doneData.toDo = toDo;
 
 	if (toDo <= 0) {
@@ -488,13 +506,17 @@ function performFolderUpdates(doneData, bookmarks) {
 			if (item.moved) {
 				try {
 					chrome.bookmarks.move(item.bookmarkId, {parentId: folderId, index: j});
-				} catch(e) { console.error("Error in 'chrome.bookmarks.move' for item '"+item.title+"': " + e); }	
+				} catch(e) {
+					console.error("Error in 'chrome.bookmarks.move' for item '"+item.title+"': " + e);
+				}
 				finishedBookmarkUpdate(doneData, "move");
 			}
 			if (item.modified) {
 				try {
 					chrome.bookmarks.update(item.bookmarkId, {title: getItemTitle(item)});
-				} catch(e) { console.error("Error in 'chrome.bookmarks.update' for item '"+item.title+"': " + e); }
+				} catch(e) {
+					console.error("Error in 'chrome.bookmarks.update' for item '"+item.title+"': " + e);
+				}
 				finishedBookmarkUpdate(doneData, "update");
 			}
 		}
@@ -506,14 +528,16 @@ function performFolderUpdates(doneData, bookmarks) {
 	for (var j = 0; j < deletedItems.length ; ++j) {
 		try {
 			chrome.bookmarks.remove(deletedItems[j].id);
-		} catch(e) { console.error("Error in 'chrome.bookmarks.remove' for id '"+deletedItems[j].title+"': " + e); }
+		} catch(e) {
+			console.error("Error in 'chrome.bookmarks.remove' for id '" + deletedItems[j].title + "': " + e);
+		}
 		finishedBookmarkUpdate(doneData, "delete");
 	}
 }
 
 function getItemTitle(item) {
 	if (!item.displayTitle) {
-		item.displayTitle = item.title ? trim11(unhtml(item.title)) : "(no title)";
+		item.displayTitle = item.title ? trim11( unhtml(item.title) ) : "(no title)";
 	}
 	return item.displayTitle;
 }

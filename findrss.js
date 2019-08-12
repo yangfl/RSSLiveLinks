@@ -27,7 +27,7 @@
  * pertinent details back to the mother ship
  */
 function findRSSLinks() {
-	var links =[]; 
+	var links = []; 
 	linkEls = document.getElementsByTagName('link');
 	var altTitle;
 	var altTitleCount = 0;
@@ -38,14 +38,14 @@ function findRSSLinks() {
 		}
 	}
 
-	for (var i =0; i<linkEls.length; ++i){
+	for (var i = 0; i < linkEls.length; ++i) {
 		var link = linkEls[i]; 
 		if ((link.type == 'application/rss+xml' || link.type == 'application/atom+xml') && link.href) {
 			var myTitle = link.title;
 			if (!myTitle) {
 				myTitle = altTitle;
 				if (myTitle && (altTitleCount > 0) ) {
-					myTitle += (altTitleCount+1);
+					myTitle += (altTitleCount + 1);
 				}
 				altTitleCount++;
 			}

@@ -23,6 +23,7 @@
  * @author  Martin Bartlett
  */
 var backgroundPage = chrome.extension.getBackgroundPage();
+/*
 var opt_link = 'options.html'
 var bug_link = 'https://chrome.google.com/webstore/support/hcamnijgggppihioleoenjmlnakejdph'
 var rln_link = 'https://docs.google.com/View?docid=dhfscm8k_780x6nkpwgk'
@@ -30,8 +31,29 @@ var doc_link = 'https://docs.google.com/View?id=dhfscm8k_764dnw3srhd'
 var xmk_link = 'https://chrome.google.com/webstore/detail/ajpgkpeckebdhofmmjfgcjjiiejpodla'
 var faq_link = 'https://docs.google.com/document/d/1xkhZUUh-ezevyxEtpynfF5iUBTEJD-dGWzRaFelLuW4/edit'
 var gcb_link = 'https://code.google.com/p/chromium/issues/detail?id=261140'
+*/
 function init() {
 	window.addEventListener("contextmenu", function () {return false;}, false);
+	
+	var _s = "https://";
+	var _g = ".google.com";
+	var _chrome = _s + "chrome" + _g + "/webstore";
+	var _docs = _s + "docs" + _g;
+	var rln_link = _docs + '/View?docid=dhfscm8k_780x6nkpwgk';
+	new Map([
+		[opt, 'options.html'],
+		[bug, _chrome + '/support/hcamnijgggppihioleoenjmlnakejdph'],
+		[rn1, rln_link],
+		[rn2, rln_link],
+		[rn3, rln_link],
+		[doc, _docs + '/View?id=dhfscm8k_764dnw3srhd'],
+		[xmk, _chrome+ '/detail/ajpgkpeckebdhofmmjfgcjjiiejpodla'],
+		[faq, _docs + '/document/d/1xkhZUUh-ezevyxEtpynfF5iUBTEJD-dGWzRaFelLuW4/edit'],
+		[gcb, _s + "code" + _g + '/p/chromium/issues/detail?id=261140']
+	]).forEach(function(link, elem) {
+		elem.addEventListener("click", function () { showUrl(link, false); }, false);
+	});
+	/*
 	rn1.addEventListener("click", function () {showUrl(rln_link, false);}, false);
 	xmk.addEventListener("click", function () {showUrl(xmk_link, false);}, false);
 	rn2.addEventListener("click", function () {showUrl(rln_link, false);}, false);
@@ -41,7 +63,7 @@ function init() {
 	bug.addEventListener("click", function () {showUrl(bug_link, false);}, false);
 	opt.addEventListener("click", function () {showUrl(opt_link, false);}, false);
 	gcb.addEventListener("click", function () {showUrl(gcb_link, false);}, false);
-	
+	*/
 	rssllVersion.innerHTML = backgroundPage.manifest.version;
 	chrome.browserAction.setPopup({"popup": "popup.html"});
 }

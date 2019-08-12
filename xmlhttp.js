@@ -42,7 +42,7 @@ var httpSliceMax = 16;*/
 var httpRequestCount = 0;
 
 function delayRun(requestor, requestData) {
-	//console.log("REQUESTOR "+requestor.num+": scheduling request: " + requestData.url);
+	//console.log("REQUESTOR " + requestor.num + ": scheduling request: " + requestData.url);
 	if (httpDelayTime > 0) {
 		setTimeout( function() {
 			requestor.run(requestData);
@@ -215,7 +215,7 @@ XMLHttpRequestor.prototype.setRequest = function() {
 			var requestData = this.requestData;
 			this.requestData = undefined;
 			if (this.queued) {
-				logMsg("LOGIC ERROR: REQUESTOR "+this.requestor.num+": onload should not be run on queued requestor");
+				logMsg("LOGIC ERROR: REQUESTOR " + this.requestor.num + ": onload should not be run on queued requestor");
 			}
 			this.finished = true;
 			try {
@@ -223,7 +223,13 @@ XMLHttpRequestor.prototype.setRequest = function() {
 					clearTimeout(this.timeoutTimer);
 					this.timeoutTimer = undefined;
 				}
-				delayOnLoad(this.requestor, requestData.doneFunc, requestData.context, this.responseXML, this.responseText);
+				delayOnLoad(
+					this.requestor,
+					requestData.doneFunc,
+					requestData.context,
+					this.responseXML,
+					this.responseText
+				);
 				this.requestor.runNext();
 			} catch (err) {
 				this.requestData = requestData;

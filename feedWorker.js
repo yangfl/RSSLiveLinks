@@ -63,17 +63,17 @@ function runUpdate(id, data) {
 	var feed = data.feed;
 	data.response.feed = {
 		updateCycleId: feed.updateCycleId,
-		baseURL: feed.baseURL,
-		parentURL: feed.parentURL,
-		itemGuids: feed.itemGuids,
-		itemsByGuid: feed.itemsByGuid,
-		deletedItems: feed.deletedItems,
-		moreStories: feed.moreStories,
+		baseURL:       feed.baseURL,
+		parentURL:     feed.parentURL,
+		itemGuids:     feed.itemGuids,
+		itemsByGuid:   feed.itemsByGuid,
+		deletedItems:  feed.deletedItems,
+		moreStories:   feed.moreStories,
 		txt: feed.txt,
 		ttl: feed.ttl,
 		pubDate: feed.pubDate,
 		stats: feed.stats,
-		faviconURL: feed.faviconURL	
+		faviconURL: feed.faviconURL
 	};
 	//logMsg("Running update for " + data.url);
 	xmlHttpRequestManager.runRequest(data.url, data, handleResponse, handleError, data.timeout);
@@ -89,7 +89,7 @@ function endUpdate (data, changed) {
 		/*
 		 * TESTING
 		 */
-		var feed = data.testing.feed;
+		var feed     = data.testing.feed;
 		var doneFunc = data.testing.doneFunc;
 		feed.handleUpdate(response);
 	} else {
@@ -108,11 +108,11 @@ function handleResponse(data, doc, txt) {
 		if ((!doc) && txt) {
 		//if (txt) {
 			if (data.testing) {
-				var parser=new DOMParser();
-				doc=parser.parseFromString(txt,"text/xml");
+				var parser = new DOMParser();
+				doc = parser.parseFromString(txt, "text/xml");
 			} else {
-				var parser=new DOMImplementation();
-				doc=parser.loadXML(txt).getDocumentElement();
+				var parser = new DOMImplementation();
+				doc = parser.loadXML(txt).getDocumentElement();
 			}
 		}
 		if (doc) {
@@ -126,7 +126,7 @@ function handleResponse(data, doc, txt) {
 			.replace(/^\s+at\s+/gm, '')
 			.replace(/^Object.<anonymous>\s*\(/gm, '{anonymous}()@')
 			.split('\n');
-		data.response.error = 'Feed processing error. type: ' + e.type + ", message: " + e.message+ "\r\n" + "Stack Trace: " +stack;
+		data.response.error = 'Feed processing error. type: ' + e.type + ", message: " + e.message + "\r\n" + "Stack Trace: " +stack;
 		endUpdate(data, false);
 	}
 }
@@ -158,23 +158,27 @@ function populate (data, doc, txt) {
 	var dateString = "";
 
 	var feedPubDateEl = doc.getElementsByTagName("lastBuildDate").item(0);
-	dateString = trim11(getInner(feedPubDateEl,''));
-	if (dateString.length < 1) {
-		var feedPubDateEl = doc.getElementsByTagName("updated").item(0)
-		if (feedPubDateEl && feedPubDateEl.firstChild) {
-			var parentTag = feedPubDateEl.parentNode.tagName;
-			if (!(parentTag == "item" || parentTag == "entry")) {
-				dateString = trim11(getInner(feedPubDateEl,''));
-			}
-		} else {
-			feedPubDateEl = doc.getElementsByTagName("pubDate").item(0);
-			if (feedPubDateEl && feedPubDateEl.firstChild) {
-				var parentTag = feedPubDateEl.parentNode.tagName;
-				if (!(parentTag == "item" || parentTag == "entry")) {
-					dateString = trim11(getInner(feedPubDateEl,''));
+	dateString = trim11(getInner(feedPubDateEl, ''));
+
+	if (dateString.length < 1) { // Try other tag names
+		function setDateString(dateTagName) {
+			if (!tagNames) {
+				console.error("function getDateString() requires one truthy arguments.");
+				return;
+			} else {
+				feedPubDateEl = doc.getElementsByTagName(dateTagName).item(0);
+				if (feedPubDateEl && feedPubDateEl.firstChild) {
+					var parentTag = feedPubDateEl.parentNode.tagName;
+					if (!(parentTag == "item" || parentTag == "entry")) {
+						dateString = trim11(getInner(feedPubDateEl, ''));
+					}
 				}
 			}
-		}	
+		}
+		setDateString("updated");
+		if (dateString.length < 1) {
+			setDateString("pubDate");
+		}
 	}
 
 	if (dateString.length > 0) {
@@ -196,7 +200,7 @@ function populate (data, doc, txt) {
 			if (url) {
 				moreStoriesURL = trim11(url);
 			} else {
-				moreStoriesURL = trim11(getInner(link,null));
+				moreStoriesURL = trim11(getInner(link, null));
 			}
 		}
 	}
@@ -211,7 +215,7 @@ function populate (data, doc, txt) {
 	if (title && title.firstChild) {
 		parentTag = title.parentNode.tagName;
 		if (parentTag != "item" && parentTag != "entry") {
-			responseFeed.feedTitle = trim11(getInner(title,"Unknown Feed"));
+			responseFeed.feedTitle = trim11(getInner(title, "Unknown Feed"));
 		}
 	}
 
